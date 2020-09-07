@@ -44,7 +44,7 @@ body {
     text-decoration: none;
     float: left;
     color: #ccc;
-    width: 85px;
+    width: 87px;
     height: 50px;
     border-right: 1px solid #222;
     text-align: center;
@@ -53,12 +53,13 @@ body {
   
   .navbuttons:hover {
     color: #666666;
+    transition: 0.2s;
   }
 
   #main {
     max-width: 1200px;
     background-color: #ffffff;
-    height: 1080px;
+    height: 1300px;
     margin: auto;
     margin-top: 0px;
     padding: 20px;
@@ -72,6 +73,7 @@ body {
   width: 100%;
   padding-top: 30px;
   height: 175px;
+  border-bottom: 1px solid #ccc;
 }
 
 
@@ -83,8 +85,9 @@ body {
 
 #songmain {
   width: 100%;
-  height: 500px;
-
+  height: 700px;
+  border-bottom: 1px solid #ccc;
+  padding-top: 25px;
 }
 .songlist {
     margin: auto;
@@ -97,6 +100,29 @@ body {
     float: left;
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 830px) {
+  .songlist > * {
+    width: 200px;
+    height: 200px;
+  }
+  #songmain {
+    height: 1000px;
+  }
+
+  #main {
+    height: 1500px;
+  }
+}
+
+
+/** INFO STYLING ***/
+
+#infomain {
+  width: 100%;
+  height: 300px;
+  padding-top: 20px;
 }
 
   

@@ -7,6 +7,7 @@ class Songs extends React.Component {
       return(
         <div id="songmain">
             <h1>Songs</h1>
+            <p>Here is our library of available songs.</p>
             <div className="songlist">
                 <div>
 
@@ -27,6 +28,28 @@ class Songs extends React.Component {
                 <div>
                     
                 </div>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+
                 
             </div>
         </div>
