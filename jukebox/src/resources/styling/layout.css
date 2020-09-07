@@ -72,3 +72,27 @@ body {
   #jukeboxbutton > p {
     margin-top: 10px;
   }
+
+
+  
+
+
+  #player {
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  .navelements2 {
+     max-width: 1235px;
+     margin: auto;
+  }
+  .navbuttons2:hover {
+    color: #666666;
+  }
+
+
+
