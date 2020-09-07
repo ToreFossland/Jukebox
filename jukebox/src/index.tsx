@@ -6,11 +6,49 @@ import * as serviceWorker from './serviceWorker';
 
 var element = React.createElement('h1', { className: 'greeting' }, 'Hello, world!');
 
+class NavBar extends React.Component {
+  render() {
+    return (
+      <div id="navbar">
+        <div className="navelements">
+          <a href="index.tsx" id="home">
+            JukeBox
+          </a>
+          <a href="index.tsx" className="navbuttons">
+            Home
+          </a>
+          <a href="index.tsx" className="navbuttons">
+           Songs
+          </a>
+          <a href="index.tsx" className="navbuttons">
+            Info
+          </a>
+        </div>
+      </div>
+    );
+  }
+  
+}
 
-ReactDOM.render(
-  element,
+class Main extends React.Component {
+  render() {
+    return(
+      <div id="main">
+      
+      </div>
+    );
+  }
+}
+
+
+var components = [<NavBar />, <Main />];
+
+ReactDOM.render(components,
   document.getElementById('root')
 );
+
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
