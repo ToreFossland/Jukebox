@@ -3,6 +3,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Interstate";
+    src: "jukebox/src/resources/font/Interstate ExtraLight Regular.otf";
     background-color: #eeeeee;
   }
 
