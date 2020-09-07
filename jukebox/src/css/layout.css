@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family:"Interstate";
+    background-color: #eeeeee;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  #navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    font-weight: bold;
+  }
+  
+  #main {
+    max-width: 1200px;
+    background-color: #ffffff;
+    height: 1080px;
+    margin: auto;
+    margin-top: 0px;
+    padding: 20px;
+    color: #333;
+    text-align: left;
+  }
+  
+  
+  
+  .navelements {
+     max-width: 1235px;
+     margin: auto;
+  }
+  .navbuttons {
+    text-decoration: none;
+    float: left;
+    color: #ccc;
+    width: 80px;
+    height: 50px;
+    border-right: 1px solid #222;
+    text-align: center;
+  }
+
+  .navbuttons:first-child {
+    border-left: 1px solid #222;
+  }
+  
+  .navbuttons:hover {
+    color: #666666;
+  }
+  
+  #jukeboxbutton {
+    color: #1B88F5;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+    width: 100px;
+    font-size: 25px;
+    border-right: 1px solid #222;
+  }
+  #jukeboxbutton > p {
+    margin-top: 10px;
+  }
