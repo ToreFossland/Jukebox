@@ -82,9 +82,6 @@ body {
 
 
 
-
-
-
 /*** SONGS STYLING ***/
 
 #songmain {
@@ -105,21 +102,6 @@ body {
     margin-right: 10px;
     margin-bottom: 10px;
 }
-
-@media only screen and (min-width: 830px) {
-  .songlist > * {
-    width: 200px;
-    height: 200px;
-  }
-  #songmain {
-    height: 1000px;
-  }
-
-  #main {
-    height: 1500px;
-  }
-}
-
 
 /*** INFO STYLING ***/
 
@@ -195,11 +177,27 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+/*** MEDIA STYLING ***/
+
+@media only screen and (min-width: 880px) {
+  .songlist > * {
+    width: 200px;
+    height: 200px;
+  }
+  #songmain {
+    height: 1000px;
+  }
+
+  #main {
+    height: 1500px;
+  }
 }
