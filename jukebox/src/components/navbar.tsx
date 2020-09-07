@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../css/layout.css';
+import '../resources/styling/layout.css';
 
 class NavBar extends React.Component {
     render() {

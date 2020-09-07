@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../css/layout.css';
+import '../resources/styling/layout.css';
 
-class Main extends React.Component {
+class Home extends React.Component {
     render() {
       return(
         <div id="main">
@@ -14,4 +14,4 @@ class Main extends React.Component {
     }
   }
 
-  export default Main;
+  export default Home;
