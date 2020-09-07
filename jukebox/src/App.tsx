@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NavBar from "./components/navbar"
-import Home from "./components/home"
-import Songs from "./components/songs"
-import Info from "./components/info"
+import NavBar from "./components/navbar";
+import Home from "./components/home";
+import Songs from "./components/songs";
+import Info from "./components/info";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Songs />
         <Info />
       </div>
+      <Footer />
     </div>
   );
 }
