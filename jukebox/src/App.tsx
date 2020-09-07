@@ -10,8 +10,15 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+<<<<<<< HEAD
       <Songs />
       <Player />
+=======
+      <div id="main">
+        <Home />
+        <Songs />
+      </div>
+>>>>>>> ce276e06bce0c715e1131430b6a260df7672ddc1
     </div>
   );
 }

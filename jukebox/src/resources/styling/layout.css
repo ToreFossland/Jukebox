@@ -1,62 +1,29 @@
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Interstate";
+    src: "jukebox/src/resources/font/Interstate ExtraLight Regular.otf";
     background-color: #eeeeee;
   }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
+
+
+/*** NAVBAR STYLING ***/
+
   
   #navbar {
     width: 100%;
     height: 50px;
     background-color: #333;
     font-weight: bold;
-  }
-  
-  #main {
-    max-width: 1200px;
-    background-color: #ffffff;
-    height: 1080px;
-    margin: auto;
-    margin-top: 0px;
-    padding: 20px;
-    color: #333;
-    text-align: left;
-  }
-  
-  
-  
-  .navelements {
-     max-width: 1235px;
-     margin: auto;
-  }
-  .navbuttons {
-    text-decoration: none;
-    float: left;
-    color: #ccc;
-    width: 85px;
-    height: 50px;
-    border-right: 1px solid #222;
-    text-align: center;
-    font-size: 15px;
+    position: fixed;
   }
 
-  .navbuttons:first-child {
-    border-left: 1px solid #222;
-  }
-  
-  .navbuttons:hover {
-    color: #666666;
-  }
-  
+  .navelements {
+    max-width: 1235px;
+    margin: auto;
+ }
+
   #jukeboxbutton {
     color: #1B88F5;
     text-align: center;
@@ -69,6 +36,36 @@ body {
     font-size: 24px;
     border-right: 1px solid #222;
   }
+  #jukeboxbutton > p {
+    margin-top: 10px;
+  }
+  
+  .navbuttons {
+    text-decoration: none;
+    float: left;
+    color: #ccc;
+    width: 85px;
+    height: 50px;
+    border-right: 1px solid #222;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  .navbuttons:hover {
+    color: #666666;
+  }
+
+  #main {
+    max-width: 1200px;
+    background-color: #ffffff;
+    height: 1080px;
+    margin: auto;
+    margin-top: 0px;
+    padding: 20px;
+    color: #333;
+    text-align: left;
+  }
+<<<<<<< HEAD
   #jukeboxbutton > p {
     margin-top: 10px;
   }
@@ -96,3 +93,40 @@ body {
 
 
 
+=======
+
+/*** WELCOME/HOME STYLING ***/
+
+#homemain {
+  width: 100%;
+  padding-top: 30px;
+  height: 175px;
+}
+
+
+
+
+
+
+/*** SONGS STYLING ***/
+
+#songmain {
+  width: 100%;
+  height: 500px;
+
+}
+.songlist {
+    margin: auto;
+}
+
+.songlist > * {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+  
+>>>>>>> ce276e06bce0c715e1131430b6a260df7672ddc1
