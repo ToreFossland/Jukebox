@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
-import '../resources/styling/songlayout.css';
 
 class Songs extends React.Component {
     render() {
       return(
-        <div id="main">
+        <div id="songmain">
             <h1>Songs</h1>
             <div className="songlist">
                 <div>

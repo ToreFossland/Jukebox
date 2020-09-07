@@ -9,7 +9,10 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Songs />
+      <div id="main">
+        <Home />
+        <Songs />
+      </div>
     </div>
   );
 }
