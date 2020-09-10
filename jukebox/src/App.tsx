@@ -6,19 +6,13 @@ import Home from "./components/home"
 import Songs from "./components/songs"
 import Player from "./components/player"
 
+
 function App() {
   return (
-    <div className="App">
+    <div>
       <NavBar />
-<<<<<<< HEAD
-      <Songs />
-      <Player />
-=======
-      <div id="main">
-        <Home />
-        <Songs />
-      </div>
->>>>>>> ce276e06bce0c715e1131430b6a260df7672ddc1
+      <Home/>
+      <Player/>
     </div>
   );
 }

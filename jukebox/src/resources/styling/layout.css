@@ -65,7 +65,6 @@ body {
     color: #333;
     text-align: left;
   }
-<<<<<<< HEAD
   #jukeboxbutton > p {
     margin-top: 10px;
   }
@@ -81,19 +80,36 @@ body {
     font-weight: bold;
     position: fixed;
     bottom: 0;
+    padding: 0;
   }
   
   .navelements2 {
-     max-width: 1235px;
+     max-width: 600px;
      margin: auto;
+     display: flex;
   }
   .navbuttons2:hover {
     color: #666666;
   }
 
+  .progressbar .progress {
+    background-color: green;
+    border-radius: 2px;
+    transition: width 400ms ease-in-out;
+    height: 5px;
+  }
+  
+  .progressbar {
+    width: 100%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: lightgrey;
+    padding: 5px;
+  }
+  
 
 
-=======
+
 
 /*** WELCOME/HOME STYLING ***/
 
@@ -129,4 +145,3 @@ body {
 }
 
   
->>>>>>> ce276e06bce0c715e1131430b6a260df7672ddc1
