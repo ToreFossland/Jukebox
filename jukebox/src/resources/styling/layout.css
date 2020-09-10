@@ -74,22 +74,13 @@ body {
     color: #333;
     text-align: left;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> serverAndContext
   #jukeboxbutton > p {
     margin-top: 10px;
   }
 
 
   
-<<<<<<< HEAD
-
-/*** Player Styling ***/
-=======
 /***  PLAYER ***/
->>>>>>> 39246341bbff57264ef692f77d8382e80a5774a4
 
   #player {
     width: 100%;
@@ -127,11 +118,6 @@ body {
   
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> serverAndContext
 /*** WELCOME/HOME STYLING ***/
 
 #homemain {
@@ -164,7 +150,6 @@ body {
     margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
 /*** INFO STYLING ***/
 
 #infomain {
@@ -263,5 +248,3 @@ input:checked + .slider:before {
     height: 1500px;
   }
 }
-=======
->>>>>>> serverAndContext

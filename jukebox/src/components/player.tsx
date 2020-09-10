@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 
 interface myProps {
-  source: string
+  source?: string
 }
 
 interface myState {
@@ -11,7 +11,9 @@ interface myState {
   progress: number,
   duration: string,
   currentTime: string,
+  audioSource: string,
   myAudio: HTMLAudioElement
+
 }
 
 class Player extends React.Component<myProps, myState> {
@@ -22,18 +24,24 @@ class Player extends React.Component<myProps, myState> {
       progress: 0,
       duration: "0:00",
       currentTime: "0:00",
+      audioSource: "singThemeSong",
       myAudio: new Audio()
     };
     this.handleClickPlay = this.handleClickPlay.bind(this);
     this.progressBar = this.progressBar.bind(this);
+    this.setSource = this.setSource.bind(this);
+    
   }
-  
   intervalID = 0;
 
-
+  componentDidMount(){
+    this.setSource();
+  }
+  setSource(){
+    this.state.myAudio.src = require("../resources/media/"+this.state.audioSource+".mp3")
+  }
 
   handleClickPlay(){
-    this.setState({myAudio: new Audio(require("../resources/media/"+`${this.props.source}`+".mp3"))})
     var duration = this.state.myAudio.duration
     var minutes = Math.round(duration/60);
     var seconds = Math.round(duration%60);
