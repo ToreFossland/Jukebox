@@ -1,10 +1,18 @@
+@font-face {
+  font-family: "Interstate";
+  src: url("../font/Interstate ExtraLight Regular.otf");
+}
+
 body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Interstate";
-    src: "jukebox/src/resources/font/Interstate ExtraLight Regular.otf";
     background-color: #eeeeee;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
 
@@ -44,7 +52,7 @@ body {
     text-decoration: none;
     float: left;
     color: #ccc;
-    width: 85px;
+    width: 87px;
     height: 50px;
     border-right: 1px solid #222;
     text-align: center;
@@ -53,26 +61,35 @@ body {
   
   .navbuttons:hover {
     color: #666666;
+    transition: 0.2s;
   }
 
   #main {
     max-width: 1200px;
     background-color: #ffffff;
-    height: 1080px;
+    height: 1300px;
     margin: auto;
     margin-top: 0px;
     padding: 20px;
     color: #333;
     text-align: left;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> serverAndContext
   #jukeboxbutton > p {
     margin-top: 10px;
   }
 
 
   
+<<<<<<< HEAD
 
 /*** Player Styling ***/
+=======
+/***  PLAYER ***/
+>>>>>>> 39246341bbff57264ef692f77d8382e80a5774a4
 
   #player {
     width: 100%;
@@ -110,18 +127,19 @@ body {
   
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> serverAndContext
 /*** WELCOME/HOME STYLING ***/
 
 #homemain {
   width: 100%;
   padding-top: 30px;
   height: 175px;
+  border-bottom: 1px solid #ccc;
 }
-
-
-
 
 
 
@@ -129,8 +147,9 @@ body {
 
 #songmain {
   width: 100%;
-  height: 500px;
-
+  height: 700px;
+  border-bottom: 1px solid #ccc;
+  padding-top: 30px;
 }
 .songlist {
     margin: auto;
@@ -145,4 +164,104 @@ body {
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
+/*** INFO STYLING ***/
+
+#infomain {
+  width: 100%;
+  height: 300px;
+  padding-top: 20px;
+}
+
+
+/*** FOOTER STYLING ***/
   
+#footermain {
+  background-color: #444;
+  padding: 20px;
+  color: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+/*** DARKSWITCH SLIDER ***/
+.darkswitch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.darkswitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/*** MEDIA STYLING ***/
+
+@media only screen and (min-width: 880px) {
+  .songlist > * {
+    width: 200px;
+    height: 200px;
+  }
+  #songmain {
+    height: 1000px;
+  }
+
+  #main {
+    height: 1500px;
+  }
+}
+=======
+>>>>>>> serverAndContext

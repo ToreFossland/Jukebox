@@ -86,12 +86,8 @@ class Player extends React.Component<myProps, myState> {
             <p>{this.state.duration}</p>
         </div>
         </div>
-
-        
       )
   }
-
-
 }
 
 export default Player;
