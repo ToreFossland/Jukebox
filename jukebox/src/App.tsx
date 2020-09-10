@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import NavBar from "./components/navbar"
+import Index from "./components/Index"
 import Home from "./components/home"
-import Songs from "./components/songs"
-import Player from "./components/player"
+// import Tracks from "./components/tracks/Tracks";
+// import Lyrics from "./components/tracks/Lyrics";
+
+
+import {Provider} from './context'
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-<<<<<<< HEAD
-      <Songs />
-      <Player />
-=======
-      <div id="main">
-        <Home />
-        <Songs />
-      </div>
->>>>>>> ce276e06bce0c715e1131430b6a260df7672ddc1
-    </div>
+      <Provider>
+          <Router>
+              <React.Fragment>
+                  <div className="App">
+                      <NavBar />
+                      <div className="container">
+                          <Switch>
+                              <Route exact path= "/" component = {Index} />
+                          </Switch>
+                      </div>
+                      <div id="main">
+                          <Home />
+                          {/*<Tracks />*/}
+                          {/*<Lyrics />*/}
+                      </div>
+                  </div>
+              </React.Fragment>
+          </Router>
+      </Provider>
   );
 }
 

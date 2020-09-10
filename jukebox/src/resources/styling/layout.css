@@ -3,7 +3,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Interstate";
-    src: "jukebox/src/resources/font/Interstate ExtraLight Regular.otf";
     background-color: #eeeeee;
   }
 
@@ -65,7 +64,7 @@ body {
     color: #333;
     text-align: left;
   }
-<<<<<<< HEAD
+
   #jukeboxbutton > p {
     margin-top: 10px;
   }
@@ -91,9 +90,6 @@ body {
     color: #666666;
   }
 
-
-
-=======
 
 /*** WELCOME/HOME STYLING ***/
 
@@ -128,5 +124,3 @@ body {
     margin-bottom: 10px;
 }
 
-  
->>>>>>> ce276e06bce0c715e1131430b6a260df7672ddc1
