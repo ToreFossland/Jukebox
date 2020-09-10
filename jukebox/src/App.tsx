@@ -6,6 +6,7 @@ import Home from "./components/home";
 import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
+import Player from "./components/player";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Info />
       </div>
       <Footer />
+      <Player />
     </div>
   );
 }
