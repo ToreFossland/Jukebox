@@ -74,6 +74,10 @@ body {
     color: #333;
     text-align: left;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> serverAndContext
   #jukeboxbutton > p {
     margin-top: 10px;
   }
@@ -118,8 +122,11 @@ body {
   
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> serverAndContext
 /*** WELCOME/HOME STYLING ***/
 
 #homemain {
@@ -152,6 +159,7 @@ body {
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 /*** INFO STYLING ***/
 
 #infomain {
@@ -250,3 +258,5 @@ input:checked + .slider:before {
     height: 1500px;
   }
 }
+=======
+>>>>>>> serverAndContext

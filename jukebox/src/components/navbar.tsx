@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 
 class NavBar extends React.Component {
