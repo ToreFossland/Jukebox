@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from "./components/navbar";
 import Home from "./components/home";
+import Home2 from "./components/home2";
 import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
@@ -13,7 +14,7 @@ function App() {
     <div>
       <NavBar />
       <div id="main">
-        <Home />
+        <Home2 />
         <Songs />
         <Info />
       </div>
