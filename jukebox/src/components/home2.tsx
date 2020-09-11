@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
+import Dancer from '../components/dancer';
 
 class Home2 extends React.Component {
     render() {
@@ -14,6 +15,7 @@ class Home2 extends React.Component {
               </linearGradient>
             </defs>
             <rect width="100%" height="40vh" z="-100" fill="url(#gradient-0)"/>
+            <Dancer />
           </svg>
 
           <div id="currentInfo">
@@ -22,6 +24,7 @@ class Home2 extends React.Component {
             <p id="currentArtist">by Daft Punk</p>
           </div>
           <img id="currentCover" src={require("../resources/media/onemoretime.jpg")}></img>
+          
         </div>
       );
     }
