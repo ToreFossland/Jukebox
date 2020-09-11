@@ -14,7 +14,7 @@ class Home2 extends React.Component {
                 <stop offset="100%" stop-color="#FAD500"stop-opacity="1" />
               </linearGradient>
             </defs>
-            <rect width="100%" height="40vh" z="-100" fill="url(#gradient-0)"/>
+            <rect id="svgCoverRect" width="100%" height="40vh" z="-100" fill="url(#gradient-0)"/>
             <Dancer />
           </svg>
 

@@ -206,6 +206,10 @@ body {
   #currentInfo {
     width: 83%;
   }
+
+  #svgCoverRect {
+    height: 45vh;
+  }
 }
 
 
