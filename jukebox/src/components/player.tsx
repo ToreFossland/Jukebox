@@ -50,11 +50,13 @@ class Player extends React.Component<myProps, myState> {
       tenths = "0";
     }
     
+
     this.setState({ duration: minutes + ":"+tenths+seconds}); //sets the duration value in the progress bar
     if(!this.state.playing){
       this.setState({ playing: true });
       this.state.myAudio.play();
       this.intervalID =window.setInterval(this.progressBar, 1000);
+      
     }else{
       this.setState({ playing: false });
       this.state.myAudio.pause(); 
@@ -85,7 +87,7 @@ class Player extends React.Component<myProps, myState> {
       return(
         <div id="player">
         <div className="navelements2">
-            <button className="navButtons2" onClick={this.handleClickPlay}>Play</button>
+            <button className="navButtons2" onClick={this.handleClickPlay}><img id="playbutton" src={require("../resources/media/play.svg")}></img></button>
             <p>{this.state.currentTime}</p>
             <div className="progressbar">
               <div className="progress" style={{ width: `${this.state.progress}%` }}>
