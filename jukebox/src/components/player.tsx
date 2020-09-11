@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 
 interface myProps {
-  source?: string
+  source?: string,
+  valueFromParent: string
 }
 
 interface myState {
-  playing: boolean,
   progress: number,
   duration: string,
   currentTime: string,
-  audioSource: string,
   myAudio: HTMLAudioElement
 
 }
@@ -20,27 +19,37 @@ class Player extends React.Component<myProps, myState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      playing: false,
       progress: 0,
       duration: "0:00",
       currentTime: "0:00",
-      audioSource: "singThemeSong",
       myAudio: new Audio()
     };
     this.handleClickPlay = this.handleClickPlay.bind(this);
     this.progressBar = this.progressBar.bind(this);
-    this.setSource = this.setSource.bind(this);
+
     
   }
   intervalID = 0;
 
   componentDidMount(){
-    this.setSource();
-  }
-  setSource(){
-    this.state.myAudio.src = require("../resources/media/"+this.state.audioSource+".mp3")
+    this.state.myAudio.src = require("../resources/media/singThemeSong.mp3")
+
   }
 
+
+  componentWillUpdate(nesteProps:any){ //nextprops inneholder de nye. this.props er de gamle
+      console.log(nesteProps.valueFromParent)
+      if((this.props.valueFromParent !== nesteProps.valueFromParent)){
+        console.log("old2")
+        this.state.myAudio.pause()
+        this.state.myAudio.src = require("../resources/media/"+nesteProps.valueFromParent+".mp3")
+        this.state.myAudio.play()
+      }
+      return true; 
+
+  }
+
+  
   handleClickPlay(){
     var duration = this.state.myAudio.duration
     var minutes = Math.round(duration/60);
@@ -51,12 +60,10 @@ class Player extends React.Component<myProps, myState> {
     }
     
     this.setState({ duration: minutes + ":"+tenths+seconds}); //sets the duration value in the progress bar
-    if(!this.state.playing){
-      this.setState({ playing: true });
+    if(this.state.myAudio.paused){
       this.state.myAudio.play();
       this.intervalID =window.setInterval(this.progressBar, 1000);
     }else{
-      this.setState({ playing: false });
       this.state.myAudio.pause(); 
       clearInterval(this.intervalID);
     }

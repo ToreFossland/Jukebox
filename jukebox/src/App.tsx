@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import './resources/styling/layout.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import NavBar from "./components/navbar"
@@ -14,8 +16,29 @@ import Player from "./components/player";
 
 import {Provider} from './context'
 
-function App() {
-  return (
+interface myState {
+  songID: string
+}
+interface myProps {
+//fill in props here
+}
+
+class App extends React.Component<myProps, myState> {
+  
+  constructor(props:any){
+    super(props);
+    this.state = {
+        songID: ""
+    }
+    this.parentFunction = this.parentFunction.bind(this);
+}
+parentFunction=(data_from_child:string)=>{
+    this.setState({songID:data_from_child});
+}
+
+
+  render(){
+    return(
       <Provider>
           <Router>
               <React.Fragment>
@@ -28,19 +51,20 @@ function App() {
                       </div>
                       <div id="main">
                           <Home />
-                          <Songs />
+                          <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
                           <Info />
                           {/*<Tracks />*/}
                           {/*<Lyrics />*/}
                       </div>
                       <Footer />
-                      <Player source="singThemeSong"/>
+                      <Player valueFromParent={this.state.songID}/>
                   </div>
               </React.Fragment>
           </Router>
       </Provider>
 
-  );
+    );
+  }
 }
 
 export default App;
