@@ -24,7 +24,7 @@ class Player extends React.Component<myProps, myState> {
       currentTime: "0:00",
       myAudio: new Audio()
     };
-    this.handleClickPlay = this.handleClickPlay.bind(this);
+    this.handlePlayer = this.handlePlayer.bind(this);
     this.progressBar = this.progressBar.bind(this);
 
     
@@ -32,15 +32,13 @@ class Player extends React.Component<myProps, myState> {
   intervalID = 0;
 
   componentDidMount(){
-    this.state.myAudio.src = require("../resources/media/singThemeSong.mp3")
-
+    this.intervalID =window.setInterval(this.progressBar, 1000);
   }
 
 
   componentWillUpdate(nesteProps:any){ //nextprops inneholder de nye. this.props er de gamle
-      console.log(nesteProps.valueFromParent)
       if((this.props.valueFromParent !== nesteProps.valueFromParent)){
-        console.log("old2")
+        console.log("new prop from parent!")
         this.state.myAudio.pause()
         this.state.myAudio.src = require("../resources/media/"+nesteProps.valueFromParent+".mp3")
         this.state.myAudio.play()
@@ -48,42 +46,41 @@ class Player extends React.Component<myProps, myState> {
       return true; 
 
   }
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
+  }
 
   
-  handleClickPlay(){
-    var duration = this.state.myAudio.duration
-    var minutes = Math.round(duration/60);
-    var seconds = Math.round(duration%60);
-    var tenths = ""
-    if(seconds<10){
-      tenths = "0";
-    }
-    
-
-    this.setState({ duration: minutes + ":"+tenths+seconds}); //sets the duration value in the progress bar
+  handlePlayer(){
     if(this.state.myAudio.paused){
-      this.state.myAudio.play();
-      this.intervalID =window.setInterval(this.progressBar, 1000);
-      
+      this.state.myAudio.play();      
     }else{
       this.state.myAudio.pause(); 
-      clearInterval(this.intervalID);
     }
   }
 
+
+//Når player mountes vil denne funksjonen kjøres hvert sekund frem til player unmountes
  progressBar(){
-  var currentTime = this.state.myAudio.currentTime;
-  var duration = this.state.myAudio.duration;
-  var minutes = Math.round(currentTime/60);
-  var seconds = Math.round(currentTime%60);
+  var duration = this.state.myAudio.duration
+  if(!duration){duration = 0;}
+  
+  var minutes = Math.round(duration/60);
+  var seconds = Math.round(duration%60);
   var tenths = ""
-  if(seconds<10){
-    tenths = "0";
-  }
+  if(seconds<10){tenths = "0";}
+  this.setState({ duration: minutes + ":"+tenths+seconds}); //sets the duration value in the progress bar
+  
+  var currentTime = this.state.myAudio.currentTime;
+  
+  var minutes2 = Math.round(currentTime/60);
+  var seconds2 = Math.round(currentTime%60);
+  var tenths2 = ""
+  if(seconds2<10){tenths2 = "0";}
   this.setState(() => {
       return {
         progress: (currentTime/duration) * 100,
-        currentTime: minutes  + ":"+ tenths + seconds
+        currentTime: minutes2 + ":"+ tenths2 + seconds2
       }
     });
 
@@ -94,7 +91,7 @@ class Player extends React.Component<myProps, myState> {
       return(
         <div id="player">
         <div className="navelements2">
-            <button className="navButtons2" onClick={this.handleClickPlay}><img id="playbutton" src={require("../resources/media/play.svg")}></img></button>
+            <button className="navButtons2" onClick={this.handlePlayer}><img id="playbutton" src={require("../resources/media/play.svg")}></img></button>
             <p>{this.state.currentTime}</p>
             <div className="progressbar">
               <div className="progress" style={{ width: `${this.state.progress}%` }}>
