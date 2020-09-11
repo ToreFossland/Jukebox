@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './resources/styling/layout.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
-import NavBar from "./components/navbar"
-import Index from "./components/Index"
-import Home from "./components/home"
+import NavBar from "./components/navbar";
+import Home from "./components/home";
+import Home2 from "./components/home2";
 import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
@@ -15,6 +15,7 @@ import Player from "./components/player";
 
 
 import {Provider} from './context'
+import Index from './components/Index';
 
 interface myState {
   songID: string
