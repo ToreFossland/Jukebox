@@ -51,7 +51,7 @@ parentFunction=(data_from_child:string)=>{
                           </Switch>
                       </div>
                       <div id="main">
-                          <Home />
+                          <Home2/>
                           <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
                           <Info />
                           {/*<Tracks />*/}
