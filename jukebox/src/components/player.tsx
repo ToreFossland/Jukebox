@@ -29,8 +29,6 @@ class Player extends React.Component<any, any> {
       tenths = "0";
     }
     
-    var playbutton = document.getElementById("playbutton");
-    
 
     this.setState({ duration: minutes + ":"+tenths+seconds}); //sets the duration value in the progress bar
     if(!this.state.playing){
