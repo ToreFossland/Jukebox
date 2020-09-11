@@ -2,26 +2,47 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 
+interface myProps {
+  source?: string
+}
 
-class Player extends React.Component<any, any> {
+interface myState {
+  playing: boolean,
+  progress: number,
+  duration: string,
+  currentTime: string,
+  audioSource: string,
+  myAudio: HTMLAudioElement
 
+}
+
+class Player extends React.Component<myProps, myState> {
   constructor(props: any) {
     super(props);
     this.state = {
       playing: false,
       progress: 0,
       duration: "0:00",
-      currentTime: "0:00"
+      currentTime: "0:00",
+      audioSource: "singThemeSong",
+      myAudio: new Audio()
     };
     this.handleClickPlay = this.handleClickPlay.bind(this);
     this.progressBar = this.progressBar.bind(this);
+    this.setSource = this.setSource.bind(this);
+    
   }
-  myAudio = new Audio(require("../resources/media/oneMoreTime.mp3"));
   intervalID = 0;
 
+  componentDidMount(){
+    this.setSource();
+  }
+  setSource(){
+    this.state.myAudio.src = require("../resources/media/"+this.state.audioSource+".mp3")
+  }
 
   handleClickPlay(){
-    var duration = this.myAudio.duration;
+    var duration = this.state.myAudio.duration
     var minutes = Math.round(duration/60);
     var seconds = Math.round(duration%60);
     var tenths = ""
@@ -33,19 +54,19 @@ class Player extends React.Component<any, any> {
     this.setState({ duration: minutes + ":"+tenths+seconds}); //sets the duration value in the progress bar
     if(!this.state.playing){
       this.setState({ playing: true });
-      this.myAudio.play();
+      this.state.myAudio.play();
       this.intervalID =window.setInterval(this.progressBar, 1000);
       
     }else{
       this.setState({ playing: false });
-      this.myAudio.pause(); 
+      this.state.myAudio.pause(); 
       clearInterval(this.intervalID);
     }
   }
 
  progressBar(){
-  var currentTime = this.myAudio.currentTime;
-  var duration = this.myAudio.duration;
+  var currentTime = this.state.myAudio.currentTime;
+  var duration = this.state.myAudio.duration;
   var minutes = Math.round(currentTime/60);
   var seconds = Math.round(currentTime%60);
   var tenths = ""
@@ -75,12 +96,8 @@ class Player extends React.Component<any, any> {
             <p>{this.state.duration}</p>
         </div>
         </div>
-
-        
       )
   }
-
-
 }
 
 export default Player;

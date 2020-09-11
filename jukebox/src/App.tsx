@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import NavBar from "./components/navbar";
 import Home from "./components/home";
@@ -8,6 +8,11 @@ import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
 import Player from "./components/player";
+// import Tracks from "./components/tracks/Tracks";
+// import Lyrics from "./components/tracks/Lyrics";
+
+
+import {Provider} from './context'
 
 function App() {
   return (
