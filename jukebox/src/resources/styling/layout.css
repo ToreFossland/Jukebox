@@ -96,23 +96,24 @@ body {
     color: #ddd;
   }
   
-  .navelements2 {
-     max-width: 600px;
+  .playerElements {
+     max-width: 800px;
      margin: auto;
      display: flex;
+     justify-content: center;
+     align-items: center;
   }
 
-  .navButtons2 {
+  .playerBtns {
     background-color: #333;
     border: none;
     color: #333;
     width: 50px;
     height: 50px;
-    margin-right: 10px;
     outline:none;
   }
 
-  .navButtons2 > img {
+  .playerBtns > img {
     width: 40px;
     height: 40px;
     border: none;
@@ -120,28 +121,52 @@ body {
     filter: invert(85%);
     outline: none;
   }
-  .navButtons2:hover >img {
+  .playerBtns:hover >img {
     filter: invert(60%);
   }
 
-  .progressbar .progress {
-    background-color: green;
-    border-radius: 2px;
-    transition: width 400ms ease-in-out;
-    height: 5px;
-  }
-  
-  .progressbar {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 16px;
+  .progressBar{
     width: 55%;
+    height: 12px;
+    position: relative;
+  }
+
+  #progressLine {
+    background-color: #1B88F5;
+    border-radius: 4px;
     height: 5px;
-    border-radius: 2px;
-    background-color: lightgrey;
-    padding: 5px;
   }
   
+  #progressLineBackground {
+    width: 100%;
+    height: 5px;
+    border-radius: 8px;
+    background-color: lightgrey;
+    margin-top: 3px;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  #progressBar:hover > #progressDot{
+    background-color: #1B88F5;
+    height: 102px;
+    width: 102px;
+  }
+
+  #progressDot{
+    background-color: red;
+    height: 12px;
+    width: 12px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 10;
+  }
+
+
+  
+  .playerTime{
+    min-width: 60px;
+  }
 
 
 /*** WELCOME/HOME STYLING ***/
