@@ -17,7 +17,7 @@ class NavBar extends React.Component {
                 <p>Songs</p>
             </a>
             <a href="#infomain" className="navbuttons">
-                <p>Dancer</p>
+                <p>Info</p>
             </a>
           </div>
         </div>
