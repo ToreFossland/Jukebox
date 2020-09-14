@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../resources/styling/layout.css';
+import '../resources/styling/dancers_design.css';
 
 
 

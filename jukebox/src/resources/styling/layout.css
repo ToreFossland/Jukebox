@@ -214,68 +214,6 @@ body {
 
 
 
-/*** DANCER STYLING ***/
-
-#head {
-  animation: head 0.3s infinite alternate;
-  transform-origin: 60px 100px 10px;
-  transform-box: fill-box;
-}
-
-@keyframes head {
-  from {
-    transform: rotateZ(-5deg);
-  }
-  to {
-    transform: rotateZ(10deg);
-  }
-}
-
-#armleft {
-  animation: armleft 1.5s infinite alternate;
-  transform-origin: 100px 30px 100px;
-  transform-box: fill-box;
-}
-
-#armright {
-  animation: armright 1.5s infinite alternate;
-  transform-origin: 20px 30px 100px;
-  transform-box: fill-box;
-}
-
-#legleft {
-  animation: legleft 0.3s infinite alternate;
-  transform-origin: 150px 30px 100px;
-  transform-box: fill-box;
-}
-
-@keyframes armleft {
-  from {
-    transform: rotateZ(-10deg);
-  }
-  to {
-    transform: rotateZ(120deg);
-  }
-}
-
-@keyframes armright {
-  from {
-    transform: rotateZ(10deg);
-  }
-  to {
-    transform: rotateZ(-100deg);
-  }
-}
-
-@keyframes legleft {
-  from {
-    transform: rotateZ(0deg);
-  }
-  to {
-    transform: rotateZ(10deg);
-  }
-}
-
 
 
 
