@@ -53,24 +53,7 @@ class Songs extends React.Component<myProps> {
                 <div>
                     
                 </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
+               
 
                 
             </div>

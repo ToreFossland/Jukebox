@@ -1,0 +1,198 @@
+/*** DANCER1 STYLING ***/
+
+#head {
+    animation: head 0.3s infinite alternate;
+    transform-origin: 60px 100px 10px;
+    transform-box: fill-box;
+  }
+  
+  @keyframes head {
+    from {
+      transform: rotateZ(-5deg);
+    }
+    to {
+      transform: rotateZ(10deg);
+    }
+  }
+  
+  #armleft {
+    animation: armleft 1.5s infinite alternate;
+    transform-origin: 100px 30px 100px;
+    transform-box: fill-box;
+  }
+  
+  #armright {
+    animation: armright 1.5s infinite alternate;
+    transform-origin: 20px 30px 100px;
+    transform-box: fill-box;
+  }
+  
+  #legleft {
+    animation: legleft 0.3s infinite alternate;
+    transform-origin: 150px 30px 100px;
+    transform-box: fill-box;
+  }
+  
+  @keyframes armleft {
+    from {
+      transform: rotateZ(-10deg);
+    }
+    to {
+      transform: rotateZ(120deg);
+    }
+  }
+  
+  @keyframes armright {
+    from {
+      transform: rotateZ(10deg);
+    }
+    to {
+      transform: rotateZ(-100deg);
+    }
+  }
+  
+  @keyframes legleft {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(10deg);
+    }
+  }
+
+  #torso {
+    animation: torso 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes torso {
+    from {
+      transform: rotateX(-5deg);
+    }
+    to {
+      transform: rotateX(5deg);
+    }
+  }
+
+
+  /*** DANCER2 STYLING ***/
+
+  #head2 {
+    animation: head2 0.5s infinite alternate;
+    transform-origin: 200px 100px 10px;
+    transform-box: fill-box;
+  }
+
+  @keyframes head2 {
+    from {
+      transform: rotateZ(10deg);
+    }
+    to {
+      transform: rotateZ(0deg);
+    }
+  }
+
+  #armright2 {
+    animation: armright2 1s infinite alternate;
+    transform-origin: 120px 150px 100px;
+    transform-box: fill-box;
+  }
+
+  @keyframes armright2 {
+    from {
+      transform: rotateZ(5deg);
+    }
+    to {
+      transform: rotateZ(-5deg);
+    }
+  }
+
+  #armleft2 {
+    animation: armleft2 1s infinite alternate;
+    transform-origin: 120px 150px 100px;
+    transform-box: fill-box;
+  }
+
+  @keyframes armleft2 {
+    from {
+      transform: rotateZ(5deg);
+    }
+    to {
+      transform: rotateZ(0deg);
+    }
+  }
+
+
+  #legright2 {
+    animation: legright2 0.3s infinite alternate;
+    transform-origin: 100px 30px 100px;
+    transform-box: fill-box;
+  }
+
+  @keyframes legright2 {
+    from {
+      transform: rotateZ(-5deg);
+    }
+    to {
+      transform: rotateZ(10deg);
+    }
+  }
+
+  #torso2 {
+    animation: torso2 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes torso2 {
+    from {
+      transform: rotateX(0deg);
+    }
+    to {
+      transform: rotateX(10deg);
+    }
+  }
+
+  /*** DANCER3 ***/
+
+  #head3 {
+    animation: head3 0.5s infinite alternate;
+    transform-origin: 200px 300px 10px;
+    transform-box: fill-box;
+  }
+
+  @keyframes head3 {
+    from {
+      transform: rotateZ(10deg);
+    }
+    to {
+      transform: rotateZ(-5deg);
+    }
+  }
+
+
+  #lefthand3{
+    animation: lefthand3 0.5s infinite alternate;
+    transform-origin: 100px 100px 10px;
+    transform-box: fill-box;
+  }
+
+  @keyframes lefthand3 {
+    from {
+      transform: rotateZ(10deg);
+    }
+    to {
+      transform: rotateZ(-10deg);
+    }
+  }
+
+
+  #torso3 {
+    animation: torso3 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes torso3 {
+    from {
+      transform: rotateX(0deg);
+    }
+    to {
+      transform: rotateX(10deg);
+    }
+  }

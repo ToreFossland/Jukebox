@@ -52,6 +52,7 @@ parentFunction=(data_from_child:string)=>{
                               <Route exact path= "/" component = {Index} />
                           </Switch>
                       </div>
+                      <div id="main">
                           <Home2/>
                           <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
                           <Info />
@@ -60,6 +61,7 @@ parentFunction=(data_from_child:string)=>{
                       </div>
                       <Footer />
                       <Player valueFromParent={this.state.songID}/>
+                      </div>
                   </div>
               </React.Fragment>
           </Router>
@@ -68,5 +70,6 @@ parentFunction=(data_from_child:string)=>{
     );
   }
 }
+
 
 export default App;

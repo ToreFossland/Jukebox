@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 import Dancer from '../components/dancer';
+import Dancer2 from '../components/dancer2';
+import Dancer3 from '../components/dancer3';
 
 class Home2 extends React.Component {
     render() {
@@ -14,8 +16,8 @@ class Home2 extends React.Component {
                 <stop offset="100%" stop-color="#FAD500"stop-opacity="1" />
               </linearGradient>
             </defs>
-            <rect width="100%" height="40vh" z="-100" fill="url(#gradient-0)"/>
-            <Dancer />
+            <rect id="svgCoverRect" width="100%" height="40vh" z="-100" fill="url(#gradient-0)"/>
+            <Dancer3 />
           </svg>
 
           <div id="currentInfo">
