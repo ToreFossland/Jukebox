@@ -47,17 +47,18 @@ parentFunction=(data_from_child:string)=>{
                       <NavBar />
               
                       <div id="main">
-                        <div className="container">
-                            <Switch>
-                                <Route exact path= "/" component = {Index} />
-                            </Switch>
-                        </div>
+                      
                           <Home2/>
                           <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
                           <Info />
                           {/*<Tracks />*/}
                           {/*<Lyrics />*/}
                       </div>
+                      <div className="container">
+                            <Switch>
+                                <Route exact path= "/" component = {Index} />
+                            </Switch>
+                        </div>
                       <Footer />
                       <Player valueFromParent={this.state.songID}/>
                   </div>

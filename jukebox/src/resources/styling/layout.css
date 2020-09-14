@@ -287,6 +287,8 @@ body {
 .songlist > * {
     min-width: 100px;
     min-height: 100px;
+    max-width: 200px;
+    max-height: 200px;
     width: 15vw;
     height: 15vw;
     background-color: #ddd;
