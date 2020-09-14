@@ -1,0 +1,75 @@
+{
+   "songs":[
+      {
+         "id ":1,
+         "title ": "OneMoreTime",
+         "Artist ": "daftPunk",
+         "source ": "jukebox/src/resources/media/oneMoreTime.mp3",
+         "img": "jukebox/src/resources/media/oneMoreTime.jpg",
+         "lyrics ": ""
+      },
+      {
+        "id ":2,
+        "title ": "singThemeSong",
+        "Artist ": "russer",
+        "source ": "jukebox/src/resources/media/singThemeSong.mp3",
+        "lyrics ": ""
+     },
+     {
+        "id ":3,
+        "title ": "OneMoreTime",
+        "Artist ": "daftPunk",
+        "source ": "jukebox/src/resources/media/oneMoreTime.mp3",
+        "lyrics ": ""
+     },
+     {
+        "id ":2,
+        "title ": "singThemeSong",
+        "Artist ": "russer",
+        "source ": "jukebox/src/resources/media/singThemeSong.mp3",
+        "lyrics ": ""
+     },
+     {
+        "id ":5,
+        "title ": "OneMoreTime",
+        "Artist ": "daftPunk",
+        "source ": "jukebox/src/resources/media/oneMoreTime.mp3",
+        "lyrics ": ""
+     },
+     {
+        "id ":2,
+        "title ": "singThemeSong",
+        "Artist ": "russer",
+        "source ": "jukebox/src/resources/media/singThemeSong.mp3",
+        "lyrics ": ""
+     },
+     {
+        "id ":7,
+        "title ": "OneMoreTime",
+        "Artist ": "daftPunk",
+        "source ": "jukebox/src/resources/media/oneMoreTime.mp3",
+        "lyrics ": ""
+     },
+     {
+        "id ":2,
+        "title ": "singThemeSong",
+        "Artist ": "russer",
+        "source ": "jukebox/src/resources/media/singThemeSong.mp3",
+        "lyrics ": ""
+     },
+     {
+        "id ":9,
+        "title ": "OneMoreTime",
+        "Artist ": "daftPunk",
+        "source ": "jukebox/src/resources/media/oneMoreTime.mp3",
+        "lyrics ": ""
+     },
+     {
+        "id ":2,
+        "title ": "singThemeSong",
+        "Artist ": "russer",
+        "source ": "jukebox/src/resources/media/singThemeSong.mp3",
+        "lyrics ": ""
+     }]
+}
+

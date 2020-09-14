@@ -27,13 +27,11 @@ class Player extends React.Component<myProps, myState> {
     };
     this.handlePlayer = this.handlePlayer.bind(this);
     this.progressBar = this.progressBar.bind(this);
-
-    
   }
   intervalID = 0;
 
   componentDidMount(){
-    this.intervalID =window.setInterval(this.progressBar, 1000);
+    this.intervalID =window.setInterval(this.progressBar, 100);
   }
   componentWillUnmount() {
     clearInterval(this.intervalID);
@@ -43,7 +41,8 @@ class Player extends React.Component<myProps, myState> {
         console.log("new prop from parent!")
         this.state.myAudio.pause()
         this.state.myAudio.src = require("../resources/media/"+nesteProps.valueFromParent+".mp3")
-        this.state.myAudio.play()
+        this.state.myAudio.play();
+
       }
       return true; 
   }
@@ -57,33 +56,45 @@ class Player extends React.Component<myProps, myState> {
   }
 
   convertSecondsToMinutesAndSeconds(seconds:number){
-    var minutes = Math.round(seconds/60);
-    var seconds = Math.round(seconds%60);
+    var minutes = Math.floor(seconds/60);
+    var seconds = Math.floor(seconds - minutes * 60);
     var tenths = ""
-    if(seconds<10){tenths = "0";}
+    if(seconds<=10){tenths = "0";}
     return(minutes + ":"+tenths+seconds)
   }
 
 //Når player mountes vil denne funksjonen kjøres hvert sekund frem til player unmountes
- progressBar(){
-  console.log("progess bar updates")
-  var duration = this.state.myAudio.duration
-  var currentTime = this.state.myAudio.currentTime;
-  if(this.state.myAudio.paused){
-    this.setState({playBtn: "play"})
-  }else{
-    this.setState({playBtn: "pause"})
+  progressBar(){
+    console.log("progess bar updates")
+    var duration = this.state.myAudio.duration
+    var currentTime = this.state.myAudio.currentTime;
+    var progress = (currentTime/duration) * 100
+    if(!duration){duration = 0;}
+    if(!currentTime){currentTime = 0;}
+    if(isNaN(progress)){progress = 0;}
+    
+    if(this.state.myAudio.paused){
+      this.setState({playBtn: "play"})
+    }else{
+      this.setState({playBtn: "pause"})
+    }
+    this.setState({
+          duration: this.convertSecondsToMinutesAndSeconds(duration),
+          currentTime: this.convertSecondsToMinutesAndSeconds(currentTime),
+          progress: progress
+    })
   }
-  
-  if(!duration){duration = 0;}
-  this.setState({ duration: this.convertSecondsToMinutesAndSeconds(duration)}); //sets the duration value in the progress bar
-  
-  this.setState(() => {
-      return {
-        progress: (currentTime/duration) * 100,
-        currentTime: this.convertSecondsToMinutesAndSeconds(currentTime)
-      }
-    });
+
+
+//Denne må fikses slik at det ikke oppstår bugs når spilleren starter før en sang er staret
+  handleProgressBarClick(e:any){
+ /*  var width = e.target.getBoundingClientRect().width;
+   var offsetX = e.nativeEvent.offsetX
+   var duration = this.state.myAudio.duration
+   this.state.myAudio.currentTime = offsetX/width*duration*/
+   
+   var duration = this.state.myAudio.duration
+   this.state.myAudio.currentTime = e.target.value/100 * duration
   }
 
   render(){
@@ -93,7 +104,8 @@ class Player extends React.Component<myProps, myState> {
             <button className="playerBtns" onClick={this.handlePlayer}><img id="playbutton" src={require("../resources/media/" + `${this.state.playBtn}` + ".svg")}></img></button>
             <div className="playerTime"><p>{this.state.currentTime}</p></div>
             <div className="progressBar">
-              <div id="progressDot" style={{ marginLeft: `${this.state.progress - 1}%`}}></div> 
+              <input className="invisibleSlider" type="range" min="0" max="100" onClick={this.handleProgressBarClick.bind(this)}></input>
+              <div className="progressDot" style={{ marginLeft: `${this.state.progress - 1}%`}}></div> 
               <div id="progressLineBackground"><div id="progressLine" style={{ width: `${this.state.progress}%` }}></div></div>
             </div>   
             <div className="playerTime"><p>{this.state.duration}</p></div>
@@ -104,3 +116,6 @@ class Player extends React.Component<myProps, myState> {
 }
 
 export default Player;
+
+
+              
