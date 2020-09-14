@@ -8,7 +8,7 @@ type ContextProps = {
 
 const Context = React.createContext<Partial<ContextProps>>({});
 
-export class Provider extends Component {
+export class Provider extends React.Component {
     state = {
         trackList: [],
         heading: 'Top ten tracks'
