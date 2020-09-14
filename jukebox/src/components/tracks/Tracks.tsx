@@ -10,7 +10,7 @@ class Tracks extends Component{
            <Consumer>
                {value => {
                    const { trackList } = value;
-                // console.log(value);
+                   console.log(value);
                 if (trackList == undefined || trackList.length == 0){
                     return <Spinner />
                 }else{

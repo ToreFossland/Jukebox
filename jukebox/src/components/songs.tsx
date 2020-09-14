@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import jsonData from "../resources/populationData.json"
 import '../resources/styling/layout.css';
 
 
@@ -23,7 +24,9 @@ class Songs extends React.Component<myProps> {
   constructor(props: myProps) {
     super(props);
   }
+
   
+
   render() {
       return(
         <div id="songmain">
