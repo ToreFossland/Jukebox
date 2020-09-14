@@ -51,11 +51,19 @@ parentFunction=(data_from_child:string)=>{
                                 <Route exact path= "/" component = {Index} />
                             </Switch>
                         </div>
+<<<<<<< HEAD
                         <Home2/>
                         <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
                         <Info />
                         {/*<Tracks />*/}
                         {/*<Lyrics />*/}
+=======
+                          <Home2/>
+                          <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
+                          <Info />
+                          {/*<Tracks />*/}
+                          {/*<Lyrics />*/}
+>>>>>>> f8a8c4503d3138ee07f0f1c3ae40ab7ca38defbe
                       </div>
                       <Footer />
                       <Player valueFromParent={this.state.songID}/>
