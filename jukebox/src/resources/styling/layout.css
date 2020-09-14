@@ -265,16 +265,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 500px) {
 
-  #currentInfo {
-    width: 83%;
-  }
-
-  #svgCoverRect {
-    height: 45vh;
-  }
-}
 
 
 
@@ -300,8 +291,10 @@ body {
 }
 
 .songlist > * {
-    width: 100px;
-    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    width: 15vw;
+    height: 15vw;
     background-color: #ddd;
     float: left;
     margin-right: 10px;
@@ -398,18 +391,3 @@ input:checked + .slider:before {
 
 /*** MEDIA STYLING ***/
 
-@media only screen and (min-width: 880px) {
-  .songlist > * {
-    width: 200px;
-    height: 200px;
-  }
-  #songmain {
-    height: 1000px;
-    margin-left: 25px;
-  }
-
-  #main {
-    height: 1700px;
-  }
-  
-}
