@@ -10,8 +10,8 @@ class Home2 extends React.Component {
           <svg id="svgCover" z="-1">
             <defs>
               <linearGradient id="gradient-0" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#DB3A32"stop-opacity="1" />
-                <stop offset="100%" stop-color="#FAD500"stop-opacity="1" />
+                <stop offset="0%" stopColor="#DB3A32" stopOpacity="1" />
+                <stop offset="100%" stopColor="#FAD500" stopOpacity="1" />
               </linearGradient>
             </defs>
             <rect id="svgCoverRect" width="100%" height="40vh" z="-100" fill="url(#gradient-0)"/>

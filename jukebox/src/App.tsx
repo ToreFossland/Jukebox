@@ -10,8 +10,8 @@ import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
 import Player from "./components/player";
-// import Tracks from "./components/tracks/Tracks";
-// import Lyrics from "./components/tracks/Lyrics";
+import Tracks from "./components/tracks/Tracks";
+import Lyrics from "./components/tracks/Lyrics";
 
 
 import {Provider} from './context'
@@ -46,20 +46,15 @@ parentFunction=(data_from_child:string)=>{
                   <div className="App">
                       <NavBar />
                       <div className="container">
-                          <Switch>
-                              <Route exact path= "/" component = {Index} />
-                          </Switch>
+                          {/*<Switch>*/}
+                          {/*    <Route exact path= "/" component = {Index} />*/}
+                          {/*    <Route exact path= "/lyrics/track/:id" component = {Lyrics} />*/}
+                          {/*</Switch>*/}
                       </div>
                       <div id="main">
-<<<<<<< HEAD
-                          <Home2 />
-=======
                           <Home2/>
->>>>>>> f79d2cea76ae52e2276ff01a62e9b600c0ee27d8
                           <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
                           <Info />
-                          {/*<Tracks />*/}
-                          {/*<Lyrics />*/}
                       </div>
                       <Footer />
                       <Player valueFromParent={this.state.songID}/>

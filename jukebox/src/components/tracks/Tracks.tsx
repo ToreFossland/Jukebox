@@ -9,20 +9,24 @@ class Tracks extends Component{
        return(
            <Consumer>
                {value => {
-                   const { trackList } = value;
-                // console.log(value);
-                if (trackList == undefined || trackList.length == 0){
+                   const { trackList, heading} = value;
+                if (trackList === undefined || trackList.length === 0){
                     return <Spinner />
                 }else{
                     return(
                         <React.Fragment>
                             <h1> Tracks </h1>
                             <div className= 'row'>
-                                {trackList.map((item: { track: any; }) => (
-                                    <Track key ={item.track.track_id} track = {item.track}/>
-                                ))
-
-                                }
+                                {/*{trackList.map((item: { track: Object; }) => (*/}
+                                {/*    // <Track key = {item.track.track_id} track={item.track}/>*/}
+                                {/*    console.log(item)*/}
+                                {/*))*/}
+                                {/*}*/}
+                                {/*{console.log(trackList[0])}*/}
+                                {trackList.forEach((element: any)=> (
+                                    console.log(<Track track = {element.data.message.body.track} />)
+                                )
+                                )}
                             </div>
                         </React.Fragment>
                     )
