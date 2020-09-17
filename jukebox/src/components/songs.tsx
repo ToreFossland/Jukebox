@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
-
+import Dancer from './dancer';
+import Dancer2 from './dancer2';
+import Dancer3 from './dancer3';
 
 
 interface myProps {
@@ -38,14 +40,14 @@ class Songs extends React.Component<myProps> {
                   <button onClick={this.childFunction2.bind(this)}>singThemeSong</button>
                 </div>
                 <div>
-                    
+                  
                 </div>
-
+                 
                 <div>
-                    
+                
                 </div>
                 <div>
-                    
+                
                 </div>
                 <div>
                     
