@@ -10,8 +10,8 @@ import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
 import Player from "./components/player";
-// import Tracks from "./components/tracks/Tracks";
-// import Lyrics from "./components/tracks/Lyrics";
+import Tracks from "./components/tracks/Tracks";
+import Lyrics from "./components/tracks/Lyrics";
 
 
 import {Provider} from './context'

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import jsonData from "../resources/populationData.json"
+import {Consumer} from '../context';
 import '../resources/styling/layout.css';
 
 
@@ -29,38 +29,65 @@ class Songs extends React.Component<myProps> {
 
   render() {
       return(
-        <div id="songmain">
-            <h1>Songs</h1>
-            <p>Here is our library of available songs.</p>
-            <div className="songlist">
-                <div>
-                  <button onClick={this.childFunction.bind(this)}>OneMoreTime</button>
+        <Consumer>
+              {value => {
+                  const { trackList} = value;
 
-                </div>
-                <div>
-                  <button onClick={this.childFunction2.bind(this)}>singThemeSong</button>
-                </div>
-                <div>
-                    
-                </div>
+             return(
+                <React.Fragment>
+                  <div id="songmain">
+                      <h1>Songs</h1>
+                      <p>Here is our library of available songs.</p>
+                      <div className="songlist">
+                          <div>
+                            <button onClick={this.childFunction.bind(this)}>OneMoreTime</button>
 
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-               
+                          </div>
+                          <div>
+                            <button onClick={this.childFunction2.bind(this)}>singThemeSong</button>
+                          </div>
+                          <div>
+              
+                          </div>
 
-                
-            </div>
-        </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+                          <div>
+                              
+                          </div>
+
+                          
+                      </div>
+                  </div>
+          </React.Fragment>
+            )
+          }}
+        </Consumer>
       );
     }
   }

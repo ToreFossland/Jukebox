@@ -17,13 +17,7 @@ class Tracks extends Component{
                     return(
                         <React.Fragment>
                             <h1> Tracks </h1>
-                            <div className= 'row'>
-                                {trackList.map((item: { track: any; }) => (
-                                    <Track key ={item.track.track_id} track = {item.track}/>
-                                ))
-
-                                }
-                            </div>
+               
                         </React.Fragment>
                     )
                 }
