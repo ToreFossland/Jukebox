@@ -234,7 +234,7 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-radius: 10px;
-  
+  width: 300px;
 }
 
 #homemain2 > #currentCover {
@@ -251,12 +251,6 @@ body {
   position: absolute;
 }
 
-@media only screen and (min-width: 400px) {
-
-  #currentInfo {
-    width: 300px;
-  }
-}
 
 
 @media only screen and (max-width: 750px) {
