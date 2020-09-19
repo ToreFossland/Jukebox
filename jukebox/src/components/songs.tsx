@@ -11,18 +11,26 @@ interface myProps {
 
 
 class Songs extends React.Component<myProps> {
+  
+  
 
-  childFunction=(e: any)=>{
-    e.preventDefault();
-    this.props.functionCallFromParent("oneMoreTime");
+  childFunction=(trackID: number)=>{
+    console.log(trackID + "hore")
+    this.props.functionCallFromParent(trackID);
   }
-  childFunction2=(e: any)=>{
-    e.preventDefault();
-    this.props.functionCallFromParent("singThemeSong");
-  }
-
-  constructor(props: myProps) {
-    super(props);
+//Henter tittel, artist, bilde og legger enn en onclick som sender trackID childFunction. 
+//Legger til bilde som bakgrunn fordi dette gjorde det lett å skalere bilde riktig i css.
+  populateSongList(trackList:any){
+    let container:any = [];
+    trackList.forEach((element: { trackID:React.ReactNode; name: React.ReactNode; artist: React.ReactNode; }) => {
+      container.push(
+        <div className="songLink" key={element.trackID as number}  onClick={() => this.childFunction(element.trackID as number)}>
+          <div className="songLinkImg" style={{ backgroundImage: `url(${require("../resources/media/img/"+ element.trackID +".jpg")})` }} ></div>
+          <p>{element.artist} - {element.name}</p>
+        </div>
+      )
+    });
+    return container;
   }
 
   
@@ -34,57 +42,13 @@ class Songs extends React.Component<myProps> {
                   const { trackList} = value;
 
              return(
-                <React.Fragment>
                   <div id="songmain">
                       <h1>Songs</h1>
                       <p>Here is our library of available songs.</p>
                       <div className="songlist">
-                          <div>
-                            <button onClick={this.childFunction.bind(this)}>OneMoreTime</button>
-
-                          </div>
-                          <div>
-                            <button onClick={this.childFunction2.bind(this)}>singThemeSong</button>
-                          </div>
-                          <div>
-              
-                          </div>
-
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-                          <div>
-                              
-                          </div>
-
-                          
+                        {this.populateSongList(trackList)}
                       </div>
                   </div>
-          </React.Fragment>
             )
           }}
         </Consumer>

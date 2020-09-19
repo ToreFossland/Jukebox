@@ -11,9 +11,7 @@ type Track ={
     trackID:number
     name:string,
     artist:string,
-    album:string,
-    imgURL:any,
-    sourceURL:string
+    album:string
 }
 
 const Context = React.createContext<Partial<ContextProps>>({});
@@ -27,6 +25,7 @@ export class Provider extends Component {
     componentDidMount() {
 
         let songID:number[] = [
+        //OneMoreTime, SingThemeSong, 
             103162573, 114669898
         ]
 
@@ -44,12 +43,10 @@ export class Provider extends Component {
             responses.map( (item) => {
                 
                 let temp: Track={
-                    trackID:item.data.message.body.track.track_id,
+                    trackID:item.data.message.body.track.commontrack_id,
                     name:item.data.message.body.track.track_name,
                     artist:item.data.message.body.track.artist_name,
-                    album:item.data.message.body.track.album_name,
-                    imgURL:this.getImgSource(item.data.message.body.track.track_id),
-                    sourceURL:""
+                    album:item.data.message.body.track.album_name
                 }
                 tempArray.push(temp)
                 }
@@ -59,10 +56,6 @@ export class Provider extends Component {
     
         
         })).catch(errors => console.log(errors));
-    }
-
-    getImgSource(trackID:number){
-        return "./resources/media/"+trackID+".jpg"
     }
 
 

@@ -278,22 +278,32 @@ body {
 }
 
 #songmain > * {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 .songlist {
-    margin: auto;
+    min-width: 100%;
+    display:flex;
 }
 
-.songlist > * {
-    min-width: 100px;
-    min-height: 100px;
-    width: 15vw;
-    height: 15vw;
-    background-color: #ddd;
-    float: left;
-    margin-right: 10px;
-    margin-bottom: 10px;
+.songLink{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
 }
+.songLinkImg{
+  width: 200px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.songLink > p{
+  margin: 0;
+  font-weight: bold;
+}
+
 
 /*** INFO STYLING ***/
 

@@ -18,7 +18,7 @@ import {Provider} from './context'
 import Index from './components/Index';
 
 interface myState {
-  songID: string
+  trackID: number
 }
 interface myProps {
 //fill in props here
@@ -29,12 +29,12 @@ class App extends React.Component<myProps, myState> {
   constructor(props:any){
     super(props);
     this.state = {
-        songID: ""
+        trackID: 0
     }
     this.parentFunction = this.parentFunction.bind(this);
 }
-parentFunction=(data_from_child:string)=>{
-    this.setState({songID:data_from_child});
+parentFunction=(data_from_child:number)=>{
+    this.setState({trackID:data_from_child});
 }
 
 
@@ -59,7 +59,7 @@ parentFunction=(data_from_child:string)=>{
                           </div>
                       </div>
                       <Footer />
-                      <Player valueFromParent={this.state.songID}/>
+                      <Player valueFromParent={this.state.trackID}/>
                   </div>
               </React.Fragment>
           </Router>

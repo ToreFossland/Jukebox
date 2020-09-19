@@ -25,7 +25,7 @@ class Home2 extends React.Component {
             <p id="currentSong">One More Time</p>
             <p id="currentArtist">by Daft Punk</p>
           </div>
-          <img id="currentCover" src={require("../resources/media/onemoretime.jpg")}></img>
+          <img id="currentCover" src={require("../resources/media/img/103162573.jpg")}></img>
           
         </div>
       );
