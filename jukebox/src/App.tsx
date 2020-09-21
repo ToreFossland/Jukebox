@@ -14,6 +14,7 @@ import Tracks from "./components/tracks/Tracks";
 import Lyrics from "./components/tracks/Lyrics";
 
 
+
 import {Provider} from './context'
 import Index from './components/Index';
 
@@ -46,7 +47,7 @@ parentFunction=(data_from_child:number)=>{
                   <div className="App">
                       <NavBar />
                       <div id="main">
-
+                      
                           <Home2/>
                           <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
                           <Info />
@@ -58,6 +59,11 @@ parentFunction=(data_from_child:number)=>{
                             </Switch>
                           </div>
                       </div>
+                      <div className="container">
+                            <Switch>
+                                <Route exact path= "/" component = {Index} />
+                            </Switch>
+                        </div>
                       <Footer />
                       <Player valueFromParent={this.state.trackID}/>
                   </div>

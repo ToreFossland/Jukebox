@@ -231,10 +231,14 @@ body {
   margin-top: 20px;
   color: #eee;
   display: block;
-  background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-radius: 10px;
   width: 300px;
+  transition: 0.3s;
+}
+
+#homemain2 > #currentInfo:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #homemain2 > #currentCover {
@@ -242,6 +246,7 @@ body {
   position: relative;
   float: right;
   left: -50px;
+  border-radius: 15px;
 }
 
 #homemain2 > #svgCover {
@@ -249,6 +254,7 @@ body {
   height: 50vh;
   margin-left: 0;
   position: absolute;
+  
 }
 
 

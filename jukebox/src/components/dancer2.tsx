@@ -34,21 +34,41 @@ class Dancer2 extends React.Component <myProps, myState> {
     this.changeBottom = this.changeBottom.bind(this);
     
   }
+
+  componentDidMount() {
+    var hair = localStorage.getItem('hair2');
+    var top = localStorage.getItem('top2');
+    var bottom = localStorage.getItem('bottom2');
+    if(hair != null) {
+      this.setState({hairColor: hair});
+    }
+
+    if(top != null) {
+      this.setState({topColor: top});
+    }
+
+    if(bottom != null) {
+      this.setState({bottomColor: bottom});
+    }
+    
+  }
     changeHair() {
       const newColor = this.state.hairColor == purple ? yellow : purple;
+      localStorage.setItem('hair2', newColor);
       this.setState({hairColor: newColor});
     }
 
     changeTop() {
       const newColor = this.state.topColor == blue ? white : blue;
+      localStorage.setItem('top2', newColor);
       this.setState({topColor: newColor});
     }
 
     changeBottom() {
       const newColor = this.state.bottomColor == red ? green : red;
+      localStorage.setItem('bottom2', newColor);
       this.setState({bottomColor: newColor});
     }
-
 
     render() {
       return(
