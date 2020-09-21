@@ -49,7 +49,7 @@ class Player extends React.Component<myProps, myState> {
       if((this.props.valueFromParent !== nesteProps.valueFromParent)){
         console.log("new prop from parent!")
         this.state.myAudio.pause()
-        this.state.myAudio.src = require("../resources/media/Audio/"+nesteProps.valueFromParent+".mp3")
+        this.state.myAudio.src = require("../resources/media/audio/"+nesteProps.valueFromParent+".mp3")
         this.state.myAudio.play();
 
       }
