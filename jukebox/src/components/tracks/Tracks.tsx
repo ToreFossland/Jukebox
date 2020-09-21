@@ -10,20 +10,14 @@ class Tracks extends Component{
            <Consumer>
                {value => {
                    const { trackList } = value;
-                // console.log(value);
+                   console.log(value);
                 if (trackList == undefined || trackList.length == 0){
                     return <Spinner />
                 }else{
                     return(
                         <React.Fragment>
                             <h1> Tracks </h1>
-                            <div className= 'row'>
-                                {trackList.map((item: { track: any; }) => (
-                                    <Track key ={item.track.track_id} track = {item.track}/>
-                                ))
-
-                                }
-                            </div>
+               
                         </React.Fragment>
                     )
                 }

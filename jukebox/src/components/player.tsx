@@ -3,19 +3,20 @@ import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 
 interface myProps {
-  source?: string,
-  valueFromParent: string
+  valueFromParent: number
 }
 
 interface myState {
   progress: number,
   duration: string,
   currentTime: string,
-  myAudio: HTMLAudioElement
-  playBtn: string
+  myAudio: HTMLAudioElement,
+  playBtn: string,
 }
 
+
 class Player extends React.Component<myProps, myState> {
+
   constructor(props: any) {
     super(props);
     this.state = {
@@ -25,13 +26,21 @@ class Player extends React.Component<myProps, myState> {
       myAudio: new Audio(),
       playBtn: "play"
     };
+   
     this.handlePlayer = this.handlePlayer.bind(this);
     this.progressBar = this.progressBar.bind(this);
   }
   intervalID = 0;
 
   componentDidMount(){
-    this.intervalID =window.setInterval(this.progressBar, 100);
+    var currentTime = localStorage.getItem("currentTime");
+    console.log(currentTime)
+    
+    if(currentTime != null ) {
+      this.state.myAudio.currentTime = parseInt(currentTime);
+    }
+    
+    this.intervalID =window.setInterval(this.progressBar, 200);
   }
   componentWillUnmount() {
     clearInterval(this.intervalID);
@@ -40,7 +49,7 @@ class Player extends React.Component<myProps, myState> {
       if((this.props.valueFromParent !== nesteProps.valueFromParent)){
         console.log("new prop from parent!")
         this.state.myAudio.pause()
-        this.state.myAudio.src = require("../resources/media/"+nesteProps.valueFromParent+".mp3")
+        this.state.myAudio.src = require("../resources/media/audio/"+nesteProps.valueFromParent+".mp3")
         this.state.myAudio.play();
 
       }
@@ -69,6 +78,10 @@ class Player extends React.Component<myProps, myState> {
     var duration = this.state.myAudio.duration
     var currentTime = this.state.myAudio.currentTime;
     var progress = (currentTime/duration) * 100
+
+
+    localStorage.setItem('currentTime', JSON.stringify(this.state.myAudio.currentTime));
+
     if(!duration){duration = 0;}
     if(!currentTime){currentTime = 0;}
     if(isNaN(progress)){progress = 0;}

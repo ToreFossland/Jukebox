@@ -1,27 +1,65 @@
 import React, {Component} from "react";
 import axios from 'axios';
+import Track from "./components/tracks/Track";
 
 type ContextProps = {
-    trackList: any,
-    heading: string
+    trackList: Track[],
+    heading: string,
 };
+
+type Track ={
+    trackID:number
+    name:string,
+    artist:string,
+    album:string
+}
 
 const Context = React.createContext<Partial<ContextProps>>({});
 
 export class Provider extends Component {
     state = {
         trackList: [],
-        heading: 'Top ten tracks'
+        heading: 'Top ten tracks',
     }
 
     componentDidMount() {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=no&f_has_lyrics=1&apikey=${process.env.REACT_APP_MM_KEY}`)
-            .then(res => {
-                console.log(res.data);
-                this.setState({trackList: res.data.message.body.track_list});
-            })
-            .catch(err=> console.log(err))
+
+        let songID:number[] = [
+        //OneMoreTime, SingThemeSong, 
+            103162573, 114669898
+        ]
+
+        let apiURL:any[] = [];
+        
+        songID.forEach(element => {
+            let temp:string = (`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?commontrack_id=`+element +`&apikey=${process.env.REACT_APP_MM_KEY}`)
+            apiURL.push(axios.get(temp))
+        });
+
+       axios.all(apiURL).then(axios.spread((...responses) => {
+           console.log(responses)
+            let tempArray:any = [];
+
+            responses.map( (item) => {
+                
+                let temp: Track={
+                    trackID:item.data.message.body.track.commontrack_id,
+                    name:item.data.message.body.track.track_name,
+                    artist:item.data.message.body.track.artist_name,
+                    album:item.data.message.body.track.album_name
+                }
+                tempArray.push(temp)
+                }
+            )
+
+            this.setState({trackList:tempArray})
+    
+        
+        })).catch(errors => console.log(errors));
     }
+
+
+    
 
     render() {
         return(
