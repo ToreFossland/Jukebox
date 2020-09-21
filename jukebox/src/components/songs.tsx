@@ -8,7 +8,9 @@ import Dancer3 from './dancer3';
 
 
 interface myProps {
-  functionCallFromParent: Function
+  functionCallFromParent: Function,
+  btheme: string,
+  ctheme: string
 }
 
 
@@ -44,7 +46,7 @@ class Songs extends React.Component<myProps> {
                   const { trackList} = value;
 
              return(
-                  <div id="songmain">
+                  <div id="songmain" style={{background: this.props.btheme, color: this.props.ctheme}}>
                       <h1>Songs</h1>
                       <p>Here is our library of available songs.</p>
                       <div className="songlist">

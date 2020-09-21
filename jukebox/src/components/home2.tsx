@@ -8,10 +8,19 @@ import Dancer4 from '../components/dancer4';
 import Dancer5 from '../components/dancer5';
 import Dancer6 from '../components/dancer6';
 
-class Home2 extends React.Component {
+
+interface myProps {
+    btheme: string,
+    ctheme: string
+  }
+
+  interface myState {
+
+  }
+class Home2 extends React.Component<myProps, myState>  {
     render() {
       return(
-        <div id="homemain2">
+        <div id="homemain2" style={{background: this.props.btheme, color: this.props.ctheme}}>
           <svg id="svgCover" z="-1">
             <defs>
               <linearGradient id="gradient-0" x2="0%" y2="100%">
@@ -19,8 +28,8 @@ class Home2 extends React.Component {
                 <stop offset="100%" stopColor="#FAD500"stopOpacity="1" />
               </linearGradient>
             </defs>
-            <rect id="svgCoverRect" width="100%" height="40vh" z="-100" fill="url(#gradient-0)"/>
-            <Dancer3 />
+            <rect id="svgCoverRect" width="100%" z="-100" fill="url(#gradient-0)"/>
+            <Dancer />
           </svg>
 
           <div id="currentInfo">

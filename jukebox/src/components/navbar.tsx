@@ -7,14 +7,16 @@ class NavBar extends React.Component {
         <div id="navbar">
           <div className="navelements">
             <a href="#main" id="jukeboxbutton">
+            <img src={require("../resources/media/img/jukebox_logo_bigger.png")}></img>
               <p>JukeBox</p>
+              
             </a>
             
-            <a href="#main" className="navbuttons">
-                <p>Home</p>
-            </a>
             <a href="#songmain" className="navbuttons">
                 <p>Songs</p>
+            </a>
+            <a href="#dancermain" className="navbuttons">
+                <p>Dancers</p>
             </a>
             <a href="#infomain" className="navbuttons">
                 <p>Info</p>

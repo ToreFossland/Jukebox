@@ -7,7 +7,7 @@ class Dancer4 extends React.Component{
 
     render() {
       return(
-        <svg width="250" height="400" x="50" y="50" viewBox="0 0 895 767" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="200" height="350" x="75" y="90" viewBox="0 0 895 767" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="dancer4" clip-path="url(#clip0)">
           <path id="surface4" d="M447.067 766.609C693.975 766.609 894.134 754.045 894.134 738.547C894.134 723.049 693.975 710.486 447.067 710.486C200.159 710.486 0 723.049 0 738.547C0 754.045 200.159 766.609 447.067 766.609Z" fill="#D0CDE1"/>
           <g id="girlright">
