@@ -20,7 +20,7 @@ class Home2 extends React.Component {
               </linearGradient>
             </defs>
             <rect id="svgCoverRect" width="100%" height="40vh" z="-100" fill="url(#gradient-0)"/>
-            <Dancer6 />
+            <Dancer3 />
           </svg>
 
           <div id="currentInfo">
