@@ -79,10 +79,7 @@ changeTheme() {
           <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} />
           <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           </div>
-          <Footer />
-              <div id="pageTheme">
-                <button id="pageThemeButton" onClick={this.changeTheme}>Change Theme</button>
-              </div>
+          <Footer onChange={this.changeTheme}/>
           <Player/>
         </div>
       </Provider>

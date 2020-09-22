@@ -416,20 +416,8 @@ body {
   text-align: center;
   max-width: 1160px;
   margin: auto;
-  height: 100px;
+  height: 250px;
   border-bottom: 1px solid #eee;
-}
-
-
-/*** MEDIA STYLING ***/
-
-/*** PAGE THEME ***/
-#pageTheme {
-  max-width: 1200px;
-  margin: auto;
-  height: 150px;
-  background-color: #444;
-  font-family: "Interstate";
 }
 
 #pageThemeButton {
@@ -450,3 +438,5 @@ body {
   box-shadow: 0 0px #666;
   transform: translateY(5px);
 }
+
+/*** PAGE THEME ***/
