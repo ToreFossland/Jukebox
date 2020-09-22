@@ -8,18 +8,14 @@ interface myProps {
   ctheme: string
 }
 
-class Info extends React.Component <myProps> {
+const Info = ({...props})=>{
 
-  
-    render() {
-      
       return(
-        <div id="infomain" style={{background: this.props.btheme, color: this.props.ctheme}}>
+        <div id="infomain" style={{background: props.btheme, color: props.ctheme}}>
             <h1>Info</h1>
             <p> Press Dua Lipa's head, torso or tonga to change their color!</p>
         </div>
       );
     }
-  }
 
   export default Info;
