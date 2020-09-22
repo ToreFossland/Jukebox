@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
+import {Context} from '../Context'
 
-interface myProps {
-  valueFromParent: number
+//currentTrackID from parent
+/*interface myProps {
+  currentTrackID: number
 }
 
 interface myState {
@@ -13,58 +15,78 @@ interface myState {
   myAudio: HTMLAudioElement,
   playBtn: string,
 }
+*/
+
+const Player = () => {
+  const [progress, setProgress] = useState(0)
+  const [duration, setDuration] = useState("0:00")
+  const [currentTime, setCurrentTime] = useState("0:00")
+  const [myAudio, setMyAudio] = useState(new Audio())
+  const [playBtn, setPlayBtn] = useState("play")
+  const [oldCurrentTrackID, setOldCurrentTrackID] = useState(0)
+  let {currentTrackIDObject} = useContext(Context)!
+
+//Når player mountes vil denne funksjonen kjøres hvert sekund frem til player unmountes
+const progressBar = () =>{
+  var duration = myAudio.duration
+  var currentTime = myAudio.currentTime;
+  var progress = (currentTime/duration) * 100
 
 
-class Player extends React.Component<myProps, myState> {
+  localStorage.setItem('currentTime', JSON.stringify(myAudio.currentTime));
 
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      progress: 0,
-      duration: "0:00",
-      currentTime: "0:00",
-      myAudio: new Audio(),
-      playBtn: "play"
-    };
-   
-    this.handlePlayer = this.handlePlayer.bind(this);
-    this.progressBar = this.progressBar.bind(this);
+  if(!duration){duration = 0;}
+  if(!currentTime){currentTime = 0;}
+  if(isNaN(progress)){progress = 0;}
+  
+  if(myAudio.paused){
+    setPlayBtn("play")
+  }else{
+    setPlayBtn("pause")
   }
-  intervalID = 0;
+    setDuration(convertSecondsToMinutesAndSeconds(duration))
+    setCurrentTime(convertSecondsToMinutesAndSeconds(currentTime))
+    setProgress(progress)
+ }
 
-  componentDidMount(){
-    var currentTime = localStorage.getItem("currentTime");
-    console.log(currentTime)
-    
-    if(currentTime != null ) {
-      this.state.myAudio.currentTime = parseInt(currentTime);
-    }
-    
-    this.intervalID =window.setInterval(this.progressBar, 200);
+ useEffect(() => {
+  let ct = localStorage.getItem("currentTime")
+  console.log(currentTime)
+
+
+  if(currentTime != null ) {
+    myAudio.currentTime = parseInt(currentTime);
   }
-  componentWillUnmount() {
-    clearInterval(this.intervalID);
-  }
-  componentWillUpdate(nesteProps:any){ //nextprops inneholder de nye. this.props er de gamle
-      if((this.props.valueFromParent !== nesteProps.valueFromParent)){
+
+  const interval = setInterval(() => {
+    progressBar()
+  }, 200);
+  return () => clearInterval(interval);
+}, []);
+
+
+ /* const componentWillUnmount = () => {
+    clearInterval(intervalID);
+  }*/
+
+      if((currentTrackIDObject?.currentTrackID !== oldCurrentTrackID)){
+        setOldCurrentTrackID(currentTrackIDObject?.currentTrackID as number)
         console.log("new prop from parent!")
-        this.state.myAudio.pause()
-        this.state.myAudio.src = require("../resources/media/Audio/"+nesteProps.valueFromParent+".mp3")
-        this.state.myAudio.play();
+        myAudio.pause()
+        myAudio.src = require("../resources/media/audio/"+currentTrackIDObject?.currentTrackID+".mp3")
+        myAudio.play();
 
       }
-      return true; 
-  }
   
-  handlePlayer(){
-    if(this.state.myAudio.paused){
-      this.state.myAudio.play();
+  const handlePlayer = ()=>{
+    if(myAudio.paused){
+      myAudio.play();
     }else{
-      this.state.myAudio.pause();
+      myAudio.pause();
     }
   }
 
-  convertSecondsToMinutesAndSeconds(seconds:number){
+  const convertSecondsToMinutesAndSeconds = (seconds:number)=>{
     var minutes = Math.floor(seconds/60);
     var seconds = Math.floor(seconds - minutes * 60);
     var tenths = ""
@@ -72,60 +94,33 @@ class Player extends React.Component<myProps, myState> {
     return(minutes + ":"+tenths+seconds)
   }
 
-//Når player mountes vil denne funksjonen kjøres hvert sekund frem til player unmountes
-  progressBar(){
-    console.log("progess bar updates")
-    var duration = this.state.myAudio.duration
-    var currentTime = this.state.myAudio.currentTime;
-    var progress = (currentTime/duration) * 100
 
-
-    localStorage.setItem('currentTime', JSON.stringify(this.state.myAudio.currentTime));
-
-    if(!duration){duration = 0;}
-    if(!currentTime){currentTime = 0;}
-    if(isNaN(progress)){progress = 0;}
-    
-    if(this.state.myAudio.paused){
-      this.setState({playBtn: "play"})
-    }else{
-      this.setState({playBtn: "pause"})
-    }
-    this.setState({
-          duration: this.convertSecondsToMinutesAndSeconds(duration),
-          currentTime: this.convertSecondsToMinutesAndSeconds(currentTime),
-          progress: progress
-    })
-  }
 
 
 //Denne må fikses slik at det ikke oppstår bugs når spilleren starter før en sang er staret
-  handleProgressBarClick(e:any){
+  const handleProgressBarClick = (e:any)=>{
  /*  var width = e.target.getBoundingClientRect().width;
    var offsetX = e.nativeEvent.offsetX
    var duration = this.state.myAudio.duration
    this.state.myAudio.currentTime = offsetX/width*duration*/
    
-   var duration = this.state.myAudio.duration
-   this.state.myAudio.currentTime = e.target.value/100 * duration
+   myAudio.currentTime = e.target.value/100 * myAudio.duration
   }
 
-  render(){
       return(
         <div id="player">
         <div className="playerElements">
-            <button className="playerBtns" onClick={this.handlePlayer}><img id="playbutton" src={require("../resources/media/" + `${this.state.playBtn}` + ".svg")}></img></button>
-            <div className="playerTime"><p>{this.state.currentTime}</p></div>
+            <button className="playerBtns" onClick={handlePlayer}><img id="playbutton" src={require("../resources/media/" + `${playBtn}` + ".svg")}></img></button>
+            <div className="playerTime"><p>{currentTime}</p></div>
             <div className="progressBar">
-              <input className="invisibleSlider" type="range" min="0" max="100" onClick={this.handleProgressBarClick.bind(this)}></input>
-              <div className="progressDot" style={{ marginLeft: `${this.state.progress - 1}%`}}></div> 
-              <div id="progressLineBackground"><div id="progressLine" style={{ width: `${this.state.progress}%` }}></div></div>
-            </div>   
-            <div className="playerTime"><p>{this.state.duration}</p></div>
+              <input className="invisibleSlider" type="range" min="0" max="100" onClick={handleProgressBarClick}></input>
+              <div className="progressDot" style={{ marginLeft: `${progress - 1}%`}}></div> 
+              <div id="progressLineBackground"><div id="progressLine" style={{ width: `${progress}%` }}></div></div>
+            </div>
+            <div className="playerTime"><p>{duration}</p></div>
         </div>
         </div>
       )
-  }
 }
 
 export default Player;

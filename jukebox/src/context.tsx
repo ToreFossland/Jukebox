@@ -1,32 +1,38 @@
-import React, {Component} from "react";
+import React, {Component, SetStateAction, useEffect, useState} from "react";
 import axios from 'axios';
 import Track from "./components/tracks/Track";
 
 type ContextProps = {
-    trackList: Track[],
-    heading: string,
+    trackList: Track[] | null,
+    currentTrackIDObject :currentTrackIDType
 };
 
+type currentTrackIDType = {
+    currentTrackID: number
+    setCurrentTrackID: (val: any) => void
+}
+
+
 type Track ={
-    trackID:number
+    trackID:number,
     name:string,
     artist:string,
     album:string
 }
 
-const Context = React.createContext<Partial<ContextProps>>({});
+export const Context = React.createContext<Partial<ContextProps>>({});
 
-export class Provider extends Component {
-    state = {
-        trackList: [],
-        heading: 'Top ten tracks',
-    }
 
-    componentDidMount() {
+export const Provider:React.FC = ({children}) => {
+    const [trackList, setTrackList] = useState<any>([] as any[])
+    const [currentTrackID, setCurrentTrackID] = useState(0)
 
-        let songID:number[] = [
+    const currentTrackIDObject = {currentTrackID, setCurrentTrackID}
+ 
+
+    let songID:number[] = [
         //OneMoreTime, SingThemeSong, 
-            103162573, 114669898
+            103162573, 114669898, 107705824
         ]
 
         let apiURL:any[] = [];
@@ -35,39 +41,29 @@ export class Provider extends Component {
             let temp:string = (`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?commontrack_id=`+element +`&apikey=${process.env.REACT_APP_MM_KEY}`)
             apiURL.push(axios.get(temp))
         });
-
-       axios.all(apiURL).then(axios.spread((...responses) => {
+       
+        useEffect(() => {
+         axios.all(apiURL).then(axios.spread((...responses) => {
            console.log(responses)
-            let tempArray:any = [];
 
-            responses.map( (item) => {
+            const tracks = responses.map( (item) => {
                 
-                let temp: Track={
+                return {
                     trackID:item.data.message.body.track.commontrack_id,
                     name:item.data.message.body.track.track_name,
                     artist:item.data.message.body.track.artist_name,
                     album:item.data.message.body.track.album_name
                 }
-                tempArray.push(temp)
                 }
             )
+            setTrackList(tracks)
 
-            this.setState({trackList:tempArray})
-    
-        
         })).catch(errors => console.log(errors));
-    }
+    }, [])
 
-
-    
-
-    render() {
         return(
-            <Context.Provider value={this.state}>
-                {this.props.children}
+            <Context.Provider value = {{ currentTrackIDObject, trackList }}>
+                {children}
             </Context.Provider>
         );
-    }
 }
-
-export const Consumer = Context.Consumer;

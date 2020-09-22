@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 import './resources/styling/layout.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
@@ -14,11 +14,13 @@ import Tracks from "./components/tracks/Tracks";
 import Lyrics from "./components/tracks/Lyrics";
 
 
-import {Provider} from './context'
+import {Provider} from './Context'
 import Index from './components/Index';
 
 interface myState {
-  trackID: number
+  currentTrackID: number
+  currentTrackName: string,
+  currentArtistName: string,
 }
 interface myProps {
 //fill in props here
@@ -29,41 +31,26 @@ class App extends React.Component<myProps, myState> {
   constructor(props:any){
     super(props);
     this.state = {
-        trackID: 0
+      currentTrackID: 0,
+      currentTrackName: "",
+      currentArtistName: "",
     }
-    this.parentFunction = this.parentFunction.bind(this);
 }
-parentFunction=(data_from_child:number)=>{
-    this.setState({trackID:data_from_child});
-}
+
 
 
   render(){
     return(
       <Provider>
-          <Router>
-              <React.Fragment>
-                  <div className="App">
-                      <NavBar />
-                      <div id="main">
-
-                          <Home2/>
-                          <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
-                          <Info />
-                          {/*<Tracks />*/}
-                          {/*<Lyrics />*/}
-                          <div className="container">
-                            <Switch>
-                                <Route exact path= "/" component = {Index} />
-                            </Switch>
-                          </div>
-                      </div>
-                      <Footer />
-                      <Player valueFromParent={this.state.trackID}/>
-                  </div>
-              </React.Fragment>
-          </Router>
+          <NavBar/>
+          <div id="main">
+            <Home2 />
+            <Songs />
+            <Player />
+            <Footer />
+          </div>
       </Provider>
+      
 
     );
   }
