@@ -10,7 +10,7 @@ import Dancer5 from '../components/dancer5';
 import Dancer6 from '../components/dancer6';
 
 
-const Home2 = () => {
+const Home2 = ({...props}) => {
 
   let {currentTrackIDObject, trackList} = useContext(Context)!
       console.log(currentTrackIDObject?.currentTrackID)
@@ -27,13 +27,13 @@ const renderFunction = ()=>{
   }
 
   return(
-    <div id="homemain2">
+    <div id="homemain2" style={{background: props.btheme, color: props.ctheme}}>
       <svg id="svgCover">
         <defs>
           <linearGradient id="gradient-0" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#DB3A32"stopOpacity="1" />
             <stop offset="80%" stopColor="#FAD500"stopOpacity="1" />
-            <stop offset="100%" stopColor="white"stopOpacity="0" />
+            <stop offset="100%" stopColor={props.btheme} stopOpacity="0" />
 
           </linearGradient>
         </defs>

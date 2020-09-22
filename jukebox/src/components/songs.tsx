@@ -6,7 +6,11 @@ import Dancer from './dancer';
 import Dancer2 from './dancer2';
 import Dancer3 from './dancer3';
 
-const Songs = () =>{
+
+const Songs = ({...props}) =>{
+
+
+
   let {trackList, currentTrackIDObject} = useContext(Context)!
   
 //Henter tittel, artist, bilde og legger enn en onclick som sender trackID childFunction. 
@@ -28,7 +32,7 @@ const Songs = () =>{
 
 
   return(
-      <div id="songmain">
+      <div id="songmain" style={{background: props.btheme, color: props.ctheme}}>
           <h1>Songs</h1>
           <p>Here is our library of available songs.</p>
           <div className="songlist">

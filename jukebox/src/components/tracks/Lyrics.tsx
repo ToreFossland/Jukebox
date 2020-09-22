@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import axios from 'axios';
-import Track from "./Track";
 import Spinner from "../../resources/media/Spinner";
 
 
