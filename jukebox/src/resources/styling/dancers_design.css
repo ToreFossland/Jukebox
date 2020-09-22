@@ -196,3 +196,182 @@
       transform: rotateX(10deg);
     }
   }
+
+
+  /*** DANCER4 ***/
+
+  #balloon1:hover {
+    animation: balloon 0.5s infinite alternate;
+    transform-origin: 100px 100px 10px;
+    transform-box: fill-box;
+  }
+
+  #balloon2:hover {
+    animation: balloon 0.5s infinite alternate;
+    transform-origin: 100px 100px 10px;
+    transform-box: fill-box;
+  }
+
+  #balloon3:hover {
+    animation: balloon 0.5s infinite alternate;
+    transform-origin: 100px 100px 10px;
+    transform-box: fill-box;
+  }
+
+  @keyframes balloon {
+    from {
+      transform: rotateX(30deg);
+    }
+    to {
+      transform: rotateX(-30deg);
+    }
+  }
+
+  #girlleft {
+    animation: girls 2s ease-in-out infinite alternate;
+    transform-origin: 150px 300px 10px;
+    transform-box: fill-box;
+  }
+
+  #girlright  {
+    animation: girls 2s ease-in-out infinite alternate;
+    transform-origin: 150px 300px 10px;
+    transform-box: fill-box;
+  }
+
+  @keyframes girls {
+    from {
+      transform: rotateZ(5deg);
+    }
+    to {
+      transform: rotateZ(-5deg);
+    }
+  }
+
+
+  /*** DANCER5 ***/
+
+  #light1 {
+    animation: lights  0.5s infinite alternate;
+    transform-origin: 100px 300px 10px;
+    transform-box: fill-box;
+  }
+
+  #light2 {
+    animation: lights  0.5s infinite alternate;
+    transform-origin: 100px 300px 10px;
+    transform-box: fill-box;
+  }
+
+  #light3 {
+    animation: lights 0.5s infinite alternate;
+    transform-origin: 100px 300px 10px;
+    transform-box: fill-box;
+  }
+
+  @keyframes lights {
+    from {
+      transform: rotateX(30deg);
+    }
+    to {
+      transform: rotateX(-30deg);
+    }
+  }
+
+  #speaker:hover {
+    animation: speaker 0.5s ease-in-out infinite alternate;
+    transform-origin: 150px 300px 10px;
+    transform-box: fill-box;
+  }
+
+  @keyframes speaker {
+    from {
+      transform: rotateX(20deg);
+    }
+    to {
+      transform: rotateX(-20deg);
+    }
+  }
+
+  #note1 {
+    animation: notes 0.5s infinite alternate;
+    transform-origin: 20px 20px 20px;
+    transform-box: fill-box;
+  }
+
+  #note2 {
+    animation: notes 0.5s infinite alternate;
+    transform-origin: 20px 20px 20px;
+    transform-box: fill-box;
+  }
+
+  #note3 {
+    animation: notes 0.5s infinite alternate;
+    transform-origin: 20px 20px 20px;
+    transform-box: fill-box;
+  }
+
+  #note4 {
+    animation: notes 0.5s infinite alternate;
+    transform-origin: 20px 20px 20px;
+    transform-box: fill-box;
+  }
+
+  @keyframes notes {
+    from {
+      transform: rotateZ(20deg);
+    }
+    to {
+      transform: rotateZ(-20deg);
+    }
+  }
+
+
+  /*** DANCER6 ***/
+
+#body6 {
+  animation: body 0.5s ease-in-out infinite alternate;
+  transform-origin: 150px 300px 10px;
+  transform-box: fill-box;
+}
+
+@keyframes body {
+  from {
+    transform: rotateX(10deg);
+  }
+  to {
+    transform: rotateX(-20deg);
+  }
+}
+
+#head6 {
+  animation: head6 0.5s infinite alternate;
+    transform-origin: 80px 150px 0px;
+    transform-box: fill-box;
+}
+
+@keyframes head6 {
+  from {
+    transform: rotateZ(10deg);
+  }
+  to {
+    transform: rotateZ(-10deg);
+  }
+}
+
+
+#head6:hover {
+  animation: head6hover 2s infinite alternate;
+    transform-origin: 80px 150px 0px;
+    transform-box: fill-box;
+}
+
+
+@keyframes head6hover {
+  from {
+    transform: rotateZ(30deg);
+  }
+  to {
+    transform: rotateZ(-30deg);
+  }
+}

@@ -14,7 +14,12 @@ import Tracks from "./components/tracks/Tracks";
 import Lyrics from "./components/tracks/Lyrics";
 
 
+<<<<<<< HEAD
 import {Provider} from './Context'
+=======
+
+import {Provider} from './context'
+>>>>>>> 82252b919b5913f7edfc293f5406293e795cc4f7
 import Index from './components/Index';
 
 interface myState {
@@ -42,6 +47,7 @@ class App extends React.Component<myProps, myState> {
   render(){
     return(
       <Provider>
+<<<<<<< HEAD
           <NavBar/>
           <div id="main">
             <Home2 />
@@ -49,6 +55,35 @@ class App extends React.Component<myProps, myState> {
             <Player />
             <Footer />
           </div>
+=======
+          <Router>
+              <React.Fragment>
+                  <div className="App">
+                      <NavBar />
+                      <div id="main">
+                      
+                          <Home2/>
+                          <Songs functionCallFromParent={this.parentFunction.bind(this)}/>
+                          <Info />
+                          {/*<Tracks />*/}
+                          {/*<Lyrics />*/}
+                          <div className="container">
+                            <Switch>
+                                <Route exact path= "/" component = {Index} />
+                            </Switch>
+                          </div>
+                      </div>
+                      <div className="container">
+                            <Switch>
+                                <Route exact path= "/" component = {Index} />
+                            </Switch>
+                        </div>
+                      <Footer />
+                      <Player valueFromParent={this.state.trackID}/>
+                  </div>
+              </React.Fragment>
+          </Router>
+>>>>>>> 82252b919b5913f7edfc293f5406293e795cc4f7
       </Provider>
       
 

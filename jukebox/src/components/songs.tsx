@@ -2,7 +2,9 @@ import React, {useContext} from 'react';
 import ReactDOMs from 'react-dom';
 import {Context} from '../Context';
 import '../resources/styling/layout.css';
-
+import Dancer from './dancer';
+import Dancer2 from './dancer2';
+import Dancer3 from './dancer3';
 
 const Songs = () =>{
   let {trackList, currentTrackIDObject} = useContext(Context)!

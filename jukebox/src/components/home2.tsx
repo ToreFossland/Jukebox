@@ -5,6 +5,9 @@ import {Context} from '../Context';
 import Dancer from '../components/dancer';
 import Dancer2 from '../components/dancer2';
 import Dancer3 from '../components/dancer3';
+import Dancer4 from '../components/dancer4';
+import Dancer5 from '../components/dancer5';
+import Dancer6 from '../components/dancer6';
 
 
 const Home2 = () => {
