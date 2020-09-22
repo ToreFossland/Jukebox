@@ -33,7 +33,17 @@ export const Provider:React.FC = ({children}) => {
         //OneMoreTime, SingThemeSong, 
             103162573, 114669898, 107705824
         ]
-
+    
+        useEffect(() => {
+            const k = [
+            {trackID: 103162573, name: "haakon", artist: "pappa", album: "album"},
+            {trackID: 114669898, name: "haakon", artist: "pappa", album: "album"},
+            {trackID: 107705824, name: "haakon", artist: "pappa", album: "album"}
+            ]
+            
+            setTrackList(k)
+            },[]);
+    /*
         let apiURL:any[] = [];
         
         songID.forEach(element => {
@@ -59,7 +69,7 @@ export const Provider:React.FC = ({children}) => {
 
         })).catch(errors => console.log(errors));
     }, [])
-
+    */
         return(
             <Context.Provider value = {{ currentTrackIDObject, trackList }}>
                 {children}

@@ -11,14 +11,14 @@ import Footer from "./components/footer";
 import Player from "./components/player";
 import Dancers from "./components/dancers";
 
-
 import {Provider} from './context'
 
 interface myState {
   trackID: number,
   btheme: string,
   ctheme: string,
-  bodyTheme: string
+  bodyTheme: string,
+  dancerIndex: number
 }
 interface myProps {
 //fill in props here
@@ -31,9 +31,11 @@ class App extends React.Component<myProps, myState> {
         trackID: 0,
         btheme: "#fff",
         bodyTheme: "#eee;",
-        ctheme: "#333"
+        ctheme: "#333",
+        dancerIndex: 0
     }
     this.changeTheme = this.changeTheme.bind(this);
+    this.changeDancer = this.changeDancer.bind(this);
 }
 
 componentDidMount() {
@@ -51,6 +53,12 @@ componentDidMount() {
   if(bodyTheme != null) {
     this.setState({bodyTheme: bodyTheme});
   }
+
+  let dancerIndex = localStorage.getItem('dancerIndex');
+
+  if(dancerIndex != null) {
+    this.setState({dancerIndex: parseInt(dancerIndex)});
+  }
   
 }
 changeTheme() {
@@ -63,8 +71,11 @@ changeTheme() {
   localStorage.setItem('btheme', newbTheme);
   localStorage.setItem('ctheme', newcTheme);
   localStorage.setItem('bodyTheme', newBodyTheme);
+}
 
-
+changeDancer(index: number) {
+  this.setState({dancerIndex: index})
+  localStorage.setItem('dancerIndex', JSON.stringify(index));
 }
 
 
@@ -74,9 +85,9 @@ changeTheme() {
         <div className="App" style={{background: this.state.bodyTheme}}>
           <NavBar/>
           <div id="main">
-          <Home btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+          <Home dancerIndex={this.state.dancerIndex}  btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           <Songs btheme={this.state.btheme} ctheme={this.state.ctheme}/>
-          <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} />
+          <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} onChange={this.changeDancer} />
           <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           </div>
           <Footer onChange={this.changeTheme}/>
