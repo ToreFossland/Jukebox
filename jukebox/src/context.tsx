@@ -54,6 +54,7 @@ export const Provider:React.FC = ({children}) => {
         //OneMoreTime, SingThemeSong, 
             103162573, 114669898, 107705824
         ]
+<<<<<<< HEAD
 
     useEffect(() => {
     const k = [
@@ -64,6 +65,18 @@ export const Provider:React.FC = ({children}) => {
     
     setTrackList(k)
     },[]);
+=======
+    
+        useEffect(() => {
+            const k = [
+            {trackID: 103162573, name: "haakon", artist: "pappa", album: "album"},
+            {trackID: 114669898, name: "haakon", artist: "pappa", album: "album"},
+            {trackID: 107705824, name: "haakon", artist: "pappa", album: "album"}
+            ]
+            
+            setTrackList(k)
+            },[]);
+>>>>>>> d53df77dbe615c7ac9f023e6558fffa9656d5cca
     /*
         let apiURL:any[] = [];
         

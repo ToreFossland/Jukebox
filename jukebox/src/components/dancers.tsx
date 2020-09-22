@@ -3,43 +3,40 @@ import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 import Dancer from './dancer';
 
-interface myProps {
-  btheme: string,
-  ctheme: string
-}
 
-class Dancers extends React.Component <myProps> {
+const Dancers = ({...props}) => {
 
+  const handleClick = (index: number) => {
+    props.onChange(index);
+  }
   
-    render() {
-      
       return(
-        <div id="dancermain" style={{background: this.props.btheme, color: this.props.ctheme}}>
+        <div id="dancermain" style={{background: props.btheme, color: props.ctheme}}>
             <h1>Dancers</h1>
             <p>Click on the dancer you want to see on top of the screen!</p>
             <div className="dancerlist">
               <div>
-                <img src={require("../resources/media/img/dancer1.png")}></img>
+                <img src={require("../resources/media/img/dancer1.png")} onClick={() => handleClick(0)}></img>
                 <p>Effect: clickable!</p>
               </div>
               <div>
-                <img src={require("../resources/media/img/dancer2.png")}></img>
+                <img src={require("../resources/media/img/dancer2.png")} onClick={() => handleClick(1)}></img>
                 <p>Effect: clickable!</p>
               </div>
               <div>
-                <img src={require("../resources/media/img/dancer3.png")}></img>
+                <img src={require("../resources/media/img/dancer3.png")} onClick={() => handleClick(2)}></img>
                 <p>Effect: clickable!</p>
               </div>
               <div>
-                <img src={require("../resources/media/img/dancer4.png")}></img>
+                <img src={require("../resources/media/img/dancer4.png")} onClick={() => handleClick(3)}></img>
                 <p>Effect: hoverable!</p>
               </div>
               <div>
-                <img src={require("../resources/media/img/dancer5.png")}></img>
+                <img src={require("../resources/media/img/dancer5.png")} onClick={() => handleClick(4)}></img>
                 <p>Effect: hoverable!</p>
               </div>
               <div>
-                <img src={require("../resources/media/img/dancer6.png")}></img>
+                <img src={require("../resources/media/img/dancer6.png")} onClick={() => handleClick(5)}></img>
                 <p>Effect: hoverable!</p>
               </div>
               
@@ -47,6 +44,5 @@ class Dancers extends React.Component <myProps> {
         </div>
       );
     }
-  }
 
   export default Dancers;

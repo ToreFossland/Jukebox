@@ -10,9 +10,16 @@ import Dancer5 from './dancer5';
 import Dancer6 from './dancer6';
 
 
+
 const Home = ({...props}) => {
 
+<<<<<<< HEAD
   let {trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject} = useContext(Context)!
+=======
+  
+  
+  let {currentTrackIDObject, trackList} = useContext(Context)!
+>>>>>>> d53df77dbe615c7ac9f023e6558fffa9656d5cca
       console.log(currentTrackIDObject?.currentTrackID)
       console.log(trackList)
 
@@ -26,6 +33,9 @@ const renderFunction = ()=>{
   );
   }
 
+  const alldancers = [<Dancer/>, <Dancer2/>, <Dancer3/>, <Dancer4/>, <Dancer5/>, <Dancer6/>];
+
+  
   return(
     <div style={{background: props.btheme, color: props.ctheme}}>
       <svg id="svgCover">
@@ -34,13 +44,13 @@ const renderFunction = ()=>{
             <stop offset="0%" stopColor="#DB3A32"stopOpacity="1" />
             <stop offset="80%" stopColor="#FAD500"stopOpacity="1" />
             <stop offset="100%" stopColor={props.btheme} stopOpacity="0" />
-
+            alldancers[props.dancerIndex];
           </linearGradient>
         </defs>
         <rect id="svgCoverRect" width="100%" height="100%" z="-10" fill="url(#gradient-0)"/>
-        <Dancer3 />
+        {alldancers[props.dancerIndex]}
       </svg>
-
+      
       <div id="currentInfo">
         <h2> Current Song:</h2>
         <p id="currentSong">{currentTrackNameObject?.currentTrackName}</p>
