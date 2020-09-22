@@ -30,7 +30,7 @@ body {
   }
 
   .navelements {
-    max-width: 1235px;
+    max-width: 1200px;
     margin: auto;
  }
 
@@ -45,6 +45,7 @@ body {
     width: 90px;
     font-size: 24px;
     border-right: 1px solid #222;
+    border-left: 1px solid #222;
     display: flex;
   }
   

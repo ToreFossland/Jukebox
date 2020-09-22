@@ -25,7 +25,8 @@ class Home2 extends React.Component<myProps, myState>  {
             <defs>
               <linearGradient id="gradient-0" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#DB3A32"stopOpacity="1" />
-                <stop offset="100%" stopColor="#FAD500"stopOpacity="1" />
+                <stop offset="80%" stopColor="#FAD500"stopOpacity="1" />
+                <stop offset="100%" stopColor={this.props.btheme}stopOpacity="1" />
               </linearGradient>
             </defs>
             <rect id="svgCoverRect" width="100%" z="-100" fill="url(#gradient-0)"/>
