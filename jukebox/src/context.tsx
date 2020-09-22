@@ -33,9 +33,16 @@ export const Provider:React.FC = ({children}) => {
         //OneMoreTime, SingThemeSong, 
             103162573, 114669898, 107705824
         ]
-    setTrackList({
-        Track:{trackId:103162573, name:"kaspar", artist:"kaspar", album:"kaspars orkester"}
-    })
+    
+        useEffect(() => {
+            const k = [
+            {trackID: 103162573, name: "haakon", artist: "pappa", album: "album"},
+            {trackID: 114669898, name: "haakon", artist: "pappa", album: "album"},
+            {trackID: 107705824, name: "haakon", artist: "pappa", album: "album"}
+            ]
+            
+            setTrackList(k)
+            },[]);
     /*
         let apiURL:any[] = [];
         

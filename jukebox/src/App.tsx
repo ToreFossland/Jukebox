@@ -53,6 +53,12 @@ componentDidMount() {
   if(bodyTheme != null) {
     this.setState({bodyTheme: bodyTheme});
   }
+
+  let dancerIndex = localStorage.getItem('dancerIndex');
+
+  if(dancerIndex != null) {
+    this.setState({dancerIndex: parseInt(dancerIndex)});
+  }
   
 }
 changeTheme() {
@@ -69,6 +75,7 @@ changeTheme() {
 
 changeDancer(index: number) {
   this.setState({dancerIndex: index})
+  localStorage.setItem('dancerIndex', JSON.stringify(index));
 }
 
 
@@ -78,9 +85,9 @@ changeDancer(index: number) {
         <div className="App" style={{background: this.state.bodyTheme}}>
           <NavBar/>
           <div id="main">
-          <Home dancerIndex={this.state.dancerIndex} onChange={this.changeDancer} btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+          <Home dancerIndex={this.state.dancerIndex}  btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           <Songs btheme={this.state.btheme} ctheme={this.state.ctheme}/>
-          <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} />
+          <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} onChange={this.changeDancer} />
           <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           </div>
           <Footer onChange={this.changeTheme}/>
