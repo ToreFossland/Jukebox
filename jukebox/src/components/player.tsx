@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
-import {Context} from '../Context'
+import {Context} from '../context'
 
 
 const Player = () => {
