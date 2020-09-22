@@ -68,6 +68,38 @@ changeTheme() {
 
 }
 
+componentDidMount() {
+  let btheme = localStorage.getItem('btheme');
+  let ctheme = localStorage.getItem('ctheme');
+  let bodyTheme = localStorage.getItem('bodyTheme');
+  if(btheme != null) {
+    this.setState({btheme: btheme});
+  }
+
+  if(ctheme != null) {
+    this.setState({ctheme: ctheme});
+  }
+
+  if(bodyTheme != null) {
+    this.setState({bodyTheme: bodyTheme});
+  }
+  
+}
+
+changeTheme() {
+  const newbTheme = this.state.btheme == "#fff" ? "#555" : "#fff";
+  const newcTheme = this.state.ctheme == "#333" ? "#eee" : "#333";
+  const newBodyTheme = this.state.bodyTheme == "#111" ? "#eee" : "#111";
+  this.setState({ctheme: newcTheme});
+  this.setState({bodyTheme: newBodyTheme});
+  this.setState({btheme: newbTheme});
+  localStorage.setItem('btheme', newbTheme);
+  localStorage.setItem('ctheme', newcTheme);
+  localStorage.setItem('bodyTheme', newBodyTheme);
+
+
+}
+
 
   render(){
     return(
