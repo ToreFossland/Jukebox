@@ -220,19 +220,20 @@ body {
 
 /*** WELCOME/HOME STYLING ***/
 
-#homemain {
-  width: 100%;
-  padding-top: 30px;
-  height: 175px;
-  border-bottom: 1px solid #ccc;
-  margin: 0 -20px;
-}
 
-#homemain2 {
+#homemain {
   width: 100%;
   padding-top: 30px;
   height: 35vh;
   position: relative;
+}
+
+
+#homedefault {
+  padding-top: 20px;
+}
+#homedefault > * {
+  margin-left: 20px;
 }
 
 #currentInfo {
@@ -300,15 +301,15 @@ body {
 
 
 @media only screen and (max-width: 400px) {
-  #homemain2 > #svgCover {
+  #homemain > #svgCover {
     height: 45vh;
   }
   
-  #homemain2 > #svgCoverRect {
+  #homemain > #svgCoverRect {
     height: 45vh;
   }
 
-  #homemain2 {
+  #homemain {
     height: 35vh;
   }
 }
@@ -396,7 +397,9 @@ body {
 
 /*** INFO STYLING ***/
 
-
+#infomain {
+  height: 100%;
+}
 
 #infomain > *{
   margin-left: 20px;

@@ -5,7 +5,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import NavBar from "./components/navbar";
 import Home from "./components/home";
-import Home2 from "./components/home2";
 import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
@@ -75,7 +74,7 @@ changeTheme() {
         <div className="App" style={{background: this.state.bodyTheme}}>
           <NavBar/>
           <div id="main">
-          <Home2 btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+          <Home btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           <Songs btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} />
           <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
