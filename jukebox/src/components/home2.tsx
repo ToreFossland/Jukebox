@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
-import {Context} from '../Context';
+import {Context} from '../context';
 import Dancer from '../components/dancer';
 import Dancer2 from '../components/dancer2';
 import Dancer3 from '../components/dancer3';

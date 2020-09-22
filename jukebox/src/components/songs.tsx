@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import ReactDOMs from 'react-dom';
-import {Context} from '../Context';
+import {Context} from '../context';
 import '../resources/styling/layout.css';
 import Dancer from './dancer';
 import Dancer2 from './dancer2';

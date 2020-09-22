@@ -13,7 +13,7 @@ import Player from "./components/player";
 import Dancers from "./components/dancers";
 
 
-import {Provider} from './Context'
+import {Provider} from './context'
 
 interface myState {
   trackID: number,
