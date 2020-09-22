@@ -72,15 +72,9 @@ const progressBar = () =>{
       if((currentTrackIDObject?.currentTrackID !== oldCurrentTrackID)){
         setOldCurrentTrackID(currentTrackIDObject?.currentTrackID as number)
         console.log("new prop from parent!")
-<<<<<<< HEAD
         myAudio.pause()
         myAudio.src = require("../resources/media/audio/"+currentTrackIDObject?.currentTrackID+".mp3")
         myAudio.play();
-=======
-        this.state.myAudio.pause()
-        this.state.myAudio.src = require("../resources/media/audio/"+nesteProps.valueFromParent+".mp3")
-        this.state.myAudio.play();
->>>>>>> 82252b919b5913f7edfc293f5406293e795cc4f7
 
       }
   
