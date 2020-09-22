@@ -3,12 +3,27 @@ import axios from 'axios';
 
 type ContextProps = {
     trackList: Track[] | null,
-    currentTrackIDObject :currentTrackIDType
+    currentTrackIDObject:currentTrackIDType,
+    currentTrackNameObject: currentTrackNameType,
+    currentTrackAlbumObject: currentTrackAlbumType,
+    currentTrackArtistObject: currentTrackArtistType
 };
 
 type currentTrackIDType = {
-    currentTrackID: number
+    currentTrackID: number,
     setCurrentTrackID: (val: any) => void
+}
+type currentTrackNameType = {
+    currentTrackName: string,
+    setCurrentTrackName: (val: any) => void
+}
+type currentTrackAlbumType = {
+    currentTrackAlbum: string,
+    setCurrentTrackAlbum: (val: any) => void
+}
+type currentTrackArtistType = {
+    currentTrackArtist: string,
+    setCurrentTrackArtist: (val: any) => void
 }
 
 
@@ -25,15 +40,31 @@ export const Context = React.createContext<Partial<ContextProps>>({});
 export const Provider:React.FC = ({children}) => {
     const [trackList, setTrackList] = useState<any>([] as any[])
     const [currentTrackID, setCurrentTrackID] = useState(0)
+    const [currentTrackName, setCurrentTrackName] = useState("")
+    const [currentTrackAlbum, setCurrentTrackAlbum] = useState("")
+    const [currentTrackArtist, setCurrentTrackArtist] = useState("")
 
     const currentTrackIDObject = {currentTrackID, setCurrentTrackID}
- 
+    const currentTrackNameObject = {currentTrackName, setCurrentTrackName}
+    const currentTrackAlbumObject = {currentTrackAlbum, setCurrentTrackAlbum}
+    const currentTrackArtistObject = {currentTrackArtist, setCurrentTrackArtist}
+
 
     let songID:number[] = [
         //OneMoreTime, SingThemeSong, 
             103162573, 114669898, 107705824
         ]
 
+    useEffect(() => {
+    const k = [
+    {trackID: 103162573, name: "haakon", artist: "kaskads", album: "album"},
+    {trackID: 114669898, name: "Kaspar", artist: "Daft punk", album: "album2"},
+    {trackID: 107705824, name: "Tore", artist: "haakon band", album: "album2"}
+    ]
+    
+    setTrackList(k)
+    },[]);
+    /*
         let apiURL:any[] = [];
         
         songID.forEach(element => {
@@ -59,9 +90,9 @@ export const Provider:React.FC = ({children}) => {
 
         })).catch(errors => console.log(errors));
     }, [])
-
+    */
         return(
-            <Context.Provider value = {{ currentTrackIDObject, trackList }}>
+            <Context.Provider value = {{ trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject}}>
                 {children}
             </Context.Provider>
         );

@@ -1,3 +1,4 @@
+import { stringify } from 'querystring';
 import React, {useContext} from 'react';
 import ReactDOMs from 'react-dom';
 import {Context} from '../context';
@@ -11,15 +12,22 @@ const Songs = ({...props}) =>{
 
 
 
-  let {trackList, currentTrackIDObject} = useContext(Context)!
+  let {trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject} = useContext(Context)!
   
+const setCurrentSongData = (trackID:Number, name:string, album:string, artist:string) =>{
+  currentTrackIDObject?.setCurrentTrackID(trackID);
+  currentTrackNameObject?.setCurrentTrackName(name);
+  currentTrackAlbumObject?.setCurrentTrackAlbum(album);
+  currentTrackArtistObject?.setCurrentTrackArtist(artist);
+}
+
 //Henter tittel, artist, bilde og legger enn en onclick som sender trackID childFunction. 
 //Legger til bilde som bakgrunn fordi dette gjorde det lett å skalere bilde riktig i css.
-  const populateSongList = () =>{
+const populateSongList = () =>{
     let container:any = [];
-    trackList?.forEach((element: { trackID:React.ReactNode; name: React.ReactNode; artist: React.ReactNode; }) => {
+    trackList?.forEach((element: { trackID:React.ReactNode; name: React.ReactNode; album: React.ReactNode; artist: React.ReactNode; }) => {
       container.push(
-        <div className="songLink" key={element.trackID as number} onClick={() => currentTrackIDObject?.setCurrentTrackID(element.trackID)}>
+        <div className="songLink" key={element.trackID as number} onClick={() => setCurrentSongData(element.trackID as number, element.name as string, element.album as string, element.artist as string)}>
           <div className="songLinkImg" style={{ backgroundImage: `url(${require("../resources/media/img/"+ element.trackID +".jpg")})` }} ></div>
           <p>{element.artist} - {element.name}</p>
         </div>

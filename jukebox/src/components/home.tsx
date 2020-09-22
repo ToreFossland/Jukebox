@@ -12,7 +12,7 @@ import Dancer6 from './dancer6';
 
 const Home = ({...props}) => {
 
-  let {currentTrackIDObject, trackList} = useContext(Context)!
+  let {trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject} = useContext(Context)!
       console.log(currentTrackIDObject?.currentTrackID)
       console.log(trackList)
 
@@ -43,8 +43,8 @@ const renderFunction = ()=>{
 
       <div id="currentInfo">
         <h2> Current Song:</h2>
-        <p id="currentSong">One More Time</p>
-        <p id="currentArtist">by Daft Punk</p>
+        <p id="currentSong">{currentTrackNameObject?.currentTrackName}</p>
+        <p id="currentArtist">by {currentTrackArtistObject?.currentTrackArtist}</p>
       </div>
       <img id="currentCover" src={require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")}></img>
       
