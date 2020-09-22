@@ -1,6 +1,5 @@
 import React, {Component, SetStateAction, useEffect, useState} from "react";
 import axios from 'axios';
-import Track from "./components/tracks/Track";
 
 type ContextProps = {
     trackList: Track[] | null,
