@@ -3,19 +3,6 @@ import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 import {Context} from '../Context'
 
-//currentTrackID from parent
-/*interface myProps {
-  currentTrackID: number
-}
-
-interface myState {
-  progress: number,
-  duration: string,
-  currentTime: string,
-  myAudio: HTMLAudioElement,
-  playBtn: string,
-}
-*/
 
 const Player = () => {
   const [progress, setProgress] = useState(0)
@@ -64,10 +51,6 @@ const progressBar = () =>{
   return () => clearInterval(interval);
 }, []);
 
-
- /* const componentWillUnmount = () => {
-    clearInterval(intervalID);
-  }*/
 
       if((currentTrackIDObject?.currentTrackID !== oldCurrentTrackID)){
         setOldCurrentTrackID(currentTrackIDObject?.currentTrackID as number)
