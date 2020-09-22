@@ -9,17 +9,9 @@ import Dancer4 from './dancer4';
 import Dancer5 from './dancer5';
 import Dancer6 from './dancer6';
 
-
-
 const Home = ({...props}) => {
 
-<<<<<<< HEAD
   let {trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject} = useContext(Context)!
-=======
-  
-  
-  let {currentTrackIDObject, trackList} = useContext(Context)!
->>>>>>> d53df77dbe615c7ac9f023e6558fffa9656d5cca
       console.log(currentTrackIDObject?.currentTrackID)
       console.log(trackList)
 

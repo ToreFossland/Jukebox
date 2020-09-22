@@ -1,11 +1,7 @@
-import { stringify } from 'querystring';
 import React, {useContext} from 'react';
 import ReactDOMs from 'react-dom';
 import {Context} from '../context';
 import '../resources/styling/layout.css';
-import Dancer from './dancer';
-import Dancer2 from './dancer2';
-import Dancer3 from './dancer3';
 
 
 const Songs = ({...props}) =>{
