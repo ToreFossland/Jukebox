@@ -38,7 +38,7 @@ const renderFunction = ()=>{
           </linearGradient>
         </defs>
         <rect id="svgCoverRect" width="100%" height="100%" z="-10" fill="url(#gradient-0)"/>
-        <Dancer3 />
+        alldancers[props.dancerIndex];
       </svg>
 
       <div id="currentInfo">

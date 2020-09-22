@@ -11,14 +11,14 @@ import Footer from "./components/footer";
 import Player from "./components/player";
 import Dancers from "./components/dancers";
 
-
 import {Provider} from './context'
 
 interface myState {
   trackID: number,
   btheme: string,
   ctheme: string,
-  bodyTheme: string
+  bodyTheme: string,
+  dancerIndex: number
 }
 interface myProps {
 //fill in props here
@@ -31,9 +31,11 @@ class App extends React.Component<myProps, myState> {
         trackID: 0,
         btheme: "#fff",
         bodyTheme: "#eee;",
-        ctheme: "#333"
+        ctheme: "#333",
+        dancerIndex: 0
     }
     this.changeTheme = this.changeTheme.bind(this);
+    this.changeDancer = this.changeDancer.bind(this);
 }
 
 componentDidMount() {
@@ -63,8 +65,10 @@ changeTheme() {
   localStorage.setItem('btheme', newbTheme);
   localStorage.setItem('ctheme', newcTheme);
   localStorage.setItem('bodyTheme', newBodyTheme);
+}
 
-
+changeDancer(index: number) {
+  this.setState({dancerIndex: index})
 }
 
 
@@ -74,7 +78,7 @@ changeTheme() {
         <div className="App" style={{background: this.state.bodyTheme}}>
           <NavBar/>
           <div id="main">
-          <Home btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+          <Home dancerIndex={this.state.dancerIndex} onChange={this.changeDancer} btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           <Songs btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} />
           <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
