@@ -29,7 +29,7 @@ const renderFunction = ()=>{
 
   
   return(
-    <div style={{background: props.btheme, color: props.ctheme}}>
+    <div id="homemain" style={{background: props.btheme, color: props.ctheme}}>
       <svg id="svgCover">
         <defs>
           <linearGradient id="gradient-0" x2="0%" y2="100%">
@@ -45,8 +45,9 @@ const renderFunction = ()=>{
       
       <div id="currentInfo">
         <h2> Current Song:</h2>
-        <p id="currentSong">{currentTrackNameObject?.currentTrackName}</p>
-        <p id="currentArtist">by {currentTrackArtistObject?.currentTrackArtist}</p>
+        <p id="currentSong">{currentTrackNameObject?.currentTrackName}  - {currentTrackArtistObject?.currentTrackArtist}</p>
+        <p id="currentSong">- {currentTrackAlbumObject?.currentTrackAlbum}</p>
+        <p id="currentArtist"></p>
       </div>
       <img id="currentCover" src={require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")}></img>
       

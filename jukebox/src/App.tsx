@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React, {} from 'react';
 import ReactDOM from 'react-dom';
 import './resources/styling/layout.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import NavBar from "./components/navbar";
 import Home from "./components/home";
@@ -85,10 +84,10 @@ changeDancer(index: number) {
         <div className="App" style={{background: this.state.bodyTheme}}>
           <NavBar/>
           <div id="main">
-          <Home dancerIndex={this.state.dancerIndex}  btheme={this.state.btheme} ctheme={this.state.ctheme}/>
-          <Songs btheme={this.state.btheme} ctheme={this.state.ctheme}/>
-          <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} onChange={this.changeDancer} />
-          <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+            <Home dancerIndex={this.state.dancerIndex}  btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+            <Songs btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+            <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} onChange={this.changeDancer} />
+            <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           </div>
           <Footer onChange={this.changeTheme}/>
           <Player/>

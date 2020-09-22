@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import ReactDOMs from 'react-dom';
 import {Context} from '../context';
 import '../resources/styling/layout.css';
@@ -7,10 +7,26 @@ import '../resources/styling/layout.css';
 const Songs = ({...props}) =>{
 
 
-
   let {trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject} = useContext(Context)!
   
-const setCurrentSongData = (trackID:Number, name:string, album:string, artist:string) =>{
+  useEffect(() => {
+    let currentTrackID = localStorage.getItem("currentTrackID")
+    let currentTrackName = localStorage.getItem("currentTrackName")
+    let currentTrackAlbum = localStorage.getItem("currentTrackAlbum")
+    let currentTrackArtist = localStorage.getItem("currentTrackArtist")
+    if(currentTrackID && currentTrackName && currentTrackAlbum && currentTrackArtist){
+      setCurrentSongData(parseInt(currentTrackID), currentTrackName, currentTrackAlbum, currentTrackArtist)
+    }
+    
+  }, []);
+
+  const setCurrentSongData = (trackID:Number, name:string, album:string, artist:string) =>{
+
+  localStorage.setItem('currentTrackID', JSON.stringify(trackID));
+  localStorage.setItem('currentTrackName', name);
+  localStorage.setItem('currentTrackAlbum', album);
+  localStorage.setItem('currentTrackArtist', artist);
+
   currentTrackIDObject?.setCurrentTrackID(trackID);
   currentTrackNameObject?.setCurrentTrackName(name);
   currentTrackAlbumObject?.setCurrentTrackAlbum(album);

@@ -208,15 +208,31 @@ body {
     background-color: transparent;
   }
   
-
-
-
-
-  
   .playerTime{
     min-width: 60px;
   }
 
+  .playerSongImg{
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .playerSongData{
+    min-width: 150px;
+    height: 40px;
+    position: relative;
+    margin: auto;
+    text-align: left;
+  }
+  .playerSongData > p{
+    margin: auto;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
 
 /*** WELCOME/HOME STYLING ***/
 
@@ -275,6 +291,7 @@ body {
 
 @media only screen and (min-width: 761px) {
   #currentCover {
+      height: 200px;
       top: -130px;
       position: relative;
       float: right;
