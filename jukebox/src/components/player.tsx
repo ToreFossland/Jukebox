@@ -11,7 +11,7 @@ const Player = () => {
   const [myAudio, setMyAudio] = useState(new Audio())
   const [playBtn, setPlayBtn] = useState("play")
   const [oldCurrentTrackID, setOldCurrentTrackID] = useState(0)
-  let {currentTrackIDObject} = useContext(Context)!
+  let {currentTrackIDObject, currentTrackNameObject, currentTrackArtistObject} = useContext(Context)!
 
 //Når player mountes vil denne funksjonen kjøres hvert sekund frem til player unmountes
 const progressBar = () =>{
@@ -37,10 +37,7 @@ const progressBar = () =>{
  }
 
  useEffect(() => {
-  let ct = localStorage.getItem("currentTime")
-  console.log(currentTime)
-
-
+   console.log("horemann")
   if(currentTime != null ) {
     myAudio.currentTime = parseInt(currentTime);
   }
@@ -51,23 +48,40 @@ const progressBar = () =>{
   return () => clearInterval(interval);
 }, []);
 
+const delay = (ms: number) => {
+  return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
-      if((currentTrackIDObject?.currentTrackID !== oldCurrentTrackID)){
-        setOldCurrentTrackID(currentTrackIDObject?.currentTrackID as number)
-        console.log("new prop from parent!")
-        myAudio.pause()
-        myAudio.src = require("../resources/media/audio/"+currentTrackIDObject?.currentTrackID+".mp3")
-        myAudio.play();
-
+useEffect(() => {
+  (async () => { 
+    if((currentTrackIDObject?.currentTrackID !== oldCurrentTrackID)){
+      console.log("new Audio file starting!")
+      myAudio.pause()
+      myAudio.src = require("../resources/media/audio/"+currentTrackIDObject?.currentTrackID+".mp3")
+      while(myAudio.readyState!==4){
+        await delay(100);
       }
-  
-  const handlePlayer = ()=>{
-    if(myAudio.paused){
-      myAudio.play();
-    }else{
-      myAudio.pause();
+      if(oldCurrentTrackID!==0){
+        myAudio.play();
+      }else{
+        let ct = localStorage.getItem("currentTime")
+        console.log(ct)
+        if(ct){myAudio.currentTime = parseInt(ct);}
+      }
+      setOldCurrentTrackID(currentTrackIDObject?.currentTrackID as number)
     }
+    })();
+}, [currentTrackIDObject?.currentTrackID]);
+
+
+  
+const handlePlayer = ()=>{
+  if(myAudio.paused){
+    myAudio.play();
+  }else{
+    myAudio.pause();
   }
+}
 
   const convertSecondsToMinutesAndSeconds = (seconds:number)=>{
     var minutes = Math.floor(seconds/60);
@@ -80,14 +94,10 @@ const progressBar = () =>{
 
 
 
-//Denne må fikses slik at det ikke oppstår bugs når spilleren starter før en sang er staret
   const handleProgressBarClick = (e:any)=>{
- /*  var width = e.target.getBoundingClientRect().width;
-   var offsetX = e.nativeEvent.offsetX
-   var duration = this.state.myAudio.duration
-   this.state.myAudio.currentTime = offsetX/width*duration*/
-   
-   myAudio.currentTime = e.target.value/100 * myAudio.duration
+    if(myAudio.readyState===4){
+      myAudio.currentTime = e.target.value/100 * myAudio.duration
+    }
   }
 
       return(
@@ -97,10 +107,17 @@ const progressBar = () =>{
             <div className="playerTime"><p>{currentTime}</p></div>
             <div className="progressBar">
               <input className="invisibleSlider" type="range" min="0" max="100" onClick={handleProgressBarClick}></input>
-              <div className="progressDot" style={{ marginLeft: `${progress - 1}%`}}></div> 
-              <div id="progressLineBackground"><div id="progressLine" style={{ width: `${progress}%` }}></div></div>
+              <div className="progressDot" style={{ marginLeft: `${progress - 1}%`}}></div>
+              <div id="progressLineBackground"><div id="progressLine" style={{ width: `${progress}%` }}></div>
+              </div>
             </div>
             <div className="playerTime"><p>{duration}</p></div>
+            
+            <div className="playerSongImg" style={{ backgroundImage: `url(${require("../resources/media/img/"+ currentTrackIDObject?.currentTrackID +".jpg")})` }} ></div>
+            <div className="playerSongData">
+              <p id="playerTrackName">{currentTrackNameObject?.currentTrackName}</p>
+              <p id="playerTrackAlbum">{currentTrackArtistObject?.currentTrackArtist}</p>
+            </div>
         </div>
         </div>
       )
