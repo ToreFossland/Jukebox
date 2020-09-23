@@ -85,7 +85,6 @@ changeDancer(index: number) {
           <NavBar/>
           <div id="main">
             <Home dancerIndex={this.state.dancerIndex}  btheme={this.state.btheme} ctheme={this.state.ctheme}/>
-            <Songs btheme={this.state.btheme} ctheme={this.state.ctheme}/>
             <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} onChange={this.changeDancer} />
             <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           </div>

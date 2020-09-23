@@ -52,7 +52,7 @@ const populateSongList = () =>{
 
 
   return(
-      <div id="songmain" style={{background: props.btheme, color: props.ctheme}}>
+      <div id="songmain">
           <h1>Songs</h1>
           <p>Here is our library of available songs.</p>
           <div className="songlist">

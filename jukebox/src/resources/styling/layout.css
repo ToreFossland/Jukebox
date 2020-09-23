@@ -78,6 +78,7 @@ body {
 
   #main {
     max-width: 1200px;
+    position: relative;
     background-color: #ffffff;
     height: 1500px;
     margin: auto;
@@ -101,6 +102,7 @@ body {
     background-color: #333;
     font-weight: bold;
     position: fixed;
+    z-index: 100;
     bottom: 0;
     padding: 0;
     color: #ddd;
@@ -213,6 +215,7 @@ body {
   }
 
   .playerSongImg{
+    display:block;
     width: 40px;
     min-width: 40px;
     height: 40px;
@@ -222,6 +225,7 @@ body {
   }
 
   .playerSongData{
+    display: block;
     min-width: 150px;
     height: 40px;
     position: relative;
@@ -234,28 +238,49 @@ body {
     margin-left: 10px;
   }
 
-/*** WELCOME/HOME STYLING ***/
+  @media only screen and (max-width: 401px) {
+    .playerSongData{
+      display:none;
+    }
+    .playerSongImg{
+      display:none;
+  }
+}
 
+
+/*** WELCOME/HOME STYLING ***/
+#container3{
+  width: 100%;
+  position: relative;
+}
 
 #homemain {
   width: 100%;
   padding-top: 30px;
-  height: 35vh;
-  position: relative;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
 }
 
 
 #homedefault {
   padding-top: 20px;
+  z-index: 1;
+  min-height: 200;
 }
 #homedefault > * {
   margin-left: 20px;
 }
 
-#currentInfo {
+#currentHomeData {
   position: relative;
-  margin-left: 20px;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  justify-content: space-between;
+}
+
+#currentInfo {
   color: #eee;
   display: block;
   padding: 10px;
@@ -269,20 +294,13 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-
-@media only screen and (min-width: 401px) {
-  #svgCover {
-    height: 40vh;
-  }
-  #svgCoverRect {
-    height: 40vh;
-  }
-}
-
-#svgCover {
-  width: 100%;
+#svgBackground{
   position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
 }
+
   
 /*#currentCover {
   -webkit-box-reflect: below 1px -webkit-gradient( linear, left top, left bottom, from(transparent), color-stop(80%, transparent), to(rgba(250, 250, 250, 1)));
@@ -291,45 +309,26 @@ body {
 
 @media only screen and (min-width: 761px) {
   #currentCover {
-      height: 200px;
-      top: -130px;
-      position: relative;
-      float: right;
-      margin-right: 50px;
-      border-radius: 15px;
-      box-shadow: 0px 5px 20px #222;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px #222;
     }
   }
 
 @media only screen and (max-width: 760px) {
   #currentCover {
-    position: relative;
-    margin-left: 195px;
     height: 120px;
-    top: -138px;
     border-radius: 10px;
     box-shadow: 0px 2.5px 10px #222;
   }
-  #songmain {
-    margin-top: 36px;
-  }
 }
 
 
-
-@media only screen and (max-width: 400px) {
-  #homemain > #svgCover {
-    height: 45vh;
-  }
-  
-  #homemain > #svgCoverRect {
-    height: 45vh;
-  }
-
-  #homemain {
-    height: 35vh;
-  }
+.dancers{
+  position: absolute;
+  z-index: 2;
 }
+
 
 
 
@@ -340,6 +339,8 @@ body {
 /*** SONGS STYLING ***/
 
 #songmain {
+  position: relative;
+  z-index: 3;
   width: 100%;
   height: 350px;
   border-bottom: 1px solid #ccc;
@@ -386,7 +387,6 @@ body {
   width: 100%;
   height: 350px;
   padding-top: 35px;
-  
   border-bottom: 1px solid #ccc;
 }
 

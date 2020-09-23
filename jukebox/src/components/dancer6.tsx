@@ -6,7 +6,7 @@ import '../resources/styling/dancers_design.css';
 class Dancer6 extends React.Component{
     render() {
       return(
-        <svg width="300" y="-10"x="35" height="500" viewBox="0 0 854 646" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="dancers" width="300" y="-10"x="35" height="500" viewBox="0 0 854 646" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="dancer6">
           <g id="surface6">
           <path id="Vector" opacity="0.1" d="M423 640.485C643.914 640.485 823 620.229 823 595.242C823 570.256 643.914 550 423 550C202.086 550 23 570.256 23 595.242C23 620.229 202.086 640.485 423 640.485Z" fill="#6C63FF"/>
