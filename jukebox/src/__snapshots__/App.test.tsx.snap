@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    id="navbar"
+  >
+    <div
+      className="navelements"
+    >
+      <a
+        href="#main"
+        id="jukeboxbutton"
+      >
+        <p>
+          JukeBox
+        </p>
+      </a>
+      <a
+        className="navbuttons"
+        href="#main"
+      >
+        <p>
+          Home
+        </p>
+      </a>
+      <a
+        className="navbuttons"
+        href="#songmain"
+      >
+        <p>
+          Songs
+        </p>
+      </a>
+      <a
+        className="navbuttons"
+        href="#infomain"
+      >
+        <p>
+          Info
+        </p>
+      </a>
+    </div>
+  </div>,
+  <div
+    id="main"
+  >
+    <div
+      id="homemain"
+    >
+      <h1>
+        Welcome to JukeBox
+      </h1>
+      <p>
+         Here we have a wide selection of songs available for karaoke usage. Click "Songs" in the menu or scroll down to begin!
+      </p>
+    </div>
+    <div
+      id="songmain"
+    >
+      <h1>
+        Songs
+      </h1>
+      <p>
+        Here is our library of available songs.
+      </p>
+      <div
+        className="songlist"
+      />
+    </div>
+    <div
+      id="player"
+    >
+      <div
+        className="playerElements"
+      >
+        <button
+          className="playerBtns"
+          onClick={[Function]}
+        >
+          <img
+            id="playbutton"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "play.svg",
+              }
+            }
+          />
+        </button>
+        <div
+          className="playerTime"
+        >
+          <p>
+            0:00
+          </p>
+        </div>
+        <div
+          className="progressBar"
+        >
+          <input
+            className="invisibleSlider"
+            max="100"
+            min="0"
+            onClick={[Function]}
+            type="range"
+          />
+          <div
+            className="progressDot"
+            style={
+              Object {
+                "marginLeft": "-1%",
+              }
+            }
+          />
+          <div
+            id="progressLineBackground"
+          >
+            <div
+              id="progressLine"
+              style={
+                Object {
+                  "width": "0%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="playerTime"
+        >
+          <p>
+            0:00
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      id="footermain"
+    >
+      <h2>
+        Created By:
+      </h2>
+      <p>
+        Haakon, Kaspar og Tore.
+      </p>
+      <label
+        className="darkswitch"
+      >
+        <input
+          id="switch"
+          type="checkbox"
+        />
+        <span
+          className="slider round"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;

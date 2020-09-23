@@ -12,8 +12,7 @@ import Footer from "./components/footer";
 import Player from "./components/player";
 
 
-import {Provider} from './Context'
-import Index from './components/Index';
+import {Provider} from './context'
 
 interface myState {
   currentTrackID: number

@@ -1,42 +1,37 @@
-import React, {Component} from "react";
+import React, {Component, useContext, useEffect, useState} from "react";
 import axios from 'axios';
-import Track from "./Track";
+import {Context} from '../../context'
 import Spinner from "../../resources/media/Spinner";
 
 
-class Lyrics extends Component{
-
-    state = {
-        track: {track: undefined},
-        lyrics: {}
-    }
+const Lyrics = () =>{
+    const [lyrics, setLyrics] = useState("" as string);
+    let {currentTrackIDObject} = useContext(Context)!
 
 
-    componentDidMount() {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=190589562&apikey=${process.env.REACT_APP_MM_KEY}`)
+
+    useEffect(() => {
+        axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=`+ currentTrackIDObject?.currentTrackID+`&apikey=${process.env.REACT_APP_MM_KEY}`)
             .then(res => {
-                console.log(res.data);
-                this.setState({ lyrics: res.data.message.body.lyrics_body});
-
-                return axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?commontrack_id=5920049&apikey=${process.env.REACT_APP_MM_KEY}`)
-            })
-            .then(res => {
-                this.setState({track: res.data.message.body.track})
+                // console.log(res.data.message.body.lyrics.lyrics_body);
+                let tempLyrics = (res.data.message.body.lyrics.lyrics_body).split("...")
+                console.log(tempLyrics[0])
+                // setLyrics(res.data.message.body.lyrics.lyrics_body);
             })
             .catch(err => console.log(err))
-    }
+    }, [currentTrackIDObject?.currentTrackID])
+    console.log(lyrics)
 
-    render() {
-        const {track, lyrics} = this.state;
-        if( track === undefined ||
-            lyrics === undefined ||
-            Object.keys(track).length === 0 ||
-            Object.keys(lyrics).length === 0){
-            return <Spinner />
-        }else{
-            return <h1>data returned</h1>
-        }
-    }
+    return(
+        <div id="lyricsmain">
+            <h1>Lyrics</h1>
+            <div>
+                <p>
+                    {lyrics}
+                </p>
+            </div>
+        </div>
+    )
 }
 
 export default Lyrics;

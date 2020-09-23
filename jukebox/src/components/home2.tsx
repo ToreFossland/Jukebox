@@ -1,13 +1,14 @@
 import React, {useContext, useState} from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
-import {Context} from '../Context';
+import {Context} from '../context';
 import Dancer from '../components/dancer';
 import Dancer2 from '../components/dancer2';
 import Dancer3 from '../components/dancer3';
 import Dancer4 from '../components/dancer4';
 import Dancer5 from '../components/dancer5';
 import Dancer6 from '../components/dancer6';
+import Lyrics from '../components/tracks/Lyrics'
 
 
 const Home2 = () => {
@@ -46,8 +47,7 @@ const renderFunction = ()=>{
         <p id="currentSong">One More Time</p>
         <p id="currentArtist">by Daft Punk</p>
       </div>
-      <img id="currentCover" src={require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")}></img>
-      
+      <img id="currentCover" src={require("../resources/media/img/" + currentTrackIDObject?.currentTrackID + ".jpg")}/>
     </div>
   );}
 
