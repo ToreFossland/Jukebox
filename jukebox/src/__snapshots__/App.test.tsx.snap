@@ -20,6 +20,7 @@ exports[`renders correctly 1`] = `
         id="jukeboxbutton"
       >
         <img
+          alt="Img"
           src="jukebox_logo_bigger.png"
         />
         <p>
@@ -348,5 +349,187 @@ exports[`renders correctly 2`] = `
   <div
     className="songlist"
   />
+</div>
+`;
+
+exports[`renders correctly 3`] = `
+<div
+  id="infomain"
+  style={
+    Object {
+      "background": undefined,
+      "color": undefined,
+    }
+  }
+>
+  <h1>
+    Info
+  </h1>
+  <p>
+     Press Dua Lipa's head, torso or tonga to change their color!
+  </p>
+</div>
+`;
+
+exports[`renders correctly 4`] = `
+<div
+  id="dancermain"
+  style={
+    Object {
+      "background": undefined,
+      "borderColor": undefined,
+      "color": undefined,
+    }
+  }
+>
+  <h1>
+    Dancers
+  </h1>
+  <p>
+    Click on the dancer you want to see on top of the screen!
+  </p>
+  <div
+    className="dancerlist"
+  >
+    <div>
+      <img
+        onClick={[Function]}
+        src="dancer1.png"
+      />
+      <p>
+        Effect: clickable!
+      </p>
+    </div>
+    <div>
+      <img
+        onClick={[Function]}
+        src="dancer2.png"
+      />
+      <p>
+        Effect: clickable!
+      </p>
+    </div>
+    <div>
+      <img
+        onClick={[Function]}
+        src="dancer3.png"
+      />
+      <p>
+        Effect: clickable!
+      </p>
+    </div>
+    <div>
+      <img
+        onClick={[Function]}
+        src="dancer4.png"
+      />
+      <p>
+        Effect: hoverable!
+      </p>
+    </div>
+    <div>
+      <img
+        onClick={[Function]}
+        src="dancer5.png"
+      />
+      <p>
+        Effect: hoverable!
+      </p>
+    </div>
+    <div>
+      <img
+        onClick={[Function]}
+        src="dancer6.png"
+      />
+      <p>
+        Effect: hoverable!
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly 5`] = `
+<div
+  id="navbar"
+>
+  <div
+    className="navelements"
+  >
+    <a
+      href="#main"
+      id="jukeboxbutton"
+    >
+      <img
+        alt="Img"
+        src="jukebox_logo_bigger.png"
+      />
+      <p>
+        JukeBox
+      </p>
+    </a>
+    <a
+      className="navbuttons"
+      href="#songmain"
+    >
+      <p>
+        Songs
+      </p>
+    </a>
+    <a
+      className="navbuttons"
+      href="#dancermain"
+    >
+      <p>
+        Dancers
+      </p>
+    </a>
+    <a
+      className="navbuttons"
+      href="#infomain"
+    >
+      <p>
+        Info
+      </p>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`renders correctly 6`] = `
+<div
+  id="footermain"
+>
+  <h2>
+    Created By:
+  </h2>
+  <p>
+    Haakon, Kaspar og Tore.
+  </p>
+  <button
+    id="pageThemeButton"
+    onClick={[Function]}
+  >
+    Change Theme
+  </button>
+</div>
+`;
+
+exports[`renders correctly 7`] = `
+<div
+  id="lyricsmain"
+>
+  <h1>
+    Lyrics
+  </h1>
+  <div
+    id="lyricsText"
+  >
+    <p
+      id="hore"
+    >
+      
+    </p>
+  </div>
 </div>
 `;

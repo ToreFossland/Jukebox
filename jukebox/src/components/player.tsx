@@ -1,5 +1,4 @@
 import React, {useState, useContext, useEffect} from 'react';
-import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 import {Context} from '../context'
 
@@ -8,7 +7,7 @@ const Player = () => {
   const [progress, setProgress] = useState(0)
   const [duration, setDuration] = useState("0:00")
   const [currentTime, setCurrentTime] = useState("0:00")
-  const [myAudio, setMyAudio] = useState(new Audio())
+  const [myAudio] = useState(new Audio())
   const [playBtn, setPlayBtn] = useState("play")
   const [oldCurrentTrackID, setOldCurrentTrackID] = useState(0)
   let {currentTrackIDObject, currentTrackNameObject, currentTrackArtistObject} = useContext(Context)!
