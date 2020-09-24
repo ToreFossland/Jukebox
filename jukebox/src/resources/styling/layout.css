@@ -438,8 +438,16 @@ body {
   height: 350px;
   padding-top: 35px;
   padding-bottom: 50px;
-  padding-left: 20px;
+  padding-left: 0px;
   border-bottom: 10px solid transparent;
+}
+
+#dancermain > p {
+  margin-left: 20px;
+}
+
+#dancermain > h1 {
+  margin-left: 20px;
 }
 
 
@@ -453,6 +461,10 @@ body {
 
 .dancerlist > div{
   margin-right: 10px;
+}
+
+.dancerlist > div:first-child {
+  margin-left: 20px;
 }
 
 .dancerlist > div > img {
