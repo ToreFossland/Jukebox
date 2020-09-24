@@ -284,7 +284,6 @@ body {
   position: relative;
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
 }
 
 
@@ -318,6 +317,11 @@ body {
 @media  only screen and (min-width: 701px) {
   #currentHomeData {
     flex-direction: row;
+    margin-top: 20px;
+  }
+
+  #currentHomeData {
+    margin-left: 50px;
   }
 
   #currentInfo {
@@ -331,7 +335,7 @@ body {
   }
 
   #currentInfo {
-    min-width: 100px;
+    min-width: 160px;
     width: 35vw;
   }
 
