@@ -1,4 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
+import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 import {Context} from '../context'
 
@@ -36,6 +37,7 @@ const progressBar = () =>{
  }
 
  useEffect(() => {
+   console.log("horemann")
   if(currentTime != null ) {
     myAudio.currentTime = parseInt(currentTime);
   }

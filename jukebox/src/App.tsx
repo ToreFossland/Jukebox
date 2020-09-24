@@ -1,8 +1,10 @@
 import React, {} from 'react';
+import ReactDOM from 'react-dom';
 import './resources/styling/layout.css';
 import './App.css';
 import NavBar from "./components/navbar";
 import Home from "./components/home";
+import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
 import Player from "./components/player";
@@ -26,7 +28,7 @@ class App extends React.Component<myProps, myState> {
     this.state = {
         trackID: 0,
         btheme: "#fff",
-        bodyTheme: "#eee",
+        bodyTheme: "#eee;",
         ctheme: "#333",
         dancerIndex: 0
     }
@@ -58,12 +60,12 @@ componentDidMount() {
   
 }
 changeTheme() {
-  const newbTheme = this.state.btheme === "#fff" ? "#555" : "#fff";
-  const newcTheme = this.state.ctheme === "#333" ? "#eee" : "#333";
-  const newBodyTheme = this.state.bodyTheme === "#111" ? "#eee" : "#111";
-  this.setState({btheme: newbTheme});
+  const newbTheme = this.state.btheme == "#fff" ? "#555" : "#fff";
+  const newcTheme = this.state.ctheme == "#333" ? "#eee" : "#333";
+  const newBodyTheme = this.state.bodyTheme == "#111" ? "#eee" : "#111";
   this.setState({ctheme: newcTheme});
   this.setState({bodyTheme: newBodyTheme});
+  this.setState({btheme: newbTheme});
   localStorage.setItem('btheme', newbTheme);
   localStorage.setItem('ctheme', newcTheme);
   localStorage.setItem('bodyTheme', newBodyTheme);
@@ -81,8 +83,8 @@ changeDancer(index: number) {
         <div className="App" style={{background: this.state.bodyTheme}}>
           <NavBar/>
           <div id="main">
-            <Home dancerIndex={this.state.dancerIndex}  btheme={this.state.btheme} ctheme={this.state.ctheme} bordertheme={this.state.bodyTheme}/>
-            <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} bordertheme={this.state.bodyTheme} onChange={this.changeDancer} />
+            <Home dancerIndex={this.state.dancerIndex}  btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+            <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} onChange={this.changeDancer} />
             <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           </div>
           <Footer onChange={this.changeTheme}/>
