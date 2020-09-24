@@ -24,6 +24,7 @@ const Lyrics = () =>{
             <div id="lyricsText">
                 <p id="hore">
                     {lyrics}
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </p>
             </div>
         </div>
