@@ -259,7 +259,7 @@ body {
   display: flex;
   z-index: 1;
   flex-direction: column;
-  border-bottom: 10px solid;
+  border-bottom: 10px solid transparent;
 }
 
 
@@ -387,7 +387,7 @@ body {
   height: 350px;
   padding-top: 35px;
   padding-bottom: 50px;
-  border-bottom: 10px solid;
+  border-bottom: 10px solid transparent;
 }
 
 #dancermain > * {
