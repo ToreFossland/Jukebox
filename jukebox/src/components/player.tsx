@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import '../resources/styling/layout.css';
 import {Context} from '../context'
-
+//test
 
 const Player = () => {
   const [progress, setProgress] = useState(0)
