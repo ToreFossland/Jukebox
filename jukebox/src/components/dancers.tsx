@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
-import Dancer from './dancer';
+import Dancer from './dancers/dancer1';
 
 
 const Dancers = ({...props}) => {
@@ -11,7 +11,7 @@ const Dancers = ({...props}) => {
   }
   
       return(
-        <div id="dancermain" style={{background: props.btheme, color: props.ctheme}}>
+        <div id="dancermain" style={{background: props.btheme, borderColor:props.bordertheme, color: props.ctheme}}>
             <h1>Dancers</h1>
             <p>Click on the dancer you want to see on top of the screen!</p>
             <div className="dancerlist">

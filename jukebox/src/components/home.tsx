@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
 import {Context} from '../context';
 import Songs from "./songs";
-import Dancer from './dancer';
-import Dancer2 from './dancer2';
-import Dancer3 from './dancer3';
-import Dancer4 from './dancer4';
-import Dancer5 from './dancer5';
-import Dancer6 from './dancer6';
+import Dancer1 from './dancers/dancer1';
+import Dancer2 from './dancers/dancer2';
+import Dancer3 from './dancers/dancer3';
+import Dancer4 from './dancers/dancer4';
+import Dancer5 from './dancers/dancer5';
+import Dancer6 from './dancers/dancer6';
 import Lyrics from './lyrics';
 
 const Home = ({...props}) => {
@@ -18,7 +18,7 @@ const Home = ({...props}) => {
       console.log(trackList)
 
   
-  const alldancers = [<Dancer/>, <Dancer2/>, <Dancer3/>, <Dancer4/>, <Dancer5/>, <Dancer6/>];
+  const alldancers = [<Dancer1/>, <Dancer2/>, <Dancer3/>, <Dancer4/>, <Dancer5/>, <Dancer6/>];
 
 
 const renderFunction = ()=>{
@@ -60,7 +60,7 @@ const renderFunction = ()=>{
             </defs>
             <rect width="100%" height="100%" fill="url(#gradient-0)"/>
           </svg>
-          <div id="homemain">
+          <div id="homemain" style={{borderColor:props.bordertheme}}>
             {renderFunction()}
             <Songs/>
           </div>

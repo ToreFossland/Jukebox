@@ -4,7 +4,6 @@ import './resources/styling/layout.css';
 import './App.css';
 import NavBar from "./components/navbar";
 import Home from "./components/home";
-import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
 import Player from "./components/player";
@@ -83,8 +82,8 @@ changeDancer(index: number) {
         <div className="App" style={{background: this.state.bodyTheme}}>
           <NavBar/>
           <div id="main">
-            <Home dancerIndex={this.state.dancerIndex}  btheme={this.state.btheme} ctheme={this.state.ctheme}/>
-            <Dancers btheme={this.state.btheme} ctheme={this.state.ctheme} onChange={this.changeDancer} />
+            <Home dancerIndex={this.state.dancerIndex} bordertheme={this.state.bodyTheme}  btheme={this.state.btheme} ctheme={this.state.ctheme}/>
+            <Dancers btheme={this.state.btheme} bordertheme={this.state.bodyTheme} ctheme={this.state.ctheme} onChange={this.changeDancer} />
             <Info btheme={this.state.btheme} ctheme={this.state.ctheme}/>
           </div>
           <Footer onChange={this.changeTheme}/>

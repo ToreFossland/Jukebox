@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import { setConstantValue } from 'typescript';
-import '../resources/styling/dancers_design.css';
+import '../../resources/styling/dancers_design.css';
 
 
 //Dua Lipa colors
@@ -13,7 +13,7 @@ const red = "#DB4114";
 const green = "#81DB46";
 
 
- const Dancer = () =>{
+ const Dancer1 = () =>{
 
   const [hairColor, setHairColor] = useState("yellow")
   const [topColor, setTopColor] = useState("red")
@@ -89,4 +89,4 @@ const green = "#81DB46";
       );
     }
 
-    export default Dancer;
+    export default Dancer1;
