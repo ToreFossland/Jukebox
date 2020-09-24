@@ -8,7 +8,8 @@ const Songs = () =>{
 
 
   let {trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject} = useContext(Context)!
-  
+  //Kjøres en gang og sjekker hvilke data som er i local storage.
+  //
   useEffect(() => {
     let currentTrackID = localStorage.getItem("currentTrackID")
     let currentTrackName = localStorage.getItem("currentTrackName")
@@ -18,7 +19,7 @@ const Songs = () =>{
       setCurrentSongData(parseInt(currentTrackID), currentTrackName, currentTrackAlbum, currentTrackArtist)
     }
     
-  }, [currentTrackIDObject?.currentTrackID]);
+  }, []);
 
   const setCurrentSongData = (trackID:Number, name:string, album:string, artist:string) =>{
 

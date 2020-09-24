@@ -76,7 +76,7 @@ useEffect(() => {
 }, [currentTrackIDObject?.currentTrackID]);
 
 
-  
+//Pauser/Starter sangen. Kjøres når du klikker på playbutton.
 const handlePlayer = ()=>{
   if(myAudio.paused){
     myAudio.play();
@@ -85,6 +85,8 @@ const handlePlayer = ()=>{
   }
 }
 
+//hjelpemetode for å formatere sekunder til minutter og sekunder.
+//returnerer som string.
   const convertSecondsToMinutesAndSeconds = (seconds:number)=>{
     var minutes = Math.floor(seconds/60);
     var seconds = Math.floor(seconds - minutes * 60);
@@ -95,7 +97,8 @@ const handlePlayer = ()=>{
 
 
 
-
+//Dersom audioobjektet er klar til å spille av lyd vil denne sette currentTime til angitt tid.
+//Tiden sendes ved hjelp av en slider som returnerer en verdi.
   const handleProgressBarClick = (e:any)=>{
     if(myAudio.readyState===4){
       myAudio.currentTime = e.target.value/100 * myAudio.duration
