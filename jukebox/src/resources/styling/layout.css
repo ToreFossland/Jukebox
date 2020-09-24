@@ -39,10 +39,10 @@ body {
     text-align: center;
     text-decoration: none;
     float: left;
-    padding-left: 10px;
-    padding-right: 30px;
     height: 50px;
-    width: 90px;
+    width: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 24px;
     border-right: 1px solid #222;
     border-left: 1px solid #222;
@@ -51,6 +51,7 @@ body {
   
   #jukeboxbutton > p {
     margin-top: 10px;
+    margin-left: 0px;
   }
 
   #jukeboxbutton > img {
@@ -67,8 +68,11 @@ body {
     width: 80px;
     height: 50px;
     border-right: 1px solid #222;
-    text-align: center;
     font-size: 15px;
+  }
+
+  .navbuttons >p  {
+    margin-left: 0px;
   }
   
   .navbuttons:hover {
@@ -315,6 +319,7 @@ body {
 
 #lyricsmain{
   z-index: 8;
+  padding-left: 20px;
 }
 
 #lyricsText{
@@ -328,7 +333,7 @@ body {
   -webkit-mask-size: 100% 100%;
   height: 330px;
   -webkit-mask-repeat: no-repeat;
-  font-size: inherit;
+  font-size: 14px;
 
 }
 
@@ -382,11 +387,24 @@ body {
   height: 350px;
 }
 
+#songmain > p {
+  margin-left: 20px;
+}
+
+#songmain > h1 {
+  margin-left: 20px;
+}
+
+
 .songlist {
-    width: 100%;
-    display: flex;
-    overflow: auto;
-    white-space: nowrap;
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.songlist > .songLink:first-child {
+  margin-left: 20px;
 }
 
 .songLink{
@@ -418,7 +436,7 @@ body {
   height: 350px;
   padding-top: 35px;
   padding-bottom: 50px;
-  padding-left: 10px;
+  padding-left: 20px;
   border-bottom: 10px solid transparent;
 }
 
@@ -447,7 +465,7 @@ body {
 
 #infomain {
   height: 300px;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 
