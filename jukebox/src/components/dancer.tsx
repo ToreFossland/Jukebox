@@ -1,5 +1,7 @@
 import React, { useEffect, useState} from 'react';
-import '../../resources/styling/dancers_design.css';
+import ReactDOM from 'react-dom';
+import { setConstantValue } from 'typescript';
+import '../resources/styling/dancers_design.css';
 
 
 //Dua Lipa colors
@@ -11,11 +13,11 @@ const red = "#DB4114";
 const green = "#81DB46";
 
 
- const Dancer1 = () =>{
+ const Dancer = () =>{
 
-  const [hairColor, setHairColor] = useState("yellow");
-  const [topColor, setTopColor] = useState("red");
-  const [bottomColor, setBottomColor] = useState("blue");
+  const [hairColor, setHairColor] = useState("yellow")
+  const [topColor, setTopColor] = useState("red")
+  const [bottomColor, setBottomColor] = useState("blue")
 
   useEffect(() => {
     var hair = localStorage.getItem('hair1');
@@ -36,19 +38,19 @@ const green = "#81DB46";
   },[]);
 
     const changeHair = () => {
-      const newColor = hairColor === purple ? yellow : purple;
+      const newColor = hairColor == purple ? yellow : purple;
       localStorage.setItem('hair1', newColor);
       setHairColor(newColor);
     }
 
     const changeTop = () => {
-      const newColor = topColor === blue ? white : blue;
+      const newColor = topColor == blue ? white : blue;
       localStorage.setItem('top1', newColor);
       setTopColor(newColor);
     }
 
     const changeBottom = () => {
-      const newColor = bottomColor === red ? green : red;
+      const newColor = bottomColor == red ? green : red;
       localStorage.setItem('bottom1', newColor);
       setBottomColor(newColor);
     }
@@ -87,4 +89,4 @@ const green = "#81DB46";
       );
     }
 
-    export default Dancer1;
+    export default Dancer;

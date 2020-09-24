@@ -1,5 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
+import Dancer from './dancer';
 
 interface myProps {
   btheme: string,

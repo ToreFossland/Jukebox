@@ -1,8 +1,10 @@
 import React from 'react';
-import '../../resources/styling/dancers_design.css';
+import ReactDOM from 'react-dom';
+import '../resources/styling/dancers_design.css';
 
 
-const Dancer5 = () =>{
+class Dancer5 extends React.Component{
+    render() {
       return(
         <svg className="dancers" width="300" height="500" x="35" y="-10" viewBox="0 0 1114 812" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="dancer5" clip-path="url(#clip0)">
@@ -33,5 +35,6 @@ const Dancer5 = () =>{
 
       );
     }
+  }
 
   export default Dancer5;
