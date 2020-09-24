@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import '../resources/styling/layout.css';
-import {Context} from '../context'
 
 const Footer = ({...props}) => {
 

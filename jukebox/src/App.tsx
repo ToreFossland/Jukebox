@@ -1,10 +1,8 @@
 import React, {} from 'react';
-import ReactDOM from 'react-dom';
 import './resources/styling/layout.css';
 import './App.css';
 import NavBar from "./components/navbar";
 import Home from "./components/home";
-import Songs from "./components/songs";
 import Info from "./components/info";
 import Footer from "./components/footer";
 import Player from "./components/player";
@@ -28,7 +26,7 @@ class App extends React.Component<myProps, myState> {
     this.state = {
         trackID: 0,
         btheme: "#fff",
-        bodyTheme: "#eee;",
+        bodyTheme: "#eee",
         ctheme: "#333",
         dancerIndex: 0
     }
@@ -60,9 +58,9 @@ componentDidMount() {
   
 }
 changeTheme() {
-  const newbTheme = this.state.btheme == "#fff" ? "#555" : "#fff";
-  const newcTheme = this.state.ctheme == "#333" ? "#eee" : "#333";
-  const newBodyTheme = this.state.bodyTheme == "#111" ? "#eee" : "#111";
+  const newbTheme = this.state.btheme === "#fff" ? "#555" : "#fff";
+  const newcTheme = this.state.ctheme === "#333" ? "#eee" : "#333";
+  const newBodyTheme = this.state.bodyTheme === "#111" ? "#eee" : "#111";
   this.setState({ctheme: newcTheme});
   this.setState({bodyTheme: newBodyTheme});
   this.setState({btheme: newbTheme});

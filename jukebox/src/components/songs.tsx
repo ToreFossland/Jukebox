@@ -1,5 +1,4 @@
 import React, {useContext, useEffect} from 'react';
-import ReactDOMs from 'react-dom';
 import {Context} from '../context';
 import '../resources/styling/layout.css';
 
