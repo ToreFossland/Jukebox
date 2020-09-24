@@ -40,7 +40,7 @@ const renderFunction = ()=>{
             </div>
             <div id="currentCover" style={{ backgroundImage: `url(${require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")})` }}></div>
           </div>
-          {alldancers[props.dancerIndex]};
+          {alldancers[props.dancerIndex]}
         </div>
         <Lyrics/>
       </div>
