@@ -55,7 +55,7 @@ const Dancer2 = () => {
       return(
 
 
-        <svg className="dancers" width="300" height="500" x="0" y="5" viewBox="0 0 1111 754" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="dancers" width="800" height="800"viewBox="300 0 600 754" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="dancer2">
         <g id="surface2">
         <path id="Vector" opacity="0.1" d="M646.666 753.935C798.459 753.935 921.512 727.778 921.512 695.512C921.512 663.246 798.459 637.089 646.666 637.089C494.873 637.089 371.821 663.246 371.821 695.512C371.821 727.778 494.873 753.935 646.666 753.935Z" fill="#6C63FF"/>

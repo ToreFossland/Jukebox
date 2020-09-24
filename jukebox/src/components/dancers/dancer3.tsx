@@ -48,7 +48,7 @@ const Dancer3 = () => {
     }
 
       return(
-        <svg className="dancers" width="200" x="80" y="20" height="500" viewBox="0 0 886 763" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="dancers" width="200" height="500" viewBox="-100 0 886 763" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="mello" clipPath="url(#clip0)">
           <g id="head3">
           <path id="Vector" onClick={changeColor}  d="M555.711 476.836C462.723 501.945 371.329 503.721 281.867 477.222C271.35 474.108 264.161 464.874 264.161 454.394V193.058C264.161 181.365 273.058 171.39 285.184 169.488C369.577 156.253 458.981 157.278 552.489 169.983C564.844 171.661 574.016 181.751 574.016 193.626V453.841C574.016 464.541 566.528 473.915 555.711 476.836Z" style={{fill: color}}/>
