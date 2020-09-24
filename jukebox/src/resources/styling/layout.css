@@ -290,7 +290,7 @@ body {
 
 #currentCover {
   position: relative;
-  width: 250px;
+  width: 200px;
   height: 170px;
   border-radius:0px 10px 10px 0;
   box-shadow: 0 2.5px 5px #222;
@@ -320,7 +320,7 @@ body {
   }
 
   #currentInfo {
-    width: 300px;
+    width: 220px;
   }
 }
 
@@ -330,8 +330,8 @@ body {
   }
 
   #currentInfo {
-    max-width: 300;
-    width: 80vw;
+    min-width: 100px;
+    width: 28vw;
   }
 
 }
