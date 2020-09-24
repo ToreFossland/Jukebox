@@ -4,7 +4,7 @@ import {Context} from '../context';
 import '../resources/styling/layout.css';
 
 
-const Songs = ({...props}) =>{
+const Songs = () =>{
 
 
   let {trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject} = useContext(Context)!

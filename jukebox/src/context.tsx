@@ -1,6 +1,7 @@
 import React, {Component, SetStateAction, useEffect, useState} from "react";
 import axios from 'axios';
 
+
 type ContextProps = {
     trackList: Track[] | null,
     currentTrackIDObject:currentTrackIDType,
@@ -52,10 +53,10 @@ export const Provider:React.FC = ({children}) => {
 
     let songID:number[] = [
         //OneMoreTime, SingThemeSong, 
-            103162573, 114669898, 107705824
+            114611205, 114669898, 107705824, 114669898
         ]
 
-    useEffect(() => {
+   /* useEffect(() => {
     const k = [
     {trackID: 103162573, name: "haakon", artist: "kaskads", album: "album"},
     {trackID: 114669898, name: "Kaspar", artist: "Daft punk", album: "album2"},
@@ -64,7 +65,7 @@ export const Provider:React.FC = ({children}) => {
     
     setTrackList(k)
     },[]);
-    /*
+    */
         let apiURL:any[] = [];
         
         songID.forEach(element => {
@@ -72,6 +73,7 @@ export const Provider:React.FC = ({children}) => {
             apiURL.push(axios.get(temp))
         });
        
+
         useEffect(() => {
          axios.all(apiURL).then(axios.spread((...responses) => {
            console.log(responses)
@@ -90,7 +92,7 @@ export const Provider:React.FC = ({children}) => {
 
         })).catch(errors => console.log(errors));
     }, [])
-    */
+    
         return(
             <Context.Provider value = {{ trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject}}>
                 {children}

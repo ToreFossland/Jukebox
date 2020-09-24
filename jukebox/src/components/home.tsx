@@ -9,6 +9,7 @@ import Dancer3 from './dancer3';
 import Dancer4 from './dancer4';
 import Dancer5 from './dancer5';
 import Dancer6 from './dancer6';
+import Lyrics from './lyrics';
 
 const Home = ({...props}) => {
 
@@ -34,11 +35,15 @@ const renderFunction = ()=>{
   
   return(
       <div id="currentHomeData">
-        <div id="currentInfo">
-          <h2> Current Song:</h2>
-          <p>{currentTrackNameObject?.currentTrackName}  - {currentTrackArtistObject?.currentTrackArtist}</p>
-          <p>- {currentTrackAlbumObject?.currentTrackAlbum}</p>
+        <div>
+          <div id="currentInfo">
+            <h2> Current Song:</h2>
+            <h3>{currentTrackNameObject?.currentTrackName}  - {currentTrackArtistObject?.currentTrackArtist}</h3>
+            <h3>- {currentTrackAlbumObject?.currentTrackAlbum}</h3>
+          </div>
+          {alldancers[props.dancerIndex]}
         </div>
+        <Lyrics/>
         <img id="currentCover" src={require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")}></img>
       </div>
   );}
@@ -50,13 +55,11 @@ const renderFunction = ()=>{
               <linearGradient id="gradient-0" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#DB3A32"stopOpacity="1" />
                 <stop offset="50%" stopColor="#FAD500"stopOpacity="1" />
-                <stop offset="100%" stopColor="#FAD500" stopOpacity="0" /> />
+                <stop offset="100%" stopColor="#FAD500" stopOpacity="0" />
               </linearGradient>
             </defs>
             <rect width="100%" height="100%" fill="url(#gradient-0)"/>
           </svg>
-          {alldancers[props.dancerIndex]}
-
           <div id="homemain">
             {renderFunction()}
             <Songs/>

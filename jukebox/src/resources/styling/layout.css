@@ -80,10 +80,8 @@ body {
     max-width: 1200px;
     position: relative;
     background-color: #ffffff;
-    height: 1500px;
     margin: auto;
-    margin-top: 0px;
-    padding-top: 20px;
+    padding-top: 50px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -227,18 +225,21 @@ body {
   .playerSongData{
     display: block;
     min-width: 150px;
+    max-width: 150px;
     height: 40px;
     position: relative;
-    margin: auto;
     text-align: left;
   }
   .playerSongData > p{
+    overflow: auto;  
+    white-space: nowrap;
+    text-overflow: ellipsis;
     margin: auto;
     margin-bottom: 5px;
     margin-left: 10px;
   }
 
-  @media only screen and (max-width: 401px) {
+  @media only screen and (max-width: 501px) {
     .playerSongData{
       display:none;
     }
@@ -251,15 +252,18 @@ body {
 /*** WELCOME/HOME STYLING ***/
 #container3{
   width: 100%;
-  position: relative;
+  position: relative;  
 }
 
 #homemain {
+  position: relative;
+  margin-top: 20px;
   width: 100%;
-  padding-top: 30px;
   display: flex;
   z-index: 1;
   flex-direction: column;
+  border-bottom: 1px solid #ccc;
+
 }
 
 
@@ -275,17 +279,40 @@ body {
 #currentHomeData {
   position: relative;
   display: flex;
+  width: 100%;
+  justify-content: space-evenly;
   flex-direction: row;
-  margin: 20px;
-  justify-content: space-between;
 }
+
+#lyricsmain{
+  z-index: 8;
+}
+
+#lyricsText{
+  white-space: pre;
+  overflow-y:scroll;
+  -webkit-mask-image: -webkit-gradient(
+    linear, left top, left bottom, 
+    color-stop(0.00,  rgba(0,0,0,1)),
+    color-stop(0.85,  rgba(0,0,0,1)),
+    color-stop(1.00,  rgba(0,0,0,0)));
+  -webkit-mask-size: 100% 100%;
+  height: 330px;
+  -webkit-mask-repeat: no-repeat;
+  font-size: inherit;
+
+}
+
+
 
 #currentInfo {
   color: #eee;
+  font-weight: bold;
   display: block;
   padding: 10px;
   border-radius: 10px;
   width: 315px;
+  height: 150px;
   transition: 0.3s;
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -325,8 +352,12 @@ body {
 
 
 .dancers{
-  position: absolute;
+  position: relative;
+  margin: auto;
   z-index: 2;
+  padding: 0;
+  width: 200px;
+  height:200px;
 }
 
 
@@ -343,18 +374,16 @@ body {
   z-index: 3;
   width: 100%;
   height: 350px;
-  border-bottom: 1px solid #ccc;
-  padding-top: 50px;
+
+  margin-left:10px;
 }
 
-#songmain > * {
-  margin-left: 20px;
-}
 .songlist {
-    width: 90%;
+    width: 100%;
     display: flex;
     overflow: auto;
     white-space: nowrap;
+  
 }
 
 .songLink{
@@ -377,6 +406,7 @@ body {
 
 .songLink > p{
   margin: 0;
+  white-space: normal;
   font-weight: bold;
 }
 
@@ -384,31 +414,32 @@ body {
 /*** DANCERLIST STYLING ***/
 
 #dancermain {
-  width: 100%;
+  position:relative;
   height: 350px;
   padding-top: 35px;
   border-bottom: 1px solid #ccc;
 }
-
-#dancermain > * {
-  margin-left: 20px;
+#dancermain > *{
+  margin-left:10px;
 }
+
+
 .dancerlist {
-  width: 90%;
+  width: 100%;
   display: flex;
   overflow: auto;
   white-space: nowrap;
 }
 
-.dancerlist > div > img {
-  width: 150px;
-  height: 150px;
+.dancerlist > div{
   margin-right: 10px;
 }
 
-.dancerlist > div > p {
-  margin-left: 10px;
+.dancerlist > div > img {
+  width: 150px;
+  height: 150px;
 }
+
 
 
 
