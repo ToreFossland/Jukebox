@@ -1,9 +1,11 @@
 import React, {useState, useContext, useEffect} from 'react';
 import '../resources/styling/layout.css';
 import {Context} from '../context'
-//test
+
+
 
 const Player = () => {
+  //Henter globale variabler fra Context og setter opp lokale variabler for player.
   const [progress, setProgress] = useState(0)
   const [duration, setDuration] = useState("0:00")
   const [currentTime, setCurrentTime] = useState("0:00")
@@ -12,12 +14,12 @@ const Player = () => {
   const [oldCurrentTrackID, setOldCurrentTrackID] = useState(0)
   let {currentTrackIDObject, currentTrackNameObject, currentTrackArtistObject} = useContext(Context)!
 
-//Når player mountes vil denne funksjonen kjøres hvert sekund frem til player unmountes
+//Oppdaterer alle variablene som brukes for å tegne opp progresjonsbaren i player. 
+//Altså den blå streken og tiden
 const progressBar = () =>{
   var duration = myAudio.duration
   var currentTime = myAudio.currentTime;
   var progress = (currentTime/duration) * 100
-
 
   localStorage.setItem('currentTime', JSON.stringify(myAudio.currentTime));
 
@@ -34,9 +36,9 @@ const progressBar = () =>{
     setCurrentTime(convertSecondsToMinutesAndSeconds(currentTime))
     setProgress(progress)
  }
-
+//Kjører en gang og gjør at progress bar kjører med et intervall på 200ms.
+//Setter currenTime dersom den har funnet noe i localStorage.
  useEffect(() => {
-   console.log("horemann")
   if(currentTime != null ) {
     myAudio.currentTime = parseInt(currentTime);
   }
@@ -50,7 +52,8 @@ const progressBar = () =>{
 const delay = (ms: number) => {
   return new Promise( resolve => setTimeout(resolve, ms) );
 }
-
+//En async funkjon som henter currentID og bruker denne til å sette sette sourcen til audioObjektet.
+//KJøres hver gang currentID endres. I gui vil dette bety at den kjøres når du klikker på en sang i home komponenten.
 useEffect(() => {
   (async () => { 
     if((currentTrackIDObject?.currentTrackID !== oldCurrentTrackID)){
