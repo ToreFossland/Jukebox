@@ -53,7 +53,7 @@ export const Provider:React.FC = ({children}) => {
 
     let songID:number[] = [
         //OneMoreTime, SingThemeSong, 
-            114611205, 114669898, 107705824, 114669898
+            114611205, 114669898, 107705824
         ]
 
    /* useEffect(() => {

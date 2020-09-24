@@ -20,9 +20,9 @@ const green = "#81DB46";
   const [bottomColor, setBottomColor] = useState("blue")
 
   useEffect(() => {
-    var hair = localStorage.getItem('hair1');
-    var top = localStorage.getItem('top1');
-    var bottom = localStorage.getItem('bottom1');
+    var hair = sessionStorage.getItem('hair1');
+    var top = sessionStorage.getItem('top1');
+    var bottom = sessionStorage.getItem('bottom1');
     if(hair != null) {
       setHairColor(hair);
     }
@@ -39,19 +39,19 @@ const green = "#81DB46";
 
     const changeHair = () => {
       const newColor = hairColor == purple ? yellow : purple;
-      localStorage.setItem('hair1', newColor);
+      sessionStorage.setItem('hair1', newColor);
       setHairColor(newColor);
     }
 
     const changeTop = () => {
       const newColor = topColor == blue ? white : blue;
-      localStorage.setItem('top1', newColor);
+      sessionStorage.setItem('top1', newColor);
       setTopColor(newColor);
     }
 
     const changeBottom = () => {
       const newColor = bottomColor == red ? green : red;
-      localStorage.setItem('bottom1', newColor);
+      sessionStorage.setItem('bottom1', newColor);
       setBottomColor(newColor);
     }
       return(

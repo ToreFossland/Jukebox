@@ -18,7 +18,7 @@ const Songs = () =>{
       setCurrentSongData(parseInt(currentTrackID), currentTrackName, currentTrackAlbum, currentTrackArtist)
     }
     
-  }, []);
+  }, [currentTrackIDObject?.currentTrackID]);
 
   const setCurrentSongData = (trackID:Number, name:string, album:string, artist:string) =>{
 

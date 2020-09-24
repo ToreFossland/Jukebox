@@ -11,9 +11,9 @@ const Dancer3 = () => {
 
 
   useEffect(() => {
-    var leftEye = localStorage.getItem('leftEye');
-    var rightEye = localStorage.getItem('rightEye');
-    var body = localStorage.getItem('body3');
+    var leftEye = sessionStorage.getItem('leftEye');
+    var rightEye = sessionStorage.getItem('rightEye');
+    var body = sessionStorage.getItem('body3');
     if(leftEye != null) {
       setLeftEye(leftEye);
     }
@@ -30,20 +30,20 @@ const Dancer3 = () => {
 
     const changeLeftEye = () => {
       const newColor = leftEye === "#FADBAC" ? "#3F3D56" : "#FADBAC";
-      localStorage.setItem('leftEye', newColor);
+      sessionStorage.setItem('leftEye', newColor);
       setLeftEye(newColor);
     }
 
 
     const changeRightEye = () => {
       const newColor = rightEye === "#FADBAC" ? "#3F3D56" : "#FADBAC";
-      localStorage.setItem('rightEye', newColor);
+      sessionStorage.setItem('rightEye', newColor);
       setRightEye(newColor);
     }
 
     const changeColor = () => {
       const newColor = color === "#99DBFF" ? "#CFCCE0" : "#99DBFF";
-      localStorage.setItem('body3', newColor);
+      sessionStorage.setItem('body3', newColor);
       setColor(newColor);
     }
 

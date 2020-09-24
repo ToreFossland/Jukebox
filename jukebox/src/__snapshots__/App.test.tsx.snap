@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-Array [
+<div
+  className="App"
+  style={
+    Object {
+      "background": "#eee;",
+    }
+  }
+>
   <div
     id="navbar"
   >
@@ -12,16 +19,11 @@ Array [
         href="#main"
         id="jukeboxbutton"
       >
+        <img
+          src="jukebox_logo_bigger.png"
+        />
         <p>
           JukeBox
-        </p>
-      </a>
-      <a
-        className="navbuttons"
-        href="#main"
-      >
-        <p>
-          Home
         </p>
       </a>
       <a
@@ -34,6 +36,14 @@ Array [
       </a>
       <a
         className="navbuttons"
+        href="#dancermain"
+      >
+        <p>
+          Dancers
+        </p>
+      </a>
+      <a
+        className="navbuttons"
         href="#infomain"
       >
         <p>
@@ -41,125 +51,302 @@ Array [
         </p>
       </a>
     </div>
-  </div>,
+  </div>
   <div
     id="main"
   >
     <div
-      id="homemain"
+      id="container3"
+      style={
+        Object {
+          "background": "#fff",
+          "color": "#333",
+        }
+      }
     >
-      <h1>
-        Welcome to JukeBox
-      </h1>
-      <p>
-         Here we have a wide selection of songs available for karaoke usage. Click "Songs" in the menu or scroll down to begin!
-      </p>
-    </div>
-    <div
-      id="songmain"
-    >
-      <h1>
-        Songs
-      </h1>
-      <p>
-        Here is our library of available songs.
-      </p>
-      <div
-        className="songlist"
-      />
-    </div>
-    <div
-      id="player"
-    >
-      <div
-        className="playerElements"
+      <svg
+        id="svgBackground"
       >
-        <button
-          className="playerBtns"
-          onClick={[Function]}
-        >
-          <img
-            id="playbutton"
-            src={
-              Object {
-                "ReactComponent": Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "render": [Function],
-                },
-                "__esModule": true,
-                "default": "play.svg",
-              }
-            }
-          />
-        </button>
+        <defs>
+          <linearGradient
+            id="gradient-0"
+            x1="0%"
+            x2="0%"
+            y1="0%"
+            y2="100%"
+          >
+            <stop
+              offset="0%"
+              stopColor="#DB3A32"
+              stopOpacity="1"
+            />
+            <stop
+              offset="50%"
+              stopColor="#FAD500"
+              stopOpacity="1"
+            />
+            <stop
+              offset="100%"
+              stopColor="#FAD500"
+              stopOpacity="0"
+            />
+          </linearGradient>
+        </defs>
+        <rect
+          fill="url(#gradient-0)"
+          height="100%"
+          width="100%"
+        />
+      </svg>
+      <div
+        id="homemain"
+        style={
+          Object {
+            "borderColor": "#eee;",
+          }
+        }
+      >
         <div
-          className="playerTime"
+          id="homedefault"
         >
+          <h1>
+            Welcome to JukeBox
+          </h1>
           <p>
-            0:00
+             Here we have a wide selection of songs available for karaoke usage. Click "Songs" in the menu or scroll down to begin!
           </p>
         </div>
         <div
-          className="progressBar"
+          id="songmain"
         >
-          <input
-            className="invisibleSlider"
-            max="100"
-            min="0"
-            onClick={[Function]}
-            type="range"
-          />
-          <div
-            className="progressDot"
-            style={
-              Object {
-                "marginLeft": "-1%",
-              }
-            }
-          />
-          <div
-            id="progressLineBackground"
-          >
-            <div
-              id="progressLine"
-              style={
-                Object {
-                  "width": "0%",
-                }
-              }
-            />
-          </div>
-        </div>
-        <div
-          className="playerTime"
-        >
+          <h1>
+            Songs
+          </h1>
           <p>
-            0:00
+            Here is our library of available songs.
+          </p>
+          <div
+            className="songlist"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      id="dancermain"
+      style={
+        Object {
+          "background": "#fff",
+          "borderColor": "#eee;",
+          "color": "#333",
+        }
+      }
+    >
+      <h1>
+        Dancers
+      </h1>
+      <p>
+        Click on the dancer you want to see on top of the screen!
+      </p>
+      <div
+        className="dancerlist"
+      >
+        <div>
+          <img
+            onClick={[Function]}
+            src="dancer1.png"
+          />
+          <p>
+            Effect: clickable!
+          </p>
+        </div>
+        <div>
+          <img
+            onClick={[Function]}
+            src="dancer2.png"
+          />
+          <p>
+            Effect: clickable!
+          </p>
+        </div>
+        <div>
+          <img
+            onClick={[Function]}
+            src="dancer3.png"
+          />
+          <p>
+            Effect: clickable!
+          </p>
+        </div>
+        <div>
+          <img
+            onClick={[Function]}
+            src="dancer4.png"
+          />
+          <p>
+            Effect: hoverable!
+          </p>
+        </div>
+        <div>
+          <img
+            onClick={[Function]}
+            src="dancer5.png"
+          />
+          <p>
+            Effect: hoverable!
+          </p>
+        </div>
+        <div>
+          <img
+            onClick={[Function]}
+            src="dancer6.png"
+          />
+          <p>
+            Effect: hoverable!
           </p>
         </div>
       </div>
     </div>
     <div
-      id="footermain"
+      id="infomain"
+      style={
+        Object {
+          "background": "#fff",
+          "color": "#333",
+        }
+      }
     >
-      <h2>
-        Created By:
-      </h2>
+      <h1>
+        Info
+      </h1>
       <p>
-        Haakon, Kaspar og Tore.
+         Press Dua Lipa's head, torso or tonga to change their color!
       </p>
-      <label
-        className="darkswitch"
+    </div>
+  </div>
+  <div
+    id="footermain"
+  >
+    <h2>
+      Created By:
+    </h2>
+    <p>
+      Haakon, Kaspar og Tore.
+    </p>
+    <button
+      id="pageThemeButton"
+      onClick={[Function]}
+    >
+      Change Theme
+    </button>
+  </div>
+  <div
+    id="player"
+  >
+    <div
+      className="playerElements"
+    >
+      <button
+        className="playerBtns"
+        onClick={[Function]}
+      >
+        <img
+          id="playbutton"
+          src={
+            Object {
+              "ReactComponent": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "render": [Function],
+              },
+              "__esModule": true,
+              "default": "play.svg",
+            }
+          }
+        />
+      </button>
+      <div
+        className="playerTime"
+      >
+        <p>
+          0:00
+        </p>
+      </div>
+      <div
+        className="progressBar"
       >
         <input
-          id="switch"
-          type="checkbox"
+          className="invisibleSlider"
+          max="100"
+          min="0"
+          onClick={[Function]}
+          type="range"
         />
-        <span
-          className="slider round"
+        <div
+          className="progressDot"
+          style={
+            Object {
+              "marginLeft": "-1%",
+            }
+          }
         />
-      </label>
+        <div
+          id="progressLineBackground"
+        >
+          <div
+            id="progressLine"
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="playerTime"
+      >
+        <p>
+          0:00
+        </p>
+      </div>
+      <div
+        className="playerSongImg"
+        style={
+          Object {
+            "backgroundImage": "url(0.jpg)",
+          }
+        }
+      />
+      <div
+        className="playerSongData"
+      >
+        <p
+          id="playerTrackName"
+        >
+          
+        </p>
+        <p
+          id="playerTrackAlbum"
+        >
+          
+        </p>
+      </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  id="songmain"
+>
+  <h1>
+    Songs
+  </h1>
+  <p>
+    Here is our library of available songs.
+  </p>
+  <div
+    className="songlist"
+  />
+</div>
 `;

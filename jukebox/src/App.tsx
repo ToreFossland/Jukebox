@@ -51,7 +51,7 @@ componentDidMount() {
     this.setState({bodyTheme: bodyTheme});
   }
 
-  let dancerIndex = localStorage.getItem('dancerIndex');
+  let dancerIndex = sessionStorage.getItem('dancerIndex');
 
   if(dancerIndex != null) {
     this.setState({dancerIndex: parseInt(dancerIndex)});
@@ -72,7 +72,7 @@ changeTheme() {
 
 changeDancer(index: number) {
   this.setState({dancerIndex: index})
-  localStorage.setItem('dancerIndex', JSON.stringify(index));
+  sessionStorage.setItem('dancerIndex', JSON.stringify(index));
 }
 
 
