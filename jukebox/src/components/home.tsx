@@ -11,7 +11,7 @@ import Dancer6 from './dancers/dancer6';
 import Lyrics from './lyrics';
 
 const Home = ({...props}) => {
-
+//Henter globale variabler fra context.
   let {trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject} = useContext(Context)!
       console.log(currentTrackIDObject?.currentTrackID)
       console.log(trackList)
@@ -19,7 +19,7 @@ const Home = ({...props}) => {
   
   const alldancers = [<Dancer1/>, <Dancer2/>, <Dancer3/>, <Dancer4/>, <Dancer5/>, <Dancer6/>];
 
-
+//Rendrer en velkomstskjerm dersom du besøker siden uten at den finner noen sang i local storage.
 const renderFunction = ()=>{
   if(currentTrackIDObject?.currentTrackID===0){
   return(
@@ -29,9 +29,7 @@ const renderFunction = ()=>{
     </div>
   );
   }
-
-
-  
+//Dersom den finner noe vill denne vises
   return(
       <div id="currentHomeData">
         <div>
