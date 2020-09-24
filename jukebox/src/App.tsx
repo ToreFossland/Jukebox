@@ -26,7 +26,7 @@ class App extends React.Component<myProps, myState> {
     this.state = {
         trackID: 0,
         btheme: "#fff",
-        bodyTheme: "#eee;",
+        bodyTheme: "#eee",
         ctheme: "#333",
         dancerIndex: 0
     }
