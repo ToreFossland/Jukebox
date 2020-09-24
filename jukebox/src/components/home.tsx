@@ -39,10 +39,10 @@ const renderFunction = ()=>{
           <div id="currentInfo">
             <h2> Current Song:</h2>
             <h3>{currentTrackNameObject?.currentTrackName}  - {currentTrackArtistObject?.currentTrackArtist}</h3>
-            <h3>- {currentTrackAlbumObject?.currentTrackAlbum}</h3>
+            <h5>{currentTrackAlbumObject?.currentTrackAlbum}</h5>
           </div>
-          {alldancers[props.dancerIndex]}
         </div>
+        {alldancers[props.dancerIndex]}
         <Lyrics/>
         <img id="currentCover" src={require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")}></img>
       </div>

@@ -280,7 +280,54 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  flex-direction: row;
+}
+
+
+
+
+
+@media  only screen and (min-width: 761px) {
+  #currentHomeData {
+    flex-direction: row;
+  }
+
+  #currentCover {
+    height: 200px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px #222;
+  }
+}
+
+@media  only screen and (max-width: 760px) {
+  #currentHomeData {
+    flex-direction: column;
+  }
+
+  #currentHomeData :nth-child(1) {
+    order: 1;
+  }
+  
+  #currentHomeData :nth-child(2) {
+    order: 3;
+  }
+  
+  #currentHomeData :nth-child(3) {
+    order: 4;
+  }
+
+  #currentHomeData :nth-child(4) {
+    order: 2;
+  }
+
+  #currentCover {
+    height: 125px;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 2.5px 10px #222;
+    margin-top: -150px;
+    margin-left: 200px;
+  }
 }
 
 #lyricsmain{
@@ -310,14 +357,10 @@ body {
   display: block;
   padding: 10px;
   border-radius: 10px;
-  width: 315px;
+  width: 333px;
   height: 150px;
-  transition: 0.3s;
   background-color: rgba(0, 0, 0, 0.1);
-}
-
-#currentInfo:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
 }
 
 #svgBackground{
@@ -332,23 +375,6 @@ body {
   -webkit-box-reflect: below 1px -webkit-gradient( linear, left top, left bottom, from(transparent), color-stop(80%, transparent), to(rgba(250, 250, 250, 1)));
   
 }*/
-
-@media only screen and (min-width: 761px) {
-  #currentCover {
-    height: 200px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 20px #222;
-    }
-  }
-
-@media only screen and (max-width: 760px) {
-  #currentCover {
-    height: 120px;
-    border-radius: 10px;
-    box-shadow: 0px 2.5px 10px #222;
-  }
-}
-
 
 .dancers{
   position: relative;
@@ -373,8 +399,6 @@ body {
   z-index: 3;
   width: 100%;
   height: 350px;
-
-  margin-left:10px;
 }
 
 .songlist {
