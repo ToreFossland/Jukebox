@@ -290,17 +290,17 @@ body {
 
 #currentCover {
   position: relative;
-  width: 200px;
+  width: 250px;
   height: 170px;
   border-radius:0px 10px 10px 0;
   box-shadow: 0 2.5px 5px #222;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  margin-right: 10px;
 }
 
 #currentInfo {
-  width: 200px;
   margin-left: 10px;
   color: #eee;
   font-weight: bold;
@@ -318,11 +318,20 @@ body {
   #currentHomeData {
     flex-direction: row;
   }
+
+  #currentInfo {
+    width: 300px;
+  }
 }
 
 @media  only screen and (max-width: 700px) {
   #currentHomeData {
     flex-direction: column;
+  }
+
+  #currentInfo {
+    max-width: 300;
+    width: 80vw;
   }
 
 }
