@@ -6,7 +6,7 @@ import '../../resources/styling/dancers_design.css';
 
 //Dua Lipa colors
 const yellow = "#FBC661";
-const purple = "#FA3EB9"
+const pink = "#F05BC2";
 const white = "#EEEFF3";
 const blue = "#29DAFF";
 const red = "#DB4114";
@@ -16,8 +16,8 @@ const green = "#81DB46";
  const Dancer1 = () =>{
 
   const [hairColor, setHairColor] = useState("yellow")
-  const [topColor, setTopColor] = useState("red")
-  const [bottomColor, setBottomColor] = useState("blue")
+  const [topColor, setTopColor] = useState("white")
+  const [bottomColor, setBottomColor] = useState("red")
 
   useEffect(() => {
     var hair = sessionStorage.getItem('hair1');
@@ -38,7 +38,7 @@ const green = "#81DB46";
   },[]);
 
     const changeHair = () => {
-      const newColor = hairColor == purple ? yellow : purple;
+      const newColor = hairColor == pink ? yellow : pink;
       sessionStorage.setItem('hair1', newColor);
       setHairColor(newColor);
     }
