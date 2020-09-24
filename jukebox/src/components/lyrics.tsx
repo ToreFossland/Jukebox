@@ -13,14 +13,10 @@ const Lyrics = () =>{
     useEffect(() => {
         axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=`+ currentTrackIDObject?.currentTrackID+`&apikey=${process.env.REACT_APP_MM_KEY}`)
             .then(res => {
-                console.log(res.data.message.body.lyrics.lyrics_body);
-                let tempLyrics = (res.data.message.body.lyrics.lyrics_body).split("...")
-                console.log(tempLyrics[0])
                 setLyrics(res.data.message.body.lyrics.lyrics_body);
             })
             .catch(err => console.log(err))
     }, [currentTrackIDObject?.currentTrackID])
-    console.log(lyrics)
 
     return(
         <div id="lyricsmain">

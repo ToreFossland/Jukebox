@@ -1,5 +1,4 @@
-import React, {useContext, useState} from 'react';
-import ReactDOM from 'react-dom';
+import React, {useContext} from 'react';
 import '../resources/styling/layout.css';
 import {Context} from '../context';
 import Songs from "./songs";
@@ -53,8 +52,8 @@ const renderFunction = ()=>{
           <svg id="svgBackground">
             <defs>
               <linearGradient id="gradient-0" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#DB3A32"stopOpacity="1" />
-                <stop offset="50%" stopColor="#FAD500"stopOpacity="1" />
+                <stop offset="0%" stopColor="#DB3A32" stopOpacity="1" />
+                <stop offset="50%" stopColor="#FAD500" stopOpacity="1" />
                 <stop offset="100%" stopColor="#FAD500" stopOpacity="0" />
               </linearGradient>
             </defs>
