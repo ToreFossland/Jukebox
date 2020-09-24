@@ -297,10 +297,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  margin-right: 10px;
 }
 
 #currentInfo {
-  width: 200px;
   margin-left: 10px;
   color: #eee;
   font-weight: bold;
@@ -318,11 +318,20 @@ body {
   #currentHomeData {
     flex-direction: row;
   }
+
+  #currentInfo {
+    width: 220px;
+  }
 }
 
 @media  only screen and (max-width: 700px) {
   #currentHomeData {
     flex-direction: column;
+  }
+
+  #currentInfo {
+    min-width: 100px;
+    width: 35vw;
   }
 
 }
