@@ -52,8 +52,8 @@ export const Provider:React.FC = ({children}) => {
 
 
     let songID:number[] = [
-        //OneMoreTime, SingThemeSong, dancing in the moonliht, daffodils
-            114611205, 83635443, 84712669, 44456039
+        //OneMoreTime, SingThemeSong, dancing in the moonliht, daffodils, living on a prayer, break my stride
+            114611205, 83635443, 84712669, 44456039, 995081, 2368206
         ]
 
    /* useEffect(() => {
