@@ -43,13 +43,13 @@ const renderFunction = ()=>{
   );}
 
     return(
-      <div id="container3" style={{background: props.btheme, color: props.ctheme}}>
+      <div id="container3">
           <svg id="svgBackground">
             <defs>
               <linearGradient id="gradient-0" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#DB3A32"stopOpacity="1" />
                 <stop offset="50%" stopColor="#FAD500"stopOpacity="1" />
-                <stop offset="100%" stopColor="#FAD500" stopOpacity="0" /> />
+                <stop offset="100%" stopColor="#FAD500" stopOpacity="0" />
               </linearGradient>
             </defs>
             <rect width="100%" height="100%" fill="url(#gradient-0)"/>
@@ -57,7 +57,7 @@ const renderFunction = ()=>{
 
           {alldancers[props.dancerIndex]}
 
-          <div id="homemain">
+          <div id="homemain" style={{background: props.btheme, color: props.ctheme, borderColor: props.bordertheme}}>
             {renderFunction()}
             <Songs/>
           </div>

@@ -10,7 +10,7 @@ const Footer = ({...props}) => {
         <div id="footermain">
             <h2>Created By:</h2>
             <p>Haakon, Kaspar og Tore.</p>
-            <button id="pageThemeButton" onClick={handleChange}>Change Theme</button>
+            <button id="pageThemeButton" onClick={handleChange}>Light/Dark Mode</button>
         </div>
       );
   }

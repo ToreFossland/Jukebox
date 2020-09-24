@@ -9,7 +9,7 @@ const Dancers = ({...props}) => {
   }
   
       return(
-        <div id="dancermain" style={{background: props.btheme, color: props.ctheme}}>
+        <div id="dancermain" style={{background: props.btheme, color: props.ctheme, borderColor: props.bordertheme}}>
             <h1>Dancers</h1>
             <p>Click on the dancer you want to see on top of the screen!</p>
             <div className="dancerlist">
