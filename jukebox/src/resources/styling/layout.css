@@ -326,6 +326,10 @@ body {
   #currentInfo {
     width: 220px;
   }
+
+  #lyricsmain {
+    margin-left: 10vw;
+  }
 }
 
 @media  only screen and (max-width: 700px) {
