@@ -39,10 +39,10 @@ body {
     text-align: center;
     text-decoration: none;
     float: left;
-    padding-left: 10px;
-    padding-right: 30px;
     height: 50px;
-    width: 90px;
+    width: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 24px;
     border-right: 1px solid #222;
     border-left: 1px solid #222;
@@ -51,6 +51,7 @@ body {
   
   #jukeboxbutton > p {
     margin-top: 10px;
+    margin-left: 0px;
   }
 
   #jukeboxbutton > img {
@@ -67,8 +68,11 @@ body {
     width: 80px;
     height: 50px;
     border-right: 1px solid #222;
-    text-align: center;
     font-size: 15px;
+  }
+
+  .navbuttons >p  {
+    margin-left: 0px;
   }
   
   .navbuttons:hover {
@@ -284,67 +288,38 @@ body {
 
 
 
+#currentCover {
+  position: relative;
+  height: 125px;
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 2.5px 5px #222;
+  left: 180px;
+  top: -135px;
+}
+#currentInfo {
+  width: 334px;
+  margin-left: 10px;
+}
 
 
-@media  only screen and (min-width: 761px) {
+
+@media  only screen and (min-width: 701px) {
   #currentHomeData {
     flex-direction: row;
   }
-
-  #currentCover {
-    height: 200px;
-    width: 250px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 20px #222;
-  }
-
-  #lyricsmain {
-    width: 25vw;
-  }
-
-  #currentInfo {
-    width: 25vw;
-    max-width: 333px;
-  }
 }
 
-@media  only screen and (max-width: 760px) {
+@media  only screen and (max-width: 700px) {
   #currentHomeData {
     flex-direction: column;
   }
 
-  #currentHomeData :nth-child(1) {
-    order: 1;
-  }
-  
-  #currentHomeData :nth-child(2) {
-    order: 3;
-  }
-  
-  #currentHomeData :nth-child(3) {
-    order: 2;
-  }
-
-  #currentInfo {
-    width: 333px;
-  }
-
-  #currentCover {
-    height: 125px;
-    width: 150px;
-    border-radius: 10px;
-    box-shadow: 0px 2.5px 5px #222;
-    margin-top: -150px;
-    margin-left: 190px;
-  }
-
-  #lyricsmain {
-    margin-top: 200px;
-  }
 }
 
 #lyricsmain{
   z-index: 8;
+  padding-left: 20px;
 }
 
 #lyricsText{
@@ -358,7 +333,7 @@ body {
   -webkit-mask-size: 100% 100%;
   height: 330px;
   -webkit-mask-repeat: no-repeat;
-  font-size: inherit;
+  font-size: 14px;
 
 }
 
@@ -412,11 +387,24 @@ body {
   height: 350px;
 }
 
+#songmain > p {
+  margin-left: 20px;
+}
+
+#songmain > h1 {
+  margin-left: 20px;
+}
+
+
 .songlist {
-    width: 100%;
-    display: flex;
-    overflow: auto;
-    white-space: nowrap;
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.songlist > .songLink:first-child {
+  margin-left: 20px;
 }
 
 .songLink{
@@ -448,7 +436,7 @@ body {
   height: 350px;
   padding-top: 35px;
   padding-bottom: 50px;
-  padding-left: 10px;
+  padding-left: 20px;
   border-bottom: 10px solid transparent;
 }
 
@@ -477,7 +465,7 @@ body {
 
 #infomain {
   height: 300px;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 
