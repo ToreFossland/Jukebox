@@ -323,8 +323,9 @@ body {
 }
 
 #lyricsText{
-  white-space: pre;
+  white-space: pre-wrap;
   overflow-y:scroll;
+  overflow-x: hidden;
   -webkit-mask-image: -webkit-gradient(
     linear, left top, left bottom, 
     color-stop(0.00,  rgba(0,0,0,1)),
@@ -400,6 +401,7 @@ body {
   width: 100%;
   display: flex;
   overflow: auto;
+  overflow-y: hidden;
   white-space: nowrap;
 }
 
