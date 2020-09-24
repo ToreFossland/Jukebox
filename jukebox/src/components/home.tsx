@@ -39,12 +39,12 @@ const renderFunction = ()=>{
             <h2> Current Song:</h2>
             <h3>{currentTrackNameObject?.currentTrackName}  - {currentTrackArtistObject?.currentTrackArtist}</h3>
             <h5>{currentTrackAlbumObject?.currentTrackAlbum}</h5>
-            {alldancers[props.dancerIndex]}
+            <img id="currentCover" src={require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")}></img>
           </div>
+          {alldancers[props.dancerIndex]}
         </div>
         
         <Lyrics/>
-        <img id="currentCover" src={require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")}></img>
       </div>
   );}
 

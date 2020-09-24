@@ -55,7 +55,7 @@ const green = "#81DB46";
       setBottomColor(newColor);
     }
       return(
-        <svg className="dancers"  width="300" height="500" x="25" y="0" viewBox="0 0 1114 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="dancers"  width="500" height="750" x="25" y="0" viewBox="0 0 1114 812" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="undraw_dua_lipa_ixam 1">
             <g id="surface">
             <path id="Vector" opacity="0.2" d="M539.5 811C690.55 811 813 782.794 813 748C813 713.206 690.55 685 539.5 685C388.45 685 266 713.206 266 748C266 782.794 388.45 811 539.5 811Z" fill="#333"/>
