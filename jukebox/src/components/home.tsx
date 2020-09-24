@@ -33,15 +33,15 @@ const renderFunction = ()=>{
   return(
       <div id="currentHomeData">
         <div>
-          <div id="currentInfo">
-            <h2> Current Song:</h2>
-            <h3>{currentTrackNameObject?.currentTrackName}  - {currentTrackArtistObject?.currentTrackArtist}</h3>
-            <h5>{currentTrackAlbumObject?.currentTrackAlbum}</h5>
+          <div style={{display: "flex"}}>
+            <div id="currentInfo">
+              <h4>{currentTrackNameObject?.currentTrackName}  - {currentTrackArtistObject?.currentTrackArtist}</h4>
+              <h6>{currentTrackAlbumObject?.currentTrackAlbum}</h6>
+            </div>
             <div id="currentCover" style={{ backgroundImage: `url(${require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")})` }}></div>
           </div>
-          {alldancers[props.dancerIndex]}
+          {alldancers[props.dancerIndex]};
         </div>
-        
         <Lyrics/>
       </div>
   );}
