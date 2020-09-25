@@ -5,7 +5,7 @@ import '../resources/styling/layout.css';
 
 
 const Songs = () =>{
-    const setCurrentSongData = (trackID:Number, name:string, album:string, artist:string) =>{
+    const setCurrentSongData = (trackID:number, name:string, album:string, artist:string) =>{
         localStorage.setItem('currentTrackID', JSON.stringify(trackID));
         localStorage.setItem('currentTrackName', name);
         localStorage.setItem('currentTrackAlbum', album);
@@ -30,7 +30,7 @@ const Songs = () =>{
       setCurrentSongData(parseInt(currentTrackID), currentTrackName, currentTrackAlbum, currentTrackArtist)
     }
     
-  }, [setCurrentSongData]);
+  });
 
 
 

@@ -12,19 +12,19 @@ type ContextProps = {
 
 type currentTrackIDType = {
     currentTrackID: number,
-    setCurrentTrackID: (val: any) => void
+    setCurrentTrackID: (val: number) => void
 }
 type currentTrackNameType = {
     currentTrackName: string,
-    setCurrentTrackName: (val: any) => void
+    setCurrentTrackName: (val: string) => void
 }
 type currentTrackAlbumType = {
     currentTrackAlbum: string,
-    setCurrentTrackAlbum: (val: any) => void
+    setCurrentTrackAlbum: (val: string) => void
 }
 type currentTrackArtistType = {
     currentTrackArtist: string,
-    setCurrentTrackArtist: (val: any) => void
+    setCurrentTrackArtist: (val: string) => void
 }
 
 
@@ -92,7 +92,7 @@ export const Provider:React.FC = ({children}) => {
             setTrackList(tracks)
 
         })).catch(errors => console.log(errors));
-    }, [])
+    })
 
         return(
             <Context.Provider value = {{ trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject}}>
