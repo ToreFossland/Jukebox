@@ -274,7 +274,7 @@ body {
 #homedefault {
   padding-top: 20px;
   z-index: 1;
-  min-height: 200;
+  min-height: 200px;
 }
 #homedefault > * {
   margin-left: 20px;
