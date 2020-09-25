@@ -1,8 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../resources/styling/layout.css';
-import Dancer from './dancers/dancer1';
-
 
 const Dancers = ({...props}) => {
 

@@ -1,6 +1,4 @@
 import React, { useEffect, useState} from 'react';
-import ReactDOM from 'react-dom';
-import { setConstantValue } from 'typescript';
 import '../../resources/styling/dancers_design.css';
 
 
