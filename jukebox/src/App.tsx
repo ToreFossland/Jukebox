@@ -69,6 +69,7 @@ class App extends React.Component<myProps, myState> {
     localStorage.setItem('ctheme', newcTheme);
     localStorage.setItem('bodyTheme', newBodyTheme);
   }
+  
 
   changeDancer(index: number) {
     this.setState({dancerIndex: index})
