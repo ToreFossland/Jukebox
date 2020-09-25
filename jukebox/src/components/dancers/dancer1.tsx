@@ -38,19 +38,19 @@ const green = "#81DB46";
   },[]);
 
     const changeHair = () => {
-      const newColor = hairColor == pink ? yellow : pink;
+      const newColor = hairColor === pink ? yellow : pink;
       sessionStorage.setItem('hair1', newColor);
       setHairColor(newColor);
     }
 
     const changeTop = () => {
-      const newColor = topColor == blue ? white : blue;
+      const newColor = topColor === blue ? white : blue;
       sessionStorage.setItem('top1', newColor);
       setTopColor(newColor);
     }
 
     const changeBottom = () => {
-      const newColor = bottomColor == red ? green : red;
+      const newColor = bottomColor === red ? green : red;
       sessionStorage.setItem('bottom1', newColor);
       setBottomColor(newColor);
     }
