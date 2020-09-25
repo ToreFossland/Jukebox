@@ -108,7 +108,7 @@ const handlePlayer = ()=>{
       return(
         <div id="player">
         <div className="playerElements">
-            <button className="playerBtns" onClick={handlePlayer}><img id="playbutton" src={require("../resources/media/" + `${playBtn}` + ".svg")}></img></button>
+            <button className="playerBtns" onClick={handlePlayer}><img alt="Play Button" id="playbutton" src={require("../resources/media/" + `${playBtn}` + ".svg")}></img></button>
             <div className="playerTime"><p>{currentTime}</p></div>
             <div className="progressBar">
               <input className="invisibleSlider" type="range" min="0" max="100" onClick={handleProgressBarClick}></input>
