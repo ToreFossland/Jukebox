@@ -59,9 +59,9 @@ class App extends React.Component<myProps, myState> {
 
   }
   changeTheme() {
-    const newbTheme = this.state.btheme == "#fff" ? "#555" : "#fff";
-    const newcTheme = this.state.ctheme == "#333" ? "#eee" : "#333";
-    const newBodyTheme = this.state.bodyTheme == "#111" ? "#eee" : "#111";
+    const newbTheme = this.state.btheme === "#fff" ? "#555" : "#fff";
+    const newcTheme = this.state.ctheme === "#333" ? "#eee" : "#333";
+    const newBodyTheme = this.state.bodyTheme === "#111" ? "#eee" : "#111";
     this.setState({ctheme: newcTheme});
     this.setState({bodyTheme: newBodyTheme});
     this.setState({btheme: newbTheme});

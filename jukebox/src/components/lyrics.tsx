@@ -1,14 +1,14 @@
 import React, {useContext, useEffect, useState} from "react";
 import axios from 'axios';
 import {Context} from '../context'
-import Spinner from "../resources/media/Spinner";
+
 
 
 const Lyrics = () =>{
     const [lyrics, setLyrics] = useState("" as string);
     let {currentTrackIDObject} = useContext(Context)!
 
-
+    //Henter sangteksten for den aktive sangen, vill kjøres på nytt når currentTrackID oppdateres
 
     useEffect(() => {
         axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=`+ currentTrackIDObject?.currentTrackID+`&apikey=${process.env.REACT_APP_MM_KEY}`)
@@ -18,11 +18,13 @@ const Lyrics = () =>{
             .catch(err => console.log(err))
     }, [currentTrackIDObject?.currentTrackID])
 
+
+    //Returnerer en paragraf med sangteksen fra sangtekst hook'en
     return(
         <div id="lyricsmain">
             <h1>Lyrics</h1>
             <div id="lyricsText">
-                <p id="hore">
+                <p>
                     {lyrics}
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </p>
