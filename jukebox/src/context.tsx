@@ -53,7 +53,8 @@ export const Provider:React.FC = ({children}) => {
 
     let songID:number[] = [
         //OneMoreTime, SingThemeSong, dancing in the moonliht, daffodils, living on a prayer, break my stride, move your feet
-            114611205, 83635443, 84712669, 44456039, 995081, 2368206, 1844865
+            114611205, 83635443
+        //, 84712669, 44456039, 995081, 2368206, 1844865
         ]
 
    /* useEffect(() => {
@@ -70,16 +71,18 @@ export const Provider:React.FC = ({children}) => {
         
         songID.forEach(element => {
             let temp:string = (`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?commontrack_id=`+element +`&apikey=${process.env.REACT_APP_MM_KEY}`)
-            apiURL.push(axios.get(temp))
+            apiURL.push(axios.get(temp, {
+                headers : {'User-agent': 'your bot 0.1'
+                }
+            }))
         });
-       
 
         useEffect(() => {
          axios.all(apiURL).then(axios.spread((...responses) => {
            console.log(responses)
 
             const tracks = responses.map( (item) => {
-                
+
                 return {
                     trackID:item.data.message.body.track.commontrack_id,
                     name:item.data.message.body.track.track_name,

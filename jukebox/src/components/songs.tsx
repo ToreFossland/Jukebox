@@ -1,5 +1,4 @@
 import React, {useContext, useEffect} from 'react';
-import ReactDOMs from 'react-dom';
 import {Context} from '../context';
 import '../resources/styling/layout.css';
 
@@ -40,7 +39,7 @@ const populateSongList = () =>{
     trackList?.forEach((element: { trackID:React.ReactNode; name: React.ReactNode; album: React.ReactNode; artist: React.ReactNode; }) => {
       container.push(
         <div className="songLink" key={element.trackID as number} onClick={() => setCurrentSongData(element.trackID as number, element.name as string, element.album as string, element.artist as string)}>
-          <div className="songLinkImg" style={{ backgroundImage: `url(${require("../resources/media/img/"+ element.trackID +".jpg")})` }} ></div>
+          <div className="songLinkImg" style={{backgroundImage: `url(${require("../resources/media/img/" + element.trackID + ".jpg")})`}} />
           <p>{element.artist} - {element.name}</p>
         </div>
       )

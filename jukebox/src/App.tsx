@@ -16,6 +16,7 @@ interface myState {
   bodyTheme: string,
   dancerIndex: number
 }
+
 interface myProps {
 //fill in props here
 }
@@ -34,45 +35,46 @@ class App extends React.Component<myProps, myState> {
     this.changeDancer = this.changeDancer.bind(this);
 }
 
-componentDidMount() {
-  let btheme = localStorage.getItem('btheme');
-  let ctheme = localStorage.getItem('ctheme');
-  let bodyTheme = localStorage.getItem('bodyTheme');
-  if(btheme != null) {
-    this.setState({btheme: btheme});
+  componentDidMount() {
+    let btheme = localStorage.getItem('btheme');
+    let ctheme = localStorage.getItem('ctheme');
+    let bodyTheme = localStorage.getItem('bodyTheme');
+    if(btheme != null) {
+      this.setState({btheme: btheme});
+    }
+
+    if(ctheme != null) {
+      this.setState({ctheme: ctheme});
+    }
+
+    if(bodyTheme != null) {
+      this.setState({bodyTheme: bodyTheme});
+    }
+
+    let dancerIndex = sessionStorage.getItem('dancerIndex');
+
+    if(dancerIndex != null) {
+      this.setState({dancerIndex: parseInt(dancerIndex)});
+    }
+
   }
-
-  if(ctheme != null) {
-    this.setState({ctheme: ctheme});
-  }
-
-  if(bodyTheme != null) {
-    this.setState({bodyTheme: bodyTheme});
-  }
-
-  let dancerIndex = sessionStorage.getItem('dancerIndex');
-
-  if(dancerIndex != null) {
-    this.setState({dancerIndex: parseInt(dancerIndex)});
+  changeTheme() {
+    const newbTheme = this.state.btheme == "#fff" ? "#555" : "#fff";
+    const newcTheme = this.state.ctheme == "#333" ? "#eee" : "#333";
+    const newBodyTheme = this.state.bodyTheme == "#111" ? "#eee" : "#111";
+    this.setState({ctheme: newcTheme});
+    this.setState({bodyTheme: newBodyTheme});
+    this.setState({btheme: newbTheme});
+    localStorage.setItem('btheme', newbTheme);
+    localStorage.setItem('ctheme', newcTheme);
+    localStorage.setItem('bodyTheme', newBodyTheme);
   }
   
-}
-changeTheme() {
-  const newbTheme = this.state.btheme == "#fff" ? "#555" : "#fff";
-  const newcTheme = this.state.ctheme == "#333" ? "#eee" : "#333";
-  const newBodyTheme = this.state.bodyTheme == "#111" ? "#eee" : "#111";
-  this.setState({ctheme: newcTheme});
-  this.setState({bodyTheme: newBodyTheme});
-  this.setState({btheme: newbTheme});
-  localStorage.setItem('btheme', newbTheme);
-  localStorage.setItem('ctheme', newcTheme);
-  localStorage.setItem('bodyTheme', newBodyTheme);
-}
 
-changeDancer(index: number) {
-  this.setState({dancerIndex: index})
-  sessionStorage.setItem('dancerIndex', JSON.stringify(index));
-}
+  changeDancer(index: number) {
+    this.setState({dancerIndex: index})
+    sessionStorage.setItem('dancerIndex', JSON.stringify(index));
+  }
 
 
   render(){
