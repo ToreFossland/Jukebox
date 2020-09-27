@@ -5,7 +5,7 @@ import '../../resources/styling/dancers_design.css';
 const Dancer4 = () => {
       return(
         <svg className="dancers" width="200" height="350" viewBox="0 0 895 767" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="dancer4" clip-path="url(#clip0)">
+          <g id="dancer4" clipPath="url(#clip0)">
           <path id="surface4" d="M447.067 766.609C693.975 766.609 894.134 754.045 894.134 738.547C894.134 723.049 693.975 710.486 447.067 710.486C200.159 710.486 0 723.049 0 738.547C0 754.045 200.159 766.609 447.067 766.609Z" fill="#D0CDE1"/>
           <g id="girlright">
           <path id="Vector" d="M733.198 684.585L734.298 705.479L757.39 703.279L755.191 682.386L733.198 684.585Z" fill="#FBBEBE"/>

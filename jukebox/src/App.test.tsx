@@ -31,43 +31,43 @@ it('renders correctly', () => {
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
-it('renders correctly', () => {
+it('Home renders correctly', () => {
     const tree = renderer
         .create(<Home />)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
-it('renders correctly', () => {
+it('Info renders correctly', () => {
     const tree = renderer
         .create(<Info />)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
-it('renders correctly', () => {
+it('Dancers renders correctly', () => {
     const tree = renderer
         .create(<Dancers />)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
-it('renders correctly', () => {
+it('NavBar renders correctly', () => {
     const tree = renderer
         .create(<NavBar />)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
-it('renders correctly', () => {
+it('Footer renders correctly', () => {
     const tree = renderer
         .create(<Footer />)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
-it('renders correctly', () => {
+it('Player renders correctly', () => {
     const tree = renderer
         .create(<Player />)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
-it('renders correctly', () => {
+it('Lyrics renders correctly', () => {
     const tree = renderer
         .create(<Lyrics />)
         .toJSON();

@@ -47,7 +47,7 @@ const progressBar = () =>{
     progressBar()
   }, 200);
   return () => clearInterval(interval);
-}, []);
+});
 
 const delay = (ms: number) => {
   return new Promise( resolve => setTimeout(resolve, ms) );

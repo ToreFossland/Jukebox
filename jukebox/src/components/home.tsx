@@ -38,7 +38,7 @@ const renderFunction = ()=>{
               <h4>{currentTrackNameObject?.currentTrackName}  - {currentTrackArtistObject?.currentTrackArtist}</h4>
               <h6>{currentTrackAlbumObject?.currentTrackAlbum}</h6>
             </div>
-            <div id="currentCover" style={{ backgroundImage: `url(${require("../resources/media/img/"+currentTrackIDObject?.currentTrackID+".jpg")})` }}></div>
+            <div id="currentCover" style={{backgroundImage: `url(${require("../resources/media/img/" + currentTrackIDObject?.currentTrackID + ".jpg")})`}}/>
           </div>
           <div style={{marginLeft: 75}}>
             {alldancers[props.dancerIndex]}
