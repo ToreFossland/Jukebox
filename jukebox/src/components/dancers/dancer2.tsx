@@ -12,9 +12,9 @@ const green = "#81DB46";
 
 const Dancer2 = () => {
   
-  const [hairColor, setHairColor] = useState("yellow");
-  const [topColor, setTopColor] = useState("white");
-  const [bottomColor, setBottomColor] = useState("red");
+  const [hairColor, setHairColor] = useState(yellow);
+  const [topColor, setTopColor] = useState(white);
+  const [bottomColor, setBottomColor] = useState(red);
 
   useEffect(() => {
     var hair = sessionStorage.getItem('hair2');
