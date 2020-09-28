@@ -57,25 +57,25 @@ export const Provider:React.FC = ({children}) => {
         //, 84712669, 44456039, 995081, 2368206, 1844865
         ]
 
-   /* useEffect(() => {
+   useEffect(() => {
     const k = [
-    {trackID: 103162573, name: "haakon", artist: "Kaskade", album: "album"},
-    {trackID: 114669898, name: "Kaspar", artist: "Daft punk", album: "album2"},
-    {trackID: 107705824, name: "Tore", artist: "haakon band", album: "album2"}
+    {trackID: 114611205, name: "haakon", artist: "Kaskade", album: "album"},
+    {trackID: 83635443, name: "Kaspar", artist: "Daft punk", album: "album2"},
+    {trackID: 84712669, name: "Tore", artist: "haakon band", album: "album2"}
     ]
     
     setTrackList(k)
     },[]);
-    */
+    
         let apiURL:any[] = [];
         //Definerer en liste med alle URL'ene for alle sangene mot Musixmatch API'et, brukes til å hente alle sammen samtidig med axios.all
-
+ /* 
         songID.forEach(element => {
             let temp:string = (`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?commontrack_id=`+element +`&apikey=${process.env.REACT_APP_MM_KEY}`)
             apiURL.push(axios.get(temp))
         });
 
-        useEffect(() => {
+      useEffect(() => {
          axios.all(apiURL).then(axios.spread((...responses) => {
            console.log(responses)
             //Maps the response data into a Track type, and then sets the track list to this data
@@ -92,7 +92,7 @@ export const Provider:React.FC = ({children}) => {
             setTrackList(tracks)
 
         })).catch(errors => console.log(errors));
-    })
+    })*/
 
         return(
             <Context.Provider value = {{ trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject}}>

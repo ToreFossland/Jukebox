@@ -30,7 +30,7 @@ const Songs = () =>{
       setCurrentSongData(parseInt(currentTrackID), currentTrackName, currentTrackAlbum, currentTrackArtist)
     }
     
-  });
+  }), [];
 
 
 
