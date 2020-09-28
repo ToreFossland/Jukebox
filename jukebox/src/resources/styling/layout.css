@@ -27,7 +27,7 @@ body {
     font-weight: bold;
     position: fixed;
     z-index: 100;
-    overflow: scroll;
+    overflow: hidden;
   }
 
   .navelements {
