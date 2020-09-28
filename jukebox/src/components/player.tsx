@@ -78,7 +78,6 @@ useEffect(() => {
 
 //Pauser/Starter sangen. Kjøres når du klikker på playbutton.
 const handlePlayer = ()=>{
-  console.log("hei")
   if(myAudio.paused){
     myAudio.play();
   }else{
