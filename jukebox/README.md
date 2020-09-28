@@ -57,18 +57,20 @@ Vi har utført Jest snapshot testing kontinuerlig gjennom utviklingsprosessen. D
 
 ## Kilder
 
-https://reactjs.org/docs/context.html
-https://fettblog.eu/typescript-react/context/
-https://cors-anywhere.herokuapp.com/
-https://reactjs.org/docs/getting-started.html
-https://www.npmjs.com/package/axios
-https://www.npmjs.com/get-npm
-https://www.youtube.com/watch?v=DLX62G4lc44
-https://jestjs.io/docs/en/snapshot-testing
-https://reactjs.org/docs/components-and-props.html
-https://www.codecademy.com/ 
-https://www.youtube.com/watch?v=gWai7fYp9PY (@keyframes tutorial)
-https://www.typescriptlang.org/docs
-https://www.w3schools.com/JSREF/dom_obj_audio.asp
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-Funnet hjelp til feilmeldinger og bugs hos velkjente forum som stackOverflow o.l.
+
+* https://reactjs.org/docs/context.html
+* https://fettblog.eu/typescript-react/context/
+* https://cors-anywhere.herokuapp.com/
+* https://reactjs.org/docs/getting-started.html
+* https://www.npmjs.com/package/axios
+* https://www.npmjs.com/get-npm
+* https://www.youtube.com/watch?v=DLX62G4lc44
+* https://jestjs.io/docs/en/snapshot-testing
+* https://reactjs.org/docs/components-and-props.html
+* https://www.codecademy.com/ 
+* https://www.youtube.com/watch?v=gWai7fYp9PY (@keyframes tutorial)
+* https://www.typescriptlang.org/docs
+* https://www.w3schools.com/JSREF/dom_obj_audio.asp
+* https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+* Funnet hjelp til feilmeldinger og bugs hos velkjente forum som stackOverflow o.l.
+
