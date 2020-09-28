@@ -17,6 +17,8 @@ const green = "#81DB46";
   const [topColor, setTopColor] = useState(white)
   const [bottomColor, setBottomColor] = useState(red)
 
+
+  //Henter inn forandring gjort på danseren ved åpning av siden
   useEffect(() => {
     var hair = sessionStorage.getItem('hair1');
     var top = sessionStorage.getItem('top1');
@@ -35,18 +37,21 @@ const green = "#81DB46";
     
   },[]);
 
+    //Bytter farge på håret til danseren
     const changeHair = () => {
       const newColor = hairColor === pink ? yellow : pink;
       sessionStorage.setItem('hair1', newColor);
       setHairColor(newColor);
     }
 
+    //Bytter farge på toppen til danseren
     const changeTop = () => {
       const newColor = topColor === blue ? white : blue;
       sessionStorage.setItem('top1', newColor);
       setTopColor(newColor);
     }
 
+    //Bytter farge på underdelen til danseren
     const changeBottom = () => {
       const newColor = bottomColor === red ? green : red;
       sessionStorage.setItem('bottom1', newColor);

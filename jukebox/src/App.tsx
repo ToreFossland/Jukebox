@@ -35,6 +35,8 @@ class App extends React.Component<myProps, myState> {
     this.changeDancer = this.changeDancer.bind(this);
 }
 
+
+//Henter fargetemaet som brukeren hadde valgt før nettsiden ble lukket. Gjør ingenting dersom brukeren ikke har gjort noe valg.
   componentDidMount() {
     let btheme = localStorage.getItem('btheme');
     let ctheme = localStorage.getItem('ctheme');
@@ -58,6 +60,8 @@ class App extends React.Component<myProps, myState> {
     }
 
   }
+
+  //Bytter mellom to farger på hver av konstantene under, og gjør om statesene til den nye fargen. Siden styles så basert på disse.
   changeTheme() {
     const newbTheme = this.state.btheme === "#fff" ? "#555" : "#fff";
     const newcTheme = this.state.ctheme === "#333" ? "#eee" : "#333";
