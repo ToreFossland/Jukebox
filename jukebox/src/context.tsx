@@ -57,6 +57,8 @@ export const Provider:React.FC = ({children}) => {
         //, 84712669, 44456039, 995081, 2368206, 1844865
         ]
 
+    /* DENNE KAN BRUKES DERSOM API-KALLET FEILER! NB 
+    ___________________________START_________________________________*/
     useEffect(() => {
     const k = [
     {trackID: 114611205, name: "One more Time", artist: "Daft Punk", album: "Discovery"},
@@ -70,15 +72,19 @@ export const Provider:React.FC = ({children}) => {
     
     setTrackList(k)
     },[]);
-    /*
-        let apiURL:any[] = [];
+    /*___________________________SLUTT_________________________________*/
+      
+    
+    /* KOMMENTER UT DENNE FUNKSJONEN DERSOM API-KALLET FEILER 
+    ___________________________START_________________________________
+    let apiURL:any[] = [];
         //Definerer en liste med alle URL'ene for alle sangene mot Musixmatch API'et, brukes til å hente alle sammen samtidig med axios.all
   
         songID.forEach(element => {
             let temp:string = (`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?commontrack_id=`+element +`&apikey=${process.env.REACT_APP_MM_KEY}`)
             apiURL.push(axios.get(temp))
         });
-
+        
       useEffect(() => {
          axios.all(apiURL).then(axios.spread((...responses) => {
            console.log(responses)
@@ -96,7 +102,10 @@ export const Provider:React.FC = ({children}) => {
             setTrackList(tracks)
 
         })).catch(errors => console.log(errors));
-    })*/
+    })
+
+   /* ___________________________SLUTT_________________________________*/
+
 
         return(
             <Context.Provider value = {{ trackList, currentTrackIDObject, currentTrackNameObject, currentTrackAlbumObject, currentTrackArtistObject}}>
