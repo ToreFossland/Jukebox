@@ -53,15 +53,14 @@ export const Provider:React.FC = ({children}) => {
 
     let songID:number[] = [
         //OneMoreTime, SingThemeSong, dancing in the moonlight, daffodils, living on a prayer, break my stride, move your feet
-        103749, 83635443
-        //, 84712669, 44456039, 995081, 2368206, 1844865
+        103749, 83635443, 84712669, 44456039, 995081, 2368206, 1844865
         ]
 
     /* DENNE KAN BRUKES DERSOM API-KALLET FEILER! NB 
     ___________________________START_________________________________
     useEffect(() => {
     const k = [
-    {trackID: 114611205, name: "One more Time", artist: "Daft Punk", album: "Discovery"},
+    {trackID: 103749, name: "One more Time", artist: "Daft Punk", album: "Discovery"},
     {trackID: 83635443, name: "3b 3b", artist: "Jokeasses", album: "album2"},
     {trackID: 84712669, name: "Daning in the moonlight", artist: "jubel", album: "album4"},
     {trackID: 44456039, name: "Dafodills", artist: "Mark Ronson", album: "album5"},
